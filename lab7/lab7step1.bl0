@@ -1,0 +1,27 @@
+#$ TOOL ispLEVER Classic 1.7.00.05.28.13
+#$ DATE Wed Mar 02 23:55:55 2016
+#$ TITLE lab7step1
+#$ MODULE lab7step1
+#$ JEDECFILE lab7step1
+#$ PINS 16 I0:2 I1:3 I2:4 I3:5 I4:6 I5:7 I6:8 I7:9 a:14 b:15 c:16 d:17 e:18 f:19 g:20 dp:21
+
+.model lab7step1
+.inputs I0.BLIF I1.BLIF I2.BLIF I3.BLIF I4.BLIF I5.BLIF I6.BLIF I7.BLIF
+.outputs a b c d e f g dp
+.names I0.BLIF a
+0 1
+.names I1.BLIF b
+0 1
+.names I2.BLIF c
+0 1
+.names I3.BLIF d
+0 1
+.names I4.BLIF e
+0 1
+.names I5.BLIF f
+0 1
+.names I6.BLIF g
+0 1
+.names I7.BLIF dp
+0 1
+.end

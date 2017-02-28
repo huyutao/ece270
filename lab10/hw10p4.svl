@@ -1,0 +1,10 @@
+Part Number: LC4256ZE-5TN144C
+C:\ispLEVER_Classic1_7\ispvmsystem/ispufw -dev LC4256ZE-XXTN144 -op JPVS -if hw10p4.jed -oft -svf -of "U:\Personal\Downloads\lab10\hw10p4_epvs.svf" -lever
+Invoke process : C:\ispLEVER_Classic1_7\ispvmsystem/ispufw -dev LC4256ZE-XXTN144 -op JPVS -if hw10p4.jed -oft -svf -of "U:\Personal\Downloads\lab10\hw10p4_epvs.svf" -lever
+svf file '"U:\Personal\Downloads\lab10\hw10p4_epvs.svf"' is generated successfully
+C:\ispLEVER_Classic1_7\ispvmsystem/ispufw -dev LC4256ZE-XXTN144 -op JPV -if hw10p4.jed -oft -svf -of "U:\Personal\Downloads\lab10\hw10p4_epv.svf" -lever
+Invoke process : C:\ispLEVER_Classic1_7\ispvmsystem/ispufw -dev LC4256ZE-XXTN144 -op JPV -if hw10p4.jed -oft -svf -of "U:\Personal\Downloads\lab10\hw10p4_epv.svf" -lever
+svf file '"U:\Personal\Downloads\lab10\hw10p4_epv.svf"' is generated successfully
+C:\ispLEVER_Classic1_7\ispvmsystem/ispufw -dev LC4256ZE-XXTN144 -op JV -if hw10p4.jed -oft -svf -of "U:\Personal\Downloads\lab10\hw10p4_v.svf" -lever
+Invoke process : C:\ispLEVER_Classic1_7\ispvmsystem/ispufw -dev LC4256ZE-XXTN144 -op JV -if hw10p4.jed -oft -svf -of "U:\Personal\Downloads\lab10\hw10p4_v.svf" -lever
+svf file '"U:\Personal\Downloads\lab10\hw10p4_v.svf"' is generated successfully

@@ -1,0 +1,50 @@
+|--------------------------------------------------- ----------|
+|- ispLEVER Classic 1.7.00.05.28.13 Equations File            -|
+|- Copyright(C), 1992-2012, Lattice Semiconductor Corporation -|
+|- All Rights Reserved.                                       -|
+|--------------------------------------------------------------|
+
+
+Equations:
+
+
+LED20 = !( !LED22.Q & Q1.Q ) ; (1 pterm, 2 signals)
+
+LED21 = !Q1.Q & !Q0.Q
+    # LED22.Q ; (2 pterms, 3 signals)
+
+LED22.D = !LED22.Q & Q1.Q & Q0.Q
+    # !DIP3 & LED22.Q & Q0.Q
+    # !DIP3 & LED22.Q & Q1.Q
+    # !DIP2 & !DIP3
+    # DIP1 & !DIP3 ; (5 pterms, 6 signals)
+LED22.C = tmr_out ; (1 pterm, 1 signal)
+
+LED25 = !LED22.Q & !Q1.Q
+    # !Q1.Q & !Q0.Q
+    # !LED22.Q & !Q0.Q ; (3 pterms, 3 signals)
+
+LED26 = !LED22.Q & !Q0.Q
+    # !Q1.Q ; (2 pterms, 3 signals)
+
+LED27 = !( Q1.Q & Q0.Q ) ; (1 pterm, 2 signals)
+
+Q0.D.X1 = DIP3 & !LED22.Q & Q1.Q & Q0.Q
+    # DIP1 & !DIP2 & !DIP3 & LED22.Q & Q1.Q
+    # DIP1 & !DIP2 & !DIP3 & LED22.Q & !Q0.Q
+    # !DIP1 & DIP2 & !DIP3 & !LED22.Q & !Q1.Q & !Q0.Q ; (4 pterms, 6 signals)
+Q0.D.X2 = DIP3 ; (1 pterm, 1 signal)
+Q0.C = tmr_out ; (1 pterm, 1 signal)
+
+Q1.D = !DIP1 & DIP2 & !LED22.Q & !Q1.Q & Q0.Q
+    # DIP1 & !DIP2 & LED22.Q & Q1.Q & !Q0.Q
+    # DIP1 & !DIP2 & LED22.Q & !Q1.Q & Q0.Q
+    # DIP3 & !Q0.Q
+    # DIP3 & !Q1.Q
+    # DIP3 & LED22.Q ; (6 pterms, 6 signals)
+Q1.C = tmr_out ; (1 pterm, 1 signal)
+
+_dup_osc_dis = 0 ; (0 pterm, 0 signal)
+
+osc_dis = 0 ; (0 pterm, 0 signal)
+

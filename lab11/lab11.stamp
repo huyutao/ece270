@@ -1,0 +1,381 @@
+
+Timing Report for STAMP
+
+//  Project = lab11
+//  Family  = lc4k
+//  Device  = LC4256ZE
+//  Speed   = -5.8
+//  Voltage = 1.8
+//  Operating Condition = COM
+//  Data sheet version  = 0.9
+
+//  Pass Bidirection = OFF
+//  Pass S/R = OFF
+//  Pass Latch = OFF
+//  T_SU Endpoints D/T inputs = ON
+//  T_SU Endpoints CE inputs = OFF
+//  T_SU Endpoints S/R inputs = OFF
+//  T_SU Endpoints RAM gated = ON
+//  Fmax of CE = ON
+//  Fmax of RAM = ON
+
+//  Location(From => To)
+//    Pin number: numeric number preceded by "p", BGA number as is
+//    Macrocell number: Segment#,GLB#,Macrocell#
+//                      Segment#: starts from 0 (if applicable)
+//                      GLB#: starts from A..Z, AA..ZZ
+//                      Macrocell#: starts from 0 to 31
+
+
+Section IO
+  //DESTINATION NODES;
+  DIS1a [out]
+  DIS1b [out]
+  DIS1c [out]
+  DIS1d [out]
+  DIS1e [out]
+  DIS1f [out]
+  DIS1g [out]
+  DIS2a [out]
+  DIS2b [out]
+  DIS2c [out]
+  DIS2d [out]
+  DIS2e [out]
+  DIS2f [out]
+  DIS2g [out]
+  DIS3a [out]
+  DIS3b [out]
+  DIS3c [out]
+  DIS3d [out]
+  DIS3e [out]
+  DIS3f [out]
+  DIS3g [out]
+  DIS4a [out]
+  DIS4b [out]
+  DIS4c [out]
+  DIS4d [out]
+  DIS4e [out]
+  DIS4f [out]
+  DIS4g [out]
+  L16 [out]
+  LED0 [out]
+  LED1 [out]
+  LED2 [out]
+  LED3 [out]
+  LED4 [out]
+  LED5 [out]
+  LED6 [out]
+  LED7 [out]
+  LED8 [out]
+  LED9 [out]
+  LED10 [out]
+  LED11 [out]
+  LED12 [out]
+  LED13 [out]
+  LED14 [out]
+  LED15 [out]
+  LED16 [out]
+  LED17 [out]
+  LED18 [out]
+  P0 [out]
+  P1 [out]
+  P2 [out]
+  P3 [out]
+  Q0 [out]
+  Q1 [out]
+  Q2 [out]
+  Q3 [out]
+  S1 [out]
+  X0 [out]
+  X1 [out]
+  X2 [out]
+  X3 [out]
+  X4 [out]
+  X5 [out]
+  X6 [out]
+  X7 [out]
+  Y0 [out]
+  Y1 [out]
+  Y2 [out]
+  Y3 [out]
+  Y4 [out]
+  Y5 [out]
+  Y6 [out]
+  Y7 [out]
+  DIS2a.C [reg]
+  DIS2b.C [reg]
+  DIS2c.C [reg]
+  DIS2d.C [reg]
+  DIS2e.C [reg]
+  DIS2f.C [reg]
+  DIS2g.C [reg]
+  DIS3a.C [reg]
+  DIS3b.C [reg]
+  DIS3c.C [reg]
+  DIS3d.C [reg]
+  DIS3e.C [reg]
+  DIS3f.C [reg]
+  DIS3g.C [reg]
+  DIS4a.C [reg]
+  DIS4b.C [reg]
+  DIS4c.C [reg]
+  DIS4d.C [reg]
+  DIS4e.C [reg]
+  DIS4f.C [reg]
+  DIS4g.C [reg]
+  L16.C [reg]
+  P0.C [reg]
+  P1.C [reg]
+  P2.C [reg]
+  P3.C [reg]
+  Q0.C [reg]
+  Q1.C [reg]
+  Q2.C [reg]
+  Q3.C [reg]
+  S1.C [reg]
+  X0.C [reg]
+  X1.C [reg]
+  X2.C [reg]
+  X3.C [reg]
+  X4.C [reg]
+  X5.C [reg]
+  X6.C [reg]
+  X7.C [reg]
+  Y0.C [reg]
+  Y1.C [reg]
+  Y2.C [reg]
+  Y3.C [reg]
+  Y4.C [reg]
+  Y5.C [reg]
+  Y6.C [reg]
+  Y7.C [reg]
+  dd7.C [reg]
+  dd8.C [reg]
+  dd9.C [reg]
+  dd10.C [reg]
+  dd11.C [reg]
+  dd12.C [reg]
+  dd13.C [reg]
+  dd14.C [reg]
+  dd15.C [reg]
+  dd16.C [reg]
+  dd17.C [reg]
+  dd18.C [reg]
+  dd19.C [reg]
+  dd20.C [reg]
+  timediv.C [reg]
+  timediv2.C [reg]
+  DIS2a.D [reg]
+  DIS2b.D [reg]
+  DIS2c.D [reg]
+  DIS2d.D [reg]
+  DIS2e.D [reg]
+  DIS2f.D [reg]
+  DIS2g.D [reg]
+  DIS3a.D [reg]
+  DIS3b.D [reg]
+  DIS3c.D [reg]
+  DIS3d.D [reg]
+  DIS3e.D [reg]
+  DIS3f.D [reg]
+  DIS3g.D [reg]
+  DIS4a.D [reg]
+  DIS4b.D [reg]
+  DIS4c.D [reg]
+  DIS4d.D [reg]
+  DIS4e.D [reg]
+  DIS4f.D [reg]
+  DIS4g.D [reg]
+  L16.D [reg]
+  P0.T [reg]
+  P1.D [reg]
+  P2.D [reg]
+  P3.D [reg]
+  Q0.D.X1 [reg]
+  Q0.D.X2 [reg]
+  Q1.D.X1 [reg]
+  Q1.D.X2 [reg]
+  Q2.D.X1 [reg]
+  Q2.D.X2 [reg]
+  Q3.D [reg]
+  S1.D [reg]
+  X0.T [reg]
+  X1.D [reg]
+  X2.D [reg]
+  X3.D [reg]
+  X4.D [reg]
+  X5.D [reg]
+  X6.D [reg]
+  X7.D [reg]
+  Y0.D [reg]
+  Y1.D [reg]
+  Y2.D [reg]
+  Y3.D [reg]
+  Y4.D [reg]
+  Y5.D [reg]
+  Y6.D [reg]
+  Y7.D [reg]
+  dd7.D [reg]
+  dd8.D [reg]
+  dd9.D [reg]
+  dd10.D [reg]
+  dd11.D [reg]
+  dd12.D [reg]
+  dd13.D [reg]
+  dd14.D [reg]
+  dd15.D [reg]
+  dd16.D [reg]
+  dd17.D [reg]
+  dd18.D [reg]
+  dd19.D [reg]
+  dd20.D [reg]
+  timediv.D [reg]
+  timediv2.D [reg]
+
+  //SOURCE NODES;
+  DIP0 [in]
+  DIP1 [in]
+  DIP2 [in]
+  DIP3 [in]
+  DIP4 [in]
+  DIP5 [in]
+  DIP6 [in]
+  DIP7 [in]
+  LED19 [in]
+  LED20 [in]
+  LED21 [in]
+  LED22 [in]
+  LED23 [in]
+  LED24 [in]
+  LED25 [in]
+  LED26 [in]
+  LED27 [in]
+  LED28 [in]
+  LED29 [in]
+  S1_NC [in]
+  S1_NO [in]
+  S2_NC [in]
+  S2_NO [in]
+  DIS2a.Q [reg]
+  DIS2b.Q [reg]
+  DIS2c.Q [reg]
+  DIS2d.Q [reg]
+  DIS2e.Q [reg]
+  DIS2f.Q [reg]
+  DIS2g.Q [reg]
+  DIS3a.Q [reg]
+  DIS3b.Q [reg]
+  DIS3c.Q [reg]
+  DIS3d.Q [reg]
+  DIS3e.Q [reg]
+  DIS3f.Q [reg]
+  DIS3g.Q [reg]
+  DIS4a.Q [reg]
+  DIS4b.Q [reg]
+  DIS4c.Q [reg]
+  DIS4d.Q [reg]
+  DIS4e.Q [reg]
+  DIS4f.Q [reg]
+  DIS4g.Q [reg]
+  L16.Q [reg]
+  P0.Q [reg]
+  P1.Q [reg]
+  P2.Q [reg]
+  P3.Q [reg]
+  Q0.Q [reg]
+  Q1.Q [reg]
+  Q2.Q [reg]
+  Q3.Q [reg]
+  S1.Q [reg]
+  X0.Q [reg]
+  X1.Q [reg]
+  X2.Q [reg]
+  X3.Q [reg]
+  X4.Q [reg]
+  X5.Q [reg]
+  X6.Q [reg]
+  X7.Q [reg]
+  Y0.Q [reg]
+  Y1.Q [reg]
+  Y2.Q [reg]
+  Y3.Q [reg]
+  Y4.Q [reg]
+  Y5.Q [reg]
+  Y6.Q [reg]
+  Y7.Q [reg]
+  dd7.Q [reg]
+  dd8.Q [reg]
+  dd9.Q [reg]
+  dd10.Q [reg]
+  dd11.Q [reg]
+  dd12.Q [reg]
+  dd13.Q [reg]
+  dd14.Q [reg]
+  dd15.Q [reg]
+  dd16.Q [reg]
+  dd17.Q [reg]
+  dd18.Q [reg]
+  dd19.Q [reg]
+  dd20.Q [reg]
+  timediv.Q [reg]
+  timediv2.Q [reg]
+
+
+Section tSU
+
+   tSU,    tHD   Level   Location(From => To)    Source                        Destination                   Reference_Clock
+  ===========   =====   ====================    ======                        ===========                   ===============
+  6.50,- 2.50     1     p26       =>  M1        DIP7                          DIS2a.D                       DIP7
+  6.50,- 2.50     1     p26       =>  M12       DIP7                          DIS2b.D                       DIP7
+  6.50,- 2.50     1     p26       =>  M9        DIP7                          DIS2c.D                       DIP7
+  6.50,- 2.50     1     p26       =>  M7        DIP7                          DIS2d.D                       DIP7
+  6.50,- 2.50     1     p26       =>  M5        DIP7                          DIS2e.D                       DIP7
+  6.50,- 2.50     1     p26       =>  M3        DIP7                          DIS2f.D                       DIP7
+  6.50,- 2.50     1     p26       =>  L5        DIP7                          DIS2g.D                       DIP7
+  6.50,- 2.50     1     p26       =>  P2        DIP7                          DIS3a.D                       DIP7
+  6.50,- 2.50     1     p26       =>  P4        DIP7                          DIS3b.D                       DIP7
+  6.50,- 2.50     1     p26       =>  P6        DIP7                          DIS3c.D                       DIP7
+  6.50,- 2.50     1     p26       =>  P8        DIP7                          DIS3d.D                       DIP7
+  6.50,- 2.50     1     p26       =>  P0        DIP7                          DIS3e.D                       DIP7
+  6.50,- 2.50     1     p26       =>  P1        DIP7                          DIS3f.D                       DIP7
+  6.50,- 2.50     1     p26       =>  O3        DIP7                          DIS3g.D                       DIP7
+  6.50,- 2.50     1     p26       =>  G3        DIP7                          DIS4a.D                       DIP7
+  6.50,- 2.50     1     p26       =>  H1        DIP7                          DIS4b.D                       DIP7
+  6.50,- 2.50     1     p26       =>  H0        DIP7                          DIS4c.D                       DIP7
+  6.50,- 2.50     1     p26       =>  H9        DIP7                          DIS4d.D                       DIP7
+  6.50,- 2.50     1     p26       =>  H7        DIP7                          DIS4e.D                       DIP7
+  6.50,- 2.50     1     p26       =>  H5        DIP7                          DIS4f.D                       DIP7
+  6.50,- 2.50     1     p26       =>  H3        DIP7                          DIS4g.D                       DIP7
+  6.50,- 2.50     1     p26       =>  A3        DIP7                          dd7.D                         DIP7
+  6.50,- 2.50     1     p26       =>  A12       DIP7                          dd8.D                         DIP7
+  6.50,- 2.50     1     p26       =>  F3        DIP7                          dd9.D                         DIP7
+  6.50,- 2.50     1     p26       =>  P3        DIP7                          dd10.D                        DIP7
+  6.50,- 2.50     1     p26       =>  H12       DIP7                          dd11.D                        DIP7
+  6.50,- 2.50     1     p26       =>  F5        DIP7                          dd12.D                        DIP7
+  6.50,- 2.50     1     p26       =>  P5        DIP7                          dd13.D                        DIP7
+  6.50,- 2.50     1     p26       =>  P7        DIP7                          dd14.D                        DIP7
+  6.50,- 2.50     1     p26       =>  P9        DIP7                          dd15.D                        DIP7
+  6.50,- 2.50     1     p26       =>  P10       DIP7                          dd16.D                        DIP7
+  6.50,- 2.50     1     p26       =>  P11       DIP7                          dd17.D                        DIP7
+  6.50,- 2.50     1     p26       =>  P12       DIP7                          dd18.D                        DIP7
+  6.50,- 2.50     1     p26       =>  P13       DIP7                          dd19.D                        DIP7
+  6.50,- 2.50     1     p26       =>  O1        DIP7                          dd20.D                        DIP7
+  6.05,- 2.05     1     p61       =>  D3        S2_NO                         Q0.D.X2                       S2_NO
+  6.05,- 2.05     1     p61       =>  D1        S2_NO                         Q1.D.X1                       S2_NO
+  6.05,- 2.05     1     p61       =>  D1        S2_NO                         Q1.D.X2                       S2_NO
+  6.05,- 2.05     1     p61       =>  J1        S2_NO                         Q2.D.X1                       S2_NO
+  6.05,- 2.05     1     p61       =>  O12       S2_NO                         Q3.D                          S2_NO
+
+
+Section tPD
+
+   Delay         Level   Location(From => To)    Source                        Destination
+  =====         =====   ====================    ======                        ===========
+   5.85           1     p78       => p40        DIP1                          LED0
+   5.85           1     p78       => p39        DIP1                          LED1
+   5.85           1     p78       => p33        DIP1                          LED2
+   5.85           1     p78       => p32        DIP1                          LED3
+   5.85           1     p78       => p31        DIP1                          LED4
+   5.85           1     p78       => p30        DIP1                          LED5
+   5.85           1     p78       => p29        DIP1                          LED6
+   5.85           1     p78       => p28        DIP1                          LED7

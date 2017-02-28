@@ -1,0 +1,8 @@
+Warning 4154: Signal 'dp' (pin 21) is not used in the design -
+neither the signal nor its pin will be reassigned.
+$DEVICE         p22v10g    fit   lab7step4.tt3
+$PINS   16  dp:21   g:20   f:19   e:18   d:17   c:16   b:15   
+a:14   I0:2   I1:3   I2:4   I3:5   I4:6   I5:7   
+I6:8   I7:9   
+--------------------------------------------------------------
+

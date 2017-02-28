@@ -1,0 +1,16 @@
+MODULE lab7step1
+
+TITLE 'lab7step1'
+I0..I7 pin 2..9;
+!a,!b,!c,!d,!e,!f,!g,!dp pin 14..21 istype'com';
+
+A = [I0..I7];
+B = [a,b,c,d,e,f,g,dp];
+
+Equations
+B = A;
+
+
+END
+
+

@@ -1,0 +1,24 @@
+ispLEVER Classic 1.7.00.05.28.13 SDFGEN
+Copyright(C),1992-2013, Lattice Semiconductor Corporation. All Rights Reserved.
+Output Files:
+  Netlist File: lab11.vho
+  Delay   File: lab11.sdf
+
+Parsing C:/ispLEVER_Classic1_7/ispcpld/dat/sdf.mdl
+Input file: u:/personal/downloads/lab11\lab11.tt4
+Note 18862: NODE name _dup_osc_dis being renamed to Xdup_osc_dis.
+No logic associated with node 'osc_out.'
+Reading library information ...
+Mapping to combinational gates 
+Mapping to netlist view.
+Note 18862: NODE name Q2.D.X1 being renamed to GATE_Q2_D_X1.
+Note 18862: NODE name Q1.D.X1 being renamed to GATE_Q1_D_X1.
+Note 18862: NODE name Q1.D.X2 being renamed to GATE_Q1_D_X2.
+Note 18862: NODE name Q0.D.X1 being renamed to GATE_Q0_D_X1.
+Note 18862: NODE name Q0.D.X2 being renamed to GATE_Q0_D_X2.
+Note 18862: NODE name Q3_0 being renamed to GATE_Q3_AR.
+Utilization Estimate
+    Combinational Macros:        505
+    Flip-Flop and Latch Macros:   63
+    I/O Pads:                     96
+Elapsed time: 2 seconds

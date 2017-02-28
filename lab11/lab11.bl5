@@ -1,0 +1,552 @@
+#$ TOOL  ispLEVER Classic 1.7.00.05.28.13
+#$ DATE  Thu Apr 07 15:34:24 2016
+#$ JEDECFILE  isp4256zeio
+#$ MODULE  isp4256ZEio
+#$ TITLE  isp4256ZE Development Board I/O Configuration
+#$ PROPERTY  Lattice OSCTIMER TIMER_DIV= 1048576;
+#$ PINS 96 DIP0:79 DIP1:78 DIP2:77 DIP3:76 DIP4:23 DIP5:24 DIP6:25 DIP7:26
+ S1_NC:58 S1_NO:59 S2_NC:60 S2_NO:61 LED0:40 LED1:39 LED2:33 LED3:32 LED4:31
+ LED5:30 LED6:29 LED7:28 LED8:139 LED9:138 LED10:135 LED11:134 LED12:133
+ LED13:132 LED14:131 LED15:130 DIS1a:87 DIS1b:86 DIS1c:85 DIS1d:84 DIS1e:83
+ DIS1f:81 DIS1g:80 DIS2a:98 DIS2b:97 DIS2c:96 DIS2d:95 DIS2e:94 DIS2f:93 DIS2g:88
+ DIS3a:125 DIS3b:124 DIS3c:123 DIS3d:122 DIS3e:121 DIS3f:120 DIS3g:116 DIS4a:44
+ DIS4b:48 DIS4c:49 DIS4d:50 DIS4e:51 DIS4f:52 DIS4g:53 LED16:140 LED17:141
+ LED18:142 LED19:143 LED20:100 LED21:101 LED22:102 LED23:103 LED24:104 LED25:105
+ LED26:111 LED27:112 LED28:63 LED29:62 X0 X1 X2 X3 X4 X5 X6 X7 Y0 Y1 Y2 Y3 Y4 Y5
+ Y6 Y7 S1 Q3 Q2 Q1 Q0 P3 P2 P1 P0 L16
+#$ NODES 20 osc_dis osc_out tmr_out timediv+ timediv2+ dd7 dd8 dd9 dd10 dd11
+ dd12 dd13 dd14 dd15 dd16 dd17 dd18 dd19 dd20 Q3_0
+#$ EXTERNAL osctimer 4 DYNOSCDIS'i' TIMERRES'i' OSCOUT'o' TIMEROUT'o'
+#$ INSTANCE I1 osctimer 4 osc_dis osc_dis osc_out tmr_out
+.model isp4256zeio 
+.inputs X6.Q X5.Q X4.Q X3.Q X2.Q X1.Q X0.Q DIP7.BLIF timediv2.Q DIP0.BLIF X7.Q \
+ DIP1.BLIF tmr_out.BLIF timediv.Q Y6.Q Y5.Q Y4.Q Y3.Q Y2.Q Y1.Q Y0.Q S1.Q Y7.Q \
+ S1_NO.BLIF S1_NC.BLIF S2_NO.BLIF DIP2.BLIF Q3.Q Q2.Q Q1.Q Q0.Q P3.Q P2.Q P1.Q \
+ P0.Q L16.Q dd14.Q dd15.Q dd16.Q dd17.Q dd18.Q dd19.Q dd20.Q dd7.Q dd8.Q dd9.Q \
+ dd10.Q dd11.Q dd12.Q dd13.Q Q3_0.BLIF
+.outputs LED0- LED1- LED2- LED3- LED4- LED5- LED6- LED7- LED8 LED9 LED10 LED11 \
+ LED12 LED13 LED14 LED15 DIS1a- DIS1b- DIS1c- DIS1d- DIS1e DIS1f DIS1g DIS2a.D- \
+ DIS2a.C DIS2b.D- DIS2b.C DIS2c.D- DIS2c.C DIS2d.D- DIS2d.C DIS2e.D DIS2e.C \
+ DIS2f.D- DIS2f.C DIS2g.D DIS2g.C DIS3a.D- DIS3a.C DIS3b.D- DIS3b.C DIS3c.D- \
+ DIS3c.C DIS3d.D- DIS3d.C DIS3e.D- DIS3e.C DIS3f.D- DIS3f.C DIS3g.D- DIS3g.C \
+ DIS4a.D- DIS4a.C DIS4b.D- DIS4b.C DIS4c.D- DIS4c.C DIS4d.D- DIS4d.C DIS4e.D- \
+ DIS4e.C DIS4f.D- DIS4f.C DIS4g.D- DIS4g.C LED16- LED17 LED18- X0.T X0.C X0.CE \
+ X0.AR X1.D X1.C X1.CE X1.AR X2.D X2.C X2.CE X2.AR X3.D X3.C X3.CE X3.AR X4.D \
+ X4.C X4.CE X4.AR X5.D X5.C X5.CE X5.AR X6.D X6.C X6.CE X6.AR X7.D X7.C X7.CE \
+ X7.AR Y0.D Y0.C Y0.CE- Y0.AP Y1.D Y1.C Y1.CE- Y1.AR Y2.D Y2.C Y2.CE- Y2.AR Y3.D \
+ Y3.C Y3.CE- Y3.AR Y4.D Y4.C Y4.CE- Y4.AR Y5.D Y5.C Y5.CE- Y5.AR Y6.D Y6.C Y6.CE- \
+ Y6.AR Y7.D Y7.C Y7.CE- Y7.AR S1.D S1.C S1.AR S1.AP Q3.D Q3.C Q3.AR Q2.D.X1 \
+ Q2.D.X2 Q2.C Q2.AR Q1.D.X1 Q1.D.X2 Q1.C Q1.AR Q0.D.X1 Q0.D.X2 Q0.C Q0.AR P3.D \
+ P3.C P2.D P2.C P1.D P1.C P0.T- P0.C L16.D L16.C osc_dis timediv.D timediv.C \
+ timediv2.D timediv2.C dd7.D dd7.C dd8.D dd8.C dd9.D dd9.C dd10.D dd10.C dd11.D- \
+ dd11.C dd12.D dd12.C dd13.D- dd13.C dd14.D dd14.C dd15.D dd15.C dd16.D dd16.C \
+ dd17.D dd17.C dd18.D dd18.C dd19.D dd19.C dd20.D dd20.C Q3_0
+.names X0.Q DIP1.BLIF LED0-
+11 1
+.names X1.Q DIP1.BLIF LED1-
+11 1
+.names X2.Q DIP1.BLIF LED2-
+11 1
+.names X3.Q DIP1.BLIF LED3-
+11 1
+.names X4.Q DIP1.BLIF LED4-
+11 1
+.names X5.Q DIP1.BLIF LED5-
+11 1
+.names X6.Q DIP1.BLIF LED6-
+11 1
+.names X7.Q DIP1.BLIF LED7-
+11 1
+.names Y0.Q LED8
+0 1
+.names Y1.Q LED9
+0 1
+.names Y2.Q LED10
+0 1
+.names Y3.Q LED11
+0 1
+.names Y4.Q LED12
+0 1
+.names Y5.Q LED13
+0 1
+.names Y6.Q LED14
+0 1
+.names Y7.Q LED15
+0 1
+.names P3.Q P2.Q P1.Q P0.Q DIS1a-
+100- 1
+0-10 1
+-0-1 1
+.names P3.Q P2.Q P1.Q P0.Q DIS1b-
+1000 1
+0100 1
+.names P3.Q P2.Q P1.Q P0.Q DIS1c-
+0001 1
+0100 1
+1-10 1
+0111 1
+.names P3.Q P2.Q P1.Q P0.Q DIS1d-
+-110 1
+01-0 1
+0-1- 1
+-0-1 1
+.names P3.Q P2.Q P1.Q DIS1e
+000 1
+.names P3.Q P2.Q P1.Q P0.Q DIS1f
+0000 1
+1-10 1
+11-- 1
+-1-1 1
+.names P3.Q P2.Q P1.Q P0.Q DIS1g
+0011 1
+0-00 1
+.names DIP7.BLIF P3.Q P2.Q P1.Q P0.Q DIS2a.D-
+0100- 1
+00-10 1
+0-0-1 1
+.names timediv2.Q DIS2a.C
+1 1
+.names DIP7.BLIF P3.Q P2.Q P1.Q P0.Q DIS2b.D-
+01000 1
+00100 1
+.names timediv2.Q DIS2b.C
+1 1
+.names DIP7.BLIF P3.Q P2.Q P1.Q P0.Q DIS2c.D-
+00001 1
+00100 1
+01-10 1
+00111 1
+.names timediv2.Q DIS2c.C
+1 1
+.names DIP7.BLIF P3.Q P2.Q P1.Q P0.Q DIS2d.D-
+0-110 1
+001-0 1
+00-1- 1
+0-0-1 1
+.names timediv2.Q DIS2d.C
+1 1
+.names DIP7.BLIF P3.Q P2.Q P1.Q DIS2e.D
+-000 1
+1--- 1
+.names timediv2.Q DIS2e.C
+1 1
+.names DIP7.BLIF P3.Q P2.Q P1.Q P0.Q DIS2f.D-
+00-10 1
+0100- 1
+001-0 1
+0-0-1 1
+.names timediv2.Q DIS2f.C
+1 1
+.names DIP7.BLIF P3.Q P2.Q P1.Q P0.Q DIS2g.D
+-0011 1
+-0-00 1
+1---- 1
+.names timediv2.Q DIS2g.C
+1 1
+.names DIP7.BLIF dd7.Q DIS3a.D-
+01 1
+.names timediv2.Q DIS3a.C
+1 1
+.names DIP7.BLIF dd8.Q DIS3b.D-
+01 1
+.names timediv2.Q DIS3b.C
+1 1
+.names DIP7.BLIF dd9.Q DIS3c.D-
+01 1
+.names timediv2.Q DIS3c.C
+1 1
+.names DIP7.BLIF dd10.Q DIS3d.D-
+01 1
+.names timediv2.Q DIS3d.C
+1 1
+.names DIP7.BLIF dd11.Q DIS3e.D-
+01 1
+.names timediv2.Q DIS3e.C
+1 1
+.names DIP7.BLIF dd12.Q DIS3f.D-
+01 1
+.names timediv2.Q DIS3f.C
+1 1
+.names DIP7.BLIF dd13.Q DIS3g.D-
+01 1
+.names timediv2.Q DIS3g.C
+1 1
+.names DIP7.BLIF dd14.Q DIS4a.D-
+01 1
+.names timediv2.Q DIS4a.C
+1 1
+.names DIP7.BLIF dd15.Q DIS4b.D-
+01 1
+.names timediv2.Q DIS4b.C
+1 1
+.names DIP7.BLIF dd16.Q DIS4c.D-
+01 1
+.names timediv2.Q DIS4c.C
+1 1
+.names DIP7.BLIF dd17.Q DIS4d.D-
+01 1
+.names timediv2.Q DIS4d.C
+1 1
+.names DIP7.BLIF dd18.Q DIS4e.D-
+01 1
+.names timediv2.Q DIS4e.C
+1 1
+.names DIP7.BLIF dd19.Q DIS4f.D-
+01 1
+.names timediv2.Q DIS4f.C
+1 1
+.names DIP7.BLIF dd20.Q DIS4g.D-
+01 1
+.names timediv2.Q DIS4g.C
+1 1
+.names Q3.Q Q2.Q Q1.Q Q0.Q L16.Q LED16-
+11111 1
+.names Q3.Q Q2.Q Q1.Q Q0.Q LED17
+1111 1
+-000 1
+.names Q3.Q Q2.Q Q1.Q Q0.Q LED18-
+1000 1
+.names X4.Q X3.Q X2.Q X0.T
+000 1
+110 1
+101 1
+011 1
+.names timediv2.Q X0.C
+1 1
+.names DIP0.BLIF X0.CE
+1 1
+.names DIP7.BLIF X0.AR
+1 1
+.names X0.Q X1.D
+1 1
+.names timediv2.Q X1.C
+1 1
+.names DIP0.BLIF X1.CE
+1 1
+.names DIP7.BLIF X1.AR
+1 1
+.names X1.Q X2.D
+1 1
+.names timediv2.Q X2.C
+1 1
+.names DIP0.BLIF X2.CE
+1 1
+.names DIP7.BLIF X2.AR
+1 1
+.names X2.Q X3.D
+1 1
+.names timediv2.Q X3.C
+1 1
+.names DIP0.BLIF X3.CE
+1 1
+.names DIP7.BLIF X3.AR
+1 1
+.names X3.Q X4.D
+1 1
+.names timediv2.Q X4.C
+1 1
+.names DIP0.BLIF X4.CE
+1 1
+.names DIP7.BLIF X4.AR
+1 1
+.names X4.Q X5.D
+1 1
+.names timediv2.Q X5.C
+1 1
+.names DIP0.BLIF X5.CE
+1 1
+.names DIP7.BLIF X5.AR
+1 1
+.names X5.Q X6.D
+1 1
+.names timediv2.Q X6.C
+1 1
+.names DIP0.BLIF X6.CE
+1 1
+.names DIP7.BLIF X6.AR
+1 1
+.names X6.Q X7.D
+1 1
+.names timediv2.Q X7.C
+1 1
+.names DIP0.BLIF X7.CE
+1 1
+.names DIP7.BLIF X7.AR
+1 1
+.names Y6.Q Y5.Q Y4.Q Y3.Q Y2.Q Y1.Q Y0.Q Y0.D
+0000000 1
+.names S1.Q Y0.C
+1 1
+.names Q3.Q Q2.Q Q1.Q Q0.Q Y0.CE-
+1000 1
+.names DIP7.BLIF Y0.AP
+1 1
+.names Y0.Q Y1.D
+1 1
+.names S1.Q Y1.C
+1 1
+.names Q3.Q Q2.Q Q1.Q Q0.Q Y1.CE-
+1000 1
+.names DIP7.BLIF Y1.AR
+1 1
+.names Y1.Q Y2.D
+1 1
+.names S1.Q Y2.C
+1 1
+.names Q3.Q Q2.Q Q1.Q Q0.Q Y2.CE-
+1000 1
+.names DIP7.BLIF Y2.AR
+1 1
+.names Y2.Q Y3.D
+1 1
+.names S1.Q Y3.C
+1 1
+.names Q3.Q Q2.Q Q1.Q Q0.Q Y3.CE-
+1000 1
+.names DIP7.BLIF Y3.AR
+1 1
+.names Y3.Q Y4.D
+1 1
+.names S1.Q Y4.C
+1 1
+.names Q3.Q Q2.Q Q1.Q Q0.Q Y4.CE-
+1000 1
+.names DIP7.BLIF Y4.AR
+1 1
+.names Y4.Q Y5.D
+1 1
+.names S1.Q Y5.C
+1 1
+.names Q3.Q Q2.Q Q1.Q Q0.Q Y5.CE-
+1000 1
+.names DIP7.BLIF Y5.AR
+1 1
+.names Y5.Q Y6.D
+1 1
+.names S1.Q Y6.C
+1 1
+.names Q3.Q Q2.Q Q1.Q Q0.Q Y6.CE-
+1000 1
+.names DIP7.BLIF Y6.AR
+1 1
+.names Y6.Q Y7.D
+1 1
+.names S1.Q Y7.C
+1 1
+.names Q3.Q Q2.Q Q1.Q Q0.Q Y7.CE-
+1000 1
+.names DIP7.BLIF Y7.AR
+1 1
+.names S1.D
+.names S1.C
+.names S1_NC.BLIF S1.AR
+0 1
+.names S1_NO.BLIF S1.AP
+0 1
+.names X6.Q X5.Q X4.Q X3.Q X2.Q X1.Q X0.Q S2_NO.BLIF Q3.Q Q2.Q Q1.Q Q0.Q Q3.D
+-----0-00001 1
+-----1-10001 1
+--0----00100 1
+--1----10100 1
+----0--00010 1
+----1--10010 1
+0------0011- 1
+1------1011- 1
+------00-000 1
+------11-000 1
+---0---00-11 1
+---1---10-11 1
+-0-----001-1 1
+-1-----101-1 1
+--------1000 1
+---------111 1
+.names S1.Q Q3.C
+1 1
+.names Q3_0.BLIF Q3.AR
+1 1
+.names X2.Q X1.Q X0.Q X7.Q S2_NO.BLIF Q3.Q Q2.Q Q1.Q Q0.Q Q2.D.X1
+-----1111 1
+---01-111 1
+---10-111 1
+--0-10000 1
+-1--00001 1
+--1-00000 1
+-0--10001 1
+1---00010 1
+0---10010 1
+.names Q3.Q Q2.D.X2
+0 1
+.names S1.Q Q2.C
+1 1
+.names Q3_0.BLIF Q2.AR
+1 1
+.names X4.Q X3.Q X0.Q X7.Q S2_NO.BLIF Q3.Q Q2.Q Q1.Q Q0.Q Q1.D.X1
+-----0-01 1
+-----1111 1
+---1--111 1
+----10-10 1
+--1-1000- 1
+-1---0011 1
+0---00100 1
+--0-00000 1
+1---10100 1
+.names S2_NO.BLIF Q3.Q Q1.Q Q1.D.X2
+001 1
+.names S1.Q Q1.C
+1 1
+.names Q3_0.BLIF Q1.AR
+1 1
+.names X5.Q X3.Q X1.Q X7.Q Q3.Q Q2.Q Q1.Q Q0.Q Q0.D.X1
+----0--0 1
+---1011- 1
+-1--001- 1
+--1-000- 1
+1---010- 1
+----1111 1
+.names S2_NO.BLIF Q3.Q Q0.Q Q0.D.X2
+001 1
+.names S1.Q Q0.C
+1 1
+.names Q3_0.BLIF Q0.AR
+1 1
+.names Q3.Q Q2.Q Q1.Q Q0.Q P3.Q P2.Q P1.Q P0.Q P3.D
+10000111 1
+11110000 1
+1000100- 1
+11111011 1
+1111110- 1
+111111-0 1
+.names timediv2.Q P3.C
+1 1
+.names Q3.Q Q2.Q Q1.Q Q0.Q P3.Q P2.Q P1.Q P0.Q P2.D
+-1-00011 1
+--010011 1
+-01-0011 1
+-1-0010- 1
+--01010- 1
+-01-010- 1
+11111011 1
+10000000 1
+1111110- 1
+111111-0 1
+0---0011 1
+0---010- 1
+.names timediv2.Q P2.C
+1 1
+.names Q3.Q Q2.Q Q1.Q Q0.Q P3.Q P2.Q P1.Q P0.Q P1.D
+-1-00010 1
+--010010 1
+-01-0010 1
+-1-00-01 1
+--010-01 1
+-01-0-01 1
+11111110 1
+11111101 1
+10001001 1
+10000000 1
+11110000 1
+0---0010 1
+0---0-01 1
+.names timediv2.Q P1.C
+1 1
+.names Q3.Q Q2.Q Q1.Q Q0.Q P3.Q P2.Q P1.Q P0.Q P0.T-
+11110-10 1
+---011-0 1
+----0110 1
+--011--0 1
+-01-1--0 1
+-1--10-0 1
+111101-0 1
+1000--10 1
+1000-1-0 1
+0---1--0 1
+.names timediv2.Q P0.C
+1 1
+.names L16.Q L16.D
+0 1
+.names timediv2.Q L16.C
+1 1
+.names osc_dis
+.names timediv.Q timediv.D
+0 1
+.names tmr_out.BLIF timediv.C
+1 1
+.names timediv2.Q timediv2.D
+0 1
+.names timediv.Q timediv2.C
+1 1
+.names DIP7.BLIF P3.Q P2.Q P1.Q P0.Q dd7.D
+0100- 1
+00-10 1
+0-0-1 1
+.names timediv2.Q dd7.C
+1 1
+.names DIP7.BLIF P3.Q P2.Q P1.Q P0.Q dd8.D
+01000 1
+00100 1
+.names timediv2.Q dd8.C
+1 1
+.names DIP7.BLIF P3.Q P2.Q P1.Q P0.Q dd9.D
+00001 1
+00100 1
+01-10 1
+00111 1
+.names timediv2.Q dd9.C
+1 1
+.names DIP7.BLIF P3.Q P2.Q P1.Q P0.Q dd10.D
+0-110 1
+001-0 1
+00-1- 1
+0-0-1 1
+.names timediv2.Q dd10.C
+1 1
+.names DIP7.BLIF P3.Q P2.Q P1.Q dd11.D-
+-000 1
+1--- 1
+.names timediv2.Q dd11.C
+1 1
+.names DIP7.BLIF P3.Q P2.Q P1.Q P0.Q dd12.D
+00-10 1
+0100- 1
+001-0 1
+0-0-1 1
+.names timediv2.Q dd12.C
+1 1
+.names DIP7.BLIF P3.Q P2.Q P1.Q P0.Q dd13.D-
+-0011 1
+-0-00 1
+1---- 1
+.names timediv2.Q dd13.C
+1 1
+.names DIP7.BLIF dd7.Q dd14.D
+01 1
+.names timediv2.Q dd14.C
+1 1
+.names DIP7.BLIF dd8.Q dd15.D
+01 1
+.names timediv2.Q dd15.C
+1 1
+.names DIP7.BLIF dd9.Q dd16.D
+01 1
+.names timediv2.Q dd16.C
+1 1
+.names DIP7.BLIF dd10.Q dd17.D
+01 1
+.names timediv2.Q dd17.C
+1 1
+.names DIP7.BLIF dd11.Q dd18.D
+01 1
+.names timediv2.Q dd18.C
+1 1
+.names DIP7.BLIF dd12.Q dd19.D
+01 1
+.names timediv2.Q dd19.C
+1 1
+.names DIP7.BLIF dd13.Q dd20.D
+01 1
+.names timediv2.Q dd20.C
+1 1
+.names DIP7.BLIF S1.Q DIP2.BLIF Q3.Q Q2.Q Q1.Q Q0.Q Q3_0
+1------ 1
+-111000 1
+.end

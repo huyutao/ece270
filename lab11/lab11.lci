@@ -1,0 +1,186 @@
+
+[Device]
+Family = lc4k;
+PartNumber = LC4256ZE-5TN144C;
+Package = 144TQFP;
+PartType = LC4256ZE;
+Speed = -5.8;
+Operating_condition = COM;
+Status = Production;
+
+[Revision]
+Parent = lc4k256e.lci;
+DATE = 2002;
+TIME = 0:00:00;
+Source_Format = ABEL_Schematic;
+Synthesis = Synplify;
+
+[Ignore Assignments]
+
+[Clear Assignments]
+
+[Backannotate Assignments]
+
+[Global Constraints]
+
+[Location Assignments]
+layer = OFF;
+DIP0 = pin, 79, -, -, -;
+DIP1 = pin, 78, -, -, -;
+DIP2 = pin, 77, -, -, -;
+DIP3 = pin, 76, -, -, -;
+DIP4 = pin, 23, -, -, -;
+DIP5 = pin, 24, -, -, -;
+DIP6 = pin, 25, -, -, -;
+DIP7 = pin, 26, -, -, -;
+S1_NC = pin, 58, -, -, -;
+S1_NO = pin, 59, -, -, -;
+S2_NC = pin, 60, -, -, -;
+S2_NO = pin, 61, -, -, -;
+LED0 = pin, 40, -, -, -;
+LED1 = pin, 39, -, -, -;
+LED2 = pin, 33, -, -, -;
+LED3 = pin, 32, -, -, -;
+LED4 = pin, 31, -, -, -;
+LED5 = pin, 30, -, -, -;
+LED6 = pin, 29, -, -, -;
+LED7 = pin, 28, -, -, -;
+LED8 = pin, 139, -, -, -;
+LED9 = pin, 138, -, -, -;
+LED10 = pin, 135, -, -, -;
+LED11 = pin, 134, -, -, -;
+LED12 = pin, 133, -, -, -;
+LED13 = pin, 132, -, -, -;
+LED14 = pin, 131, -, -, -;
+LED15 = pin, 130, -, -, -;
+DIS1a = pin, 87, -, -, -;
+DIS1b = pin, 86, -, -, -;
+DIS1c = pin, 85, -, -, -;
+DIS1d = pin, 84, -, -, -;
+DIS1e = pin, 83, -, -, -;
+DIS1f = pin, 81, -, -, -;
+DIS1g = pin, 80, -, -, -;
+DIS2a = pin, 98, -, -, -;
+DIS2b = pin, 97, -, -, -;
+DIS2c = pin, 96, -, -, -;
+DIS2d = pin, 95, -, -, -;
+DIS2e = pin, 94, -, -, -;
+DIS2f = pin, 93, -, -, -;
+DIS2g = pin, 88, -, -, -;
+DIS3a = pin, 125, -, -, -;
+DIS3b = pin, 124, -, -, -;
+DIS3c = pin, 123, -, -, -;
+DIS3d = pin, 122, -, -, -;
+DIS3e = pin, 121, -, -, -;
+DIS3f = pin, 120, -, -, -;
+DIS3g = pin, 116, -, -, -;
+DIS4a = pin, 44, -, -, -;
+DIS4b = pin, 48, -, -, -;
+DIS4c = pin, 49, -, -, -;
+DIS4d = pin, 50, -, -, -;
+DIS4e = pin, 51, -, -, -;
+DIS4f = pin, 52, -, -, -;
+DIS4g = pin, 53, -, -, -;
+LED16 = pin, 140, -, -, -;
+LED17 = pin, 141, -, -, -;
+LED18 = pin, 142, -, -, -;
+LED19 = pin, 143, -, -, -;
+LED20 = pin, 100, -, -, -;
+LED21 = pin, 101, -, -, -;
+LED22 = pin, 102, -, -, -;
+LED23 = pin, 103, -, -, -;
+LED24 = pin, 104, -, -, -;
+LED25 = pin, 105, -, -, -;
+LED26 = pin, 111, -, -, -;
+LED27 = pin, 112, -, -, -;
+LED28 = pin, 63, -, -, -;
+LED29 = pin, 62, -, -, -;
+
+[Group Assignments]
+layer = OFF;
+
+[Resource Reservations]
+layer = OFF;
+
+[Fitter Report Format]
+
+[Power]
+
+[Source Constraint Option]
+
+[Fast Bypass]
+
+[OSM Bypass]
+
+[Input Registers]
+
+[Netlist/Delay Format]
+
+[IO Types]
+layer = OFF;
+
+[Pullup]
+
+[Slewrate]
+
+[Region]
+
+[Timing Constraints]
+
+[HSI Attributes]
+
+[Input Delay]
+
+[opt global constraints list]
+
+[Explorer User Settings]
+
+[Pin attributes list]
+
+[global constraints list]
+
+[Global Constraints Process Update]
+
+[pin lock limitation]
+
+[LOCATION ASSIGNMENTS LIST]
+
+[RESOURCE RESERVATIONS LIST]
+
+[individual constraints list]
+
+[Attributes list setting]
+
+[Timing Analyzer]
+
+[PLL Assignments]
+
+[Dual Function Macrocell]
+
+[Explorer Results]
+
+[VHDL synplify constraints]
+
+[VHDL spectrum constraints]
+
+[verilog synplify constraints]
+
+[verilog spectrum constraints]
+
+[VHDL synplify constraints list]
+
+[VHDL spectrum constraints list]
+
+[verilog synplify constraints list]
+
+[verilog spectrum constraints list]
+
+[Power Guard]
+
+[ORP Bypass]
+
+[Register Powerup]
+
+[OSCTIMER Assignments]
+layer = OFF;
+OSCTIMER = osc_dis, osc_rst, osc_out, tmr_out, 1048576;

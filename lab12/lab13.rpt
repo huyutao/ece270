@@ -1,0 +1,2072 @@
+|--------------------------------------------------------------|
+|- ispLEVER Classic 1.7.00.05.28.13 Fitter Report File        -|
+|- Copyright(C), 1992-2012, Lattice Semiconductor Corporation -|
+|- All Rights Reserved.                                       -|
+|--------------------------------------------------------------|
+
+
+
+
+The Basic/Detailed Report Format can be selected in the dialog box
+Tools->Fitter Report File Format...
+
+Project_Summary
+~~~~~~~~~~~~~~~
+Project Name         :  lab13
+Project Path         :  U:\Personal\Downloads\lab12
+Project Fitted on    :  Thu Apr 21 17:19:57 2016
+
+Device               :  M4256_96
+Package              :  144
+GLB Input Mux Size   :  33
+Available Blocks     :  16
+Speed                :  -5.8
+Part Number          :  LC4256ZE-5TN144C
+Source Format        :  ABEL_Schematic
+
+
+// Project 'lab13' Fit Successfully! //
+
+
+Compilation_Times
+~~~~~~~~~~~~~~~~~
+Prefit Time                     0 secs
+Load Design Time                0.05 secs
+Partition Time                  0.20 secs
+Place Time                      0.00 secs
+Route Time                      0.00 secs
+Total Fit Time                  00:00:01
+
+
+Design_Summary
+~~~~~~~~~~~~~~
+Total Input Pins                13
+Total Logic Functions           204
+  Total Output Pins             57
+  Total Bidir I/O Pins          0
+  Total Buried Nodes            147
+Total Flip-Flops                138
+  Total D Flip-Flops            33
+  Total T Flip-Flops            105
+  Total Latches                 0
+Total Product Terms             994
+
+Total Reserved Pins             0
+Total Locked Pins               70
+Total Locked Nodes              0
+
+Total Unique Output Enables     0
+Total Unique Clocks             4
+Total Unique Clock Enables      0
+Total Unique Resets             6
+Total Unique Presets            5
+
+Fmax Logic Levels               6
+
+
+Device_Resource_Summary
+~~~~~~~~~~~~~~~~~~~~~~~
+                                 Device
+                                 Total    Used   Not Used   Utilization
+-----------------------------------------------------------------------
+Dedicated Pins
+  Clock/Input Pins                  4        0      4    -->     0
+  Input-Only Pins                  10        0     10    -->     0
+  I/O / Enable Pins                 2        2      0    -->   100
+I/O Pins                           94       68     26    -->    72
+Logic Functions                   256      204     52    -->    79
+  Input Registers                  96        0     96    -->     0
+
+GLB Inputs                        576      483     93    -->    83
+Logical Product Terms            1280      879    401    -->    68
+Occupied GLBs                      16       16      0    -->   100
+Macrocells                        256      204     52    -->    79
+
+Control Product Terms:
+  GLB Clock/Clock Enables          16       14      2    -->    87
+  GLB Reset/Presets                16        0     16    -->     0
+  Macrocell Clocks                256       26    230    -->    10
+  Macrocell Clock Enables         256        0    256    -->     0
+  Macrocell Enables               256        0    256    -->     0
+  Macrocell Resets                256        9    247    -->     3
+  Macrocell Presets               256       13    243    -->     5
+
+Global Routing Pool               356      180    176    -->    50
+  GRP from IFB                     ..       12     ..    -->    ..
+    (from input signals)           ..       12     ..    -->    ..
+    (from output signals)          ..        0     ..    -->    ..
+    (from bidir signals)           ..        0     ..    -->    ..
+  GRP from MFB                     ..      168     ..    -->    ..
+----------------------------------------------------------------------
+
+<Note> 1 : The available PT is the product term that has not been used.
+<Note> 2 : IFB is I/O feedback.
+<Note> 3 : MFB is macrocell feedback.
+
+
+
+GLB_Resource_Summary
+~~~~~~~~~~~~~~~~~~~~
+                                                                                     # of PT
+               ---  Fanin  ---    I/O    Input  Macrocells       Macrocells   Logic  clusters
+             Unique Shared Total  Pins    Regs Used Inaccessible  available    PTs   used
+-------------------------------------------------------------------------------------------
+Maximum
+  GLB                      36      *(1)     8   --     --             16       80       16
+-------------------------------------------------------------------------------------------
+  GLB    A     14    16    30      5/6      0   15      0              1       46       15
+  GLB    B     12    19    31      6/6      0   15      0              1       49       14
+  GLB    C      4    26    30      0/6      0   12      2              2       60       16
+  GLB    D      4    27    31      0/6      0   11      0              5       66       15
+-------------------------------------------------------------------------------------------
+  GLB    E      4    26    30      4/6      0   10      0              6       54       14
+  GLB    F     16    16    32      6/6      0   13      0              3       51       14
+  GLB    G     12    18    30      3/6      0   14      0              2       50       15
+  GLB    H      4    20    24      6/6      0   13      1              2       59       15
+-------------------------------------------------------------------------------------------
+  GLB    I     10    15    25      6/6      0   14      0              2       40       14
+  GLB    J      4    27    31      0/6      0   10      0              6       62       14
+  GLB    K     12    17    29      6/6      0   14      0              2       50       14
+  GLB    L     11    19    30      6/6      0    8      1              7       50       12
+-------------------------------------------------------------------------------------------
+  GLB    M      4    30    34      6/6      0   13      0              3       63       16
+  GLB    N     16    15    31      6/6      0   16      0              0       54       15
+  GLB    O     19    15    34      3/6      0   15      0              1       61       15
+  GLB    P      0    31    31      5/6      0   11      0              5       64       15
+-------------------------------------------------------------------------------------------
+TOTALS:       146   337   483     68/96     0  204      4             48      879      233
+
+<Note> 1 : For ispMACH 4000 devices, the number of IOs depends on the GLB.
+<Note> 2 : Four rightmost columns above reflect last status of the placement process.
+
+
+
+GLB_Control_Summary
+~~~~~~~~~~~~~~~~~~~
+           Shared Shared | Mcell  Mcell  Mcell  Mcell  Mcell 
+           Clk/CE Rst/Pr | Clock  CE     Enable Reset  Preset
+------------------------------------------------------------------------------
+Maximum
+  GLB        1      1        16     16     16     16     16  
+==============================================================================
+  GLB    A   1      0         5      0      0      0      0
+  GLB    B   1      0         4      0      0      2      3
+  GLB    C   1      0         0      0      0      0      0
+  GLB    D   1      0         0      0      0      0      0
+------------------------------------------------------------------------------
+  GLB    E   1      0         0      0      0      0      0
+  GLB    F   1      0         4      0      0      0      0
+  GLB    G   1      0         5      0      0      3      2
+  GLB    H   0      0         0      0      0      0      0
+------------------------------------------------------------------------------
+  GLB    I   1      0         4      0      0      4      4
+  GLB    J   1      0         0      0      0      0      0
+  GLB    K   1      0         0      0      0      0      0
+  GLB    L   0      0         0      0      0      0      0
+------------------------------------------------------------------------------
+  GLB    M   1      0         0      0      0      0      0
+  GLB    N   1      0         2      0      0      0      2
+  GLB    O   1      0         2      0      0      0      2
+  GLB    P   1      0         0      0      0      0      0
+------------------------------------------------------------------------------
+
+<Note> 1 : For ispMACH 4000 devices, the number of output enables depends on the GLB.
+
+
+
+Optimizer_and_Fitter_Options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pin Assignment :                       Yes
+Group Assignment :                     No
+Pin Reservation :                      No
+
+@Ignore_Project_Constraints :
+  Pin Assignments :                    No
+      Keep Block Assignment            --
+      Keep Segment Assignment          --
+  Group Assignments :                  No
+  Macrocell Assignment :               No
+      Keep Block Assignment            --
+      Keep Segment Assignment          --
+
+@Backannotate_Project_Constraints
+  Pin Assignments :                    No
+  Pin And Block Assignments :          No
+  Pin, Macrocell and Block :           No
+
+@Timing_Constraints :                  No
+
+@Global_Project_Optimization :
+  Balanced Partitioning :              No
+  Spread Placement :                   Yes
+
+  Note :
+    Pack Design :
+       Balanced Partitioning = No
+       Spread Placement      = No
+    Spread Design :
+       Balanced Partitioning = Yes
+       Spread Placement      = Yes
+
+
+@Logic_Synthesis :
+  Logic Reduction :                    Yes
+  Node Collapsing :                    Area
+  Fmax_Logic_Level :                   1
+  D/T Synthesis :                      Yes
+  XOR Synthesis :                      Yes
+  Max. P-Term for Collapsing :         16
+  Max. P-Term for Splitting :          80
+  Max Symbols :                        24
+
+@Utilization_options
+  Max. % of Macrocells used :          100
+@User_Signature                        
+@IO_Types                              Default = LVCMOS18 (2)
+@Output_Slew_Rate                      Default = FAST (2)
+@Power                                 Default = HIGH (2)
+@Pull                                  Default = PULLUP_DOWN (2)
+@Input_Registers                       Default = None (2)
+@Register_Powerup                      Default = None
+
+Device Options:
+<Note> 1 : Reserved unused I/Os can be independently driven to Low or High, and does not
+           follow the drive level set for the Global Configure Unused I/O Option.
+<Note> 2 : For user-specified constraints on individual signals, refer to the Output,
+           Bidir and Buried Signal Lists.
+
+
+
+Pinout_Listing
+~~~~~~~~~~~~~~
+      | Pin   | Bank |GLB |Assigned|                 | Signal|            | PG
+Pin No| Type  |Number|Pad |Pin     |     I/O Type    | Type  | Signal name| Enable
+----------------------------------------------------------------------------------
+1     | GND   |   -  |    |        |                 |       |            |
+2     | TDI   |   -  |    |        |                 |       |            |
+3     |VCCIO0 |   -  |    |        |                 |       |            |
+4     |  I_O  |   0  |C12 |        |                 |       |            |
+5     |  I_O  |   0  |C10 |        |                 |       |            |
+6     |  I_O  |   0  |C8  |        |                 |       |            |
+7     |  I_O  |   0  |C6  |        |                 |       |            |
+8     |  I_O  |   0  |C4  |        |                 |       |            |
+9     |  I_O  |   0  |C2  |        |                 |       |            |
+10    |GNDIO0 |   -  |    |        |                 |       |            |
+11    |  I_O  |   0  |D14 |        |                 |       |            |
+12    |  I_O  |   0  |D12 |        |                 |       |            |
+13    |  I_O  |   0  |D10 |        |                 |       |            |
+14    |  I_O  |   0  |D8  |        |                 |       |            |
+15    |  I_O  |   0  |D6  |        |                 |       |            |
+16    |  I_O  |   0  |D4  |        |                 |       |            |
+17    | IN0   |   0  |    |        |                 |       |            |
+18    | NC    |   -  |    |        |                 |       |            |
+19    |VCCIO0 |   -  |    |        |                 |       |            |
+20    | IN1   |   0  |    |        |                 |       |            |
+21    |  I_O  |   0  |E2  |        |                 |       |            |
+22    |  I_O  |   0  |E4  |        |                 |       |            |
+23    |  I_O  |   0  |E6  |    *   |LVCMOS18         | Input |DIP4        |
+24    |  I_O  |   0  |E8  |    *   |LVCMOS18         | Input |DIP5        |
+25    |  I_O  |   0  |E10 |    *   |LVCMOS18         | Input |DIP6        |
+26    |  I_O  |   0  |E12 |    *   |LVCMOS18         | Input |DIP7        |
+27    |GNDIO0 |   -  |    |        |                 |       |            |
+28    |  I_O  |   0  |F2  |    *   |LVCMOS18         | Output|LED7        |
+29    |  I_O  |   0  |F4  |    *   |LVCMOS18         | Output|LED6        |
+30    |  I_O  |   0  |F6  |    *   |LVCMOS18         | Output|LED5        |
+31    |  I_O  |   0  |F8  |    *   |LVCMOS18         | Output|LED4        |
+32    |  I_O  |   0  |F10 |    *   |LVCMOS18         | Output|LED3        |
+33    |  I_O  |   0  |F12 |    *   |LVCMOS18         | Output|LED2        |
+34    |VCCIO0 |   -  |    |        |                 |       |            |
+35    | TCK   |   -  |    |        |                 |       |            |
+36    | VCC   |   -  |    |        |                 |       |            |
+37    | GND   |   -  |    |        |                 |       |            |
+38    | IN2   |   0  |    |        |                 |       |            |
+39    |  I_O  |   0  |G12 |    *   |LVCMOS18         | Output|LED1        |
+40    |  I_O  |   0  |G10 |    *   |LVCMOS18         | Output|LED0        |
+41    |  I_O  |   0  |G8  |        |                 |       |            |
+42    |  I_O  |   0  |G6  |        |                 |       |            |
+43    |  I_O  |   0  |G4  |        |                 |       |            |
+44    |  I_O  |   0  |G2  |    *   |LVCMOS18         | Output|DIS4a       |
+45    | IN3   |   0  |    |        |                 |       |            |
+46    |GNDIO0 |   -  |    |        |                 |       |            |
+47    |VCCIO0 |   -  |    |        |                 |       |            |
+48    |  I_O  |   0  |H12 |    *   |LVCMOS18         | Output|DIS4b       |
+49    |  I_O  |   0  |H10 |    *   |LVCMOS18         | Output|DIS4c       |
+50    |  I_O  |   0  |H8  |    *   |LVCMOS18         | Output|DIS4d       |
+51    |  I_O  |   0  |H6  |    *   |LVCMOS18         | Output|DIS4e       |
+52    |  I_O  |   0  |H4  |    *   |LVCMOS18         | Output|DIS4f       |
+53    |  I_O  |   0  |H2  |    *   |LVCMOS18         | Output|DIS4g       |
+54    |INCLK1 |   0  |    |        |                 |       |            |
+55    |GNDIO1 |   -  |    |        |                 |       |            |
+56    |INCLK2 |   1  |    |        |                 |       |            |
+57    | VCC   |   -  |    |        |                 |       |            |
+58    |  I_O  |   1  |I2  |    *   |LVCMOS18         | Input |S1_NC       |
+59    |  I_O  |   1  |I4  |    *   |LVCMOS18         | Input |S1_NO       |
+60    |  I_O  |   1  |I6  |    *   |LVCMOS18         | Input |S2_NC       |
+61    |  I_O  |   1  |I8  |    *   |LVCMOS18         | Input |S2_NO       |
+62    |  I_O  |   1  |I10 |    *   |LVCMOS18         | Output|LED29       |
+63    |  I_O  |   1  |I12 |    *   |LVCMOS18         | Output|LED28       |
+64    |VCCIO1 |   -  |    |        |                 |       |            |
+65    |GNDIO1 |   -  |    |        |                 |       |            |
+66    |  I_O  |   1  |J2  |        |                 |       |            |
+67    |  I_O  |   1  |J4  |        |                 |       |            |
+68    |  I_O  |   1  |J6  |        |                 |       |            |
+69    |  I_O  |   1  |J8  |        |                 |       |            |
+70    |  I_O  |   1  |J10 |        |                 |       |            |
+71    |  I_O  |   1  |J12 |        |                 |       |            |
+72    | IN4   |   0  |    |        |                 |       |            |
+73    | GND   |   -  |    |        |                 |       |            |
+74    | TMS   |   -  |    |        |                 |       |            |
+75    |VCCIO1 |   -  |    |        |                 |       |            |
+76    |  I_O  |   1  |K12 |    *   |LVCMOS18         | Input |DIP3        |
+77    |  I_O  |   1  |K10 |    *   |LVCMOS18         | Input |DIP2        |
+78    |  I_O  |   1  |K8  |    *   |LVCMOS18         | Input |DIP1        |
+79    |  I_O  |   1  |K6  |    *   |LVCMOS18         | Input |DIP0        |
+80    |  I_O  |   1  |K4  |    *   |LVCMOS18         | Output|DIS1g       |
+81    |  I_O  |   1  |K2  |    *   |LVCMOS18         | Output|DIS1f       |
+82    |GNDIO1 |   -  |    |        |                 |       |            |
+83    |  I_O  |   1  |L14 |    *   |LVCMOS18         | Output|DIS1e       |
+84    |  I_O  |   1  |L12 |    *   |LVCMOS18         | Output|DIS1d       |
+85    |  I_O  |   1  |L10 |    *   |LVCMOS18         | Output|DIS1c       |
+86    |  I_O  |   1  |L8  |    *   |LVCMOS18         | Output|DIS1b       |
+87    |  I_O  |   1  |L6  |    *   |LVCMOS18         | Output|DIS1a       |
+88    |  I_O  |   1  |L4  |    *   |LVCMOS18         | Output|DIS2g       |
+89    | IN5   |   1  |    |        |                 |       |            |
+90    | NC    |   -  |    |        |                 |       |            |
+91    |VCCIO1 |   -  |    |        |                 |       |            |
+92    | IN6   |   1  |    |        |                 |       |            |
+93    |  I_O  |   1  |M2  |    *   |LVCMOS18         | Output|DIS2f       |
+94    |  I_O  |   1  |M4  |    *   |LVCMOS18         | Output|DIS2e       |
+95    |  I_O  |   1  |M6  |    *   |LVCMOS18         | Output|DIS2d       |
+96    |  I_O  |   1  |M8  |    *   |LVCMOS18         | Output|DIS2c       |
+97    |  I_O  |   1  |M10 |    *   |LVCMOS18         | Output|DIS2b       |
+98    |  I_O  |   1  |M12 |    *   |LVCMOS18         | Output|DIS2a       |
+99    |GNDIO1 |   -  |    |        |                 |       |            |
+100   |  I_O  |   1  |N2  |    *   |LVCMOS18         | Output|LED20       |
+101   |  I_O  |   1  |N4  |    *   |LVCMOS18         | Output|LED21       |
+102   |  I_O  |   1  |N6  |    *   |LVCMOS18         | Output|LED22       |
+103   |  I_O  |   1  |N8  |    *   |LVCMOS18         | Output|LED23       |
+104   |  I_O  |   1  |N10 |    *   |LVCMOS18         | Output|LED24       |
+105   |  I_O  |   1  |N12 |    *   |LVCMOS18         | Output|LED25       |
+106   |VCCIO1 |   -  |    |        |                 |       |            |
+107   | TDO   |   -  |    |        |                 |       |            |
+108   | VCC   |   -  |    |        |                 |       |            |
+109   | GND   |   -  |    |        |                 |       |            |
+110   | IN7   |   1  |    |        |                 |       |            |
+111   |  I_O  |   1  |O12 |    *   |LVCMOS18         | Output|LED26       |
+112   |  I_O  |   1  |O10 |    *   |LVCMOS18         | Output|LED27       |
+113   |  I_O  |   1  |O8  |        |                 |       |            |
+114   |  I_O  |   1  |O6  |        |                 |       |            |
+115   |  I_O  |   1  |O4  |        |                 |       |            |
+116   |  I_O  |   1  |O2  |    *   |LVCMOS18         | Output|DIS3g       |
+117   | IN8   |   1  |    |        |                 |       |            |
+118   |GNDIO1 |   -  |    |        |                 |       |            |
+119   |VCCIO1 |   -  |    |        |                 |       |            |
+120   |  I_O  |   1  |P12 |    *   |LVCMOS18         | Output|DIS3f       |
+121   |  I_O  |   1  |P10 |    *   |LVCMOS18         | Output|DIS3e       |
+122   |  I_O  |   1  |P8  |    *   |LVCMOS18         | Output|DIS3d       |
+123   |  I_O  |   1  |P6  |    *   |LVCMOS18         | Output|DIS3c       |
+124   |  I_O  |   1  |P4  |    *   |LVCMOS18         | Output|DIS3b       |
+125   | I_O/OE|   1  |P2  |    *   |LVCMOS18         | Output|DIS3a       |
+126   |INCLK3 |   1  |    |        |                 |       |            |
+127   |GNDIO0 |   -  |    |        |                 |       |            |
+128   |INCLK0 |   0  |    |        |                 |       |            |
+129   | VCC   |   -  |    |        |                 |       |            |
+130   | I_O/OE|   0  |A2  |    *   |LVCMOS18         | Output|LED15       |
+131   |  I_O  |   0  |A4  |    *   |LVCMOS18         | Output|LED14       |
+132   |  I_O  |   0  |A6  |    *   |LVCMOS18         | Output|LED13       |
+133   |  I_O  |   0  |A8  |    *   |LVCMOS18         | Output|LED12       |
+134   |  I_O  |   0  |A10 |    *   |LVCMOS18         | Output|LED11       |
+135   |  I_O  |   0  |A12 |    *   |LVCMOS18         | Output|LED10       |
+136   |VCCIO0 |   -  |    |        |                 |       |            |
+137   |GNDIO0 |   -  |    |        |                 |       |            |
+138   |  I_O  |   0  |B2  |    *   |LVCMOS18         | Output|LED9        |
+139   |  I_O  |   0  |B4  |    *   |LVCMOS18         | Output|LED8        |
+140   |  I_O  |   0  |B6  |    *   |LVCMOS18         | Output|LED16       |
+141   |  I_O  |   0  |B8  |    *   |LVCMOS18         | Output|LED17       |
+142   |  I_O  |   0  |B10 |    *   |LVCMOS18         | Output|LED18       |
+143   |  I_O  |   0  |B12 |    *   |LVCMOS18         | Input |LED19       |
+144   | IN9   |   0  |    |        |                 |       |            |
+----------------------------------------------------------------------------------
+
+<Note> GLB Pad : This notation refers to the GLB I/O pad number in the device.
+<Note> Assigned Pin : user or dedicated input assignment (E.g. Clock pins).
+<Note> Pin Type : 
+          ClkIn : Dedicated input or clock pin 
+           CLK  : Dedicated clock pin
+           I_O  : Input/Output pin
+           INP  : Dedicated input pin
+           JTAG : JTAG Control and test pin
+           NC   : No connected
+
+
+
+Input_Signal_List
+~~~~~~~~~~~~~~~~~
+                Input
+         Pin    Fanout
+ Pin GLB Type                       Pullup Signal
+-------------------------------------------------
+  79   K  I/O   4  -B-D---H-----N--    Down DIP0
+  78   K  I/O   3  -------H----MN--    Down DIP1
+  77   K  I/O   4  -----F-------NOP    Down DIP2
+  76   K  I/O   4  -------H-JK--N--    Down DIP3
+  23   E  I/O   2  --------I-K-----    Down DIP4
+  24   E  I/O   2  A-C-------------    Down DIP5
+  25   E  I/O   2  ----E-G---------    Down DIP6
+  26   E  I/O   14 ABCDEFG-IJK-MNOP    Down DIP7
+ 143   B  I/O      ----------------    Down LED19
+  58   I  I/O   1  --------I-------    Down S1_NC
+  59   I  I/O   1  --------I-------    Down S1_NO
+  60   I  I/O   1  --------I-------    Down S2_NC
+  61   I  I/O   1  --------I-------    Down S2_NO
+-------------------------------------------------
+
+
+
+Output_Signal_List
+~~~~~~~~~~~~~~~~~~
+          I         C      P R P       O Output
+          N         L Mc   R E U C O F B Fanout
+ Pin GLB  P LL PTs  S Type E S P E E P P                     Slew Pullup Signal
+-------------------------------------------------------------------------------
+  87   L  4  -   4  1 COM                   ----------------  Fast   Down DIS1a
+  86   L  4  -   4  1 COM                   ----------------  Fast   Down DIS1b
+  85   L  4  -   3  1 COM                   ----------------  Fast   Down DIS1c
+  84   L  4  -   4  1 COM                   ----------------  Fast   Down DIS1d
+  83   L  4  -   3  1 COM                   ----------------  Fast   Down DIS1e
+  81   K  4  -   4  1 COM                   ----------------  Fast   Down DIS1f
+  80   K  4  -   3  1 COM                   ----------------  Fast   Down DIS1g
+  98   M  3  -   2  1 COM                   ----------------  Fast   Down DIS2a
+  97   M  3  -   2  1 COM                   ----------------  Fast   Down DIS2b
+  96   M  3  -   1  1 COM                   ----------------  Fast   Down DIS2c
+  95   M  3  -   3  1 COM                   ----------------  Fast   Down DIS2d
+  94   M  3  -   2  1 COM                   ----------------  Fast   Down DIS2e
+  93   M  3  -   3  1 COM                   ----------------  Fast   Down DIS2f
+  88   L  3  -   2  1 COM                   ----------------  Fast   Down DIS2g
+ 125   P  4  -   4  1 COM                   ----------------  Fast   Down DIS3a
+ 124   P  4  -   4  1 COM                   ----------------  Fast   Down DIS3b
+ 123   P  4  -   3  1 COM                   ----------------  Fast   Down DIS3c
+ 122   P  4  -   4  1 COM                   ----------------  Fast   Down DIS3d
+ 121   P  4  -   3  1 COM                   ----------------  Fast   Down DIS3e
+ 120   P  4  -   4  1 COM                   ----------------  Fast   Down DIS3f
+ 116   O  4  -   3  1 COM                   ----------------  Fast   Down DIS3g
+  44   G  4  -   4  1 COM                   ----------------  Fast   Down DIS4a
+  48   H  4  -   4  1 COM                   ----------------  Fast   Down DIS4b
+  49   H  4  -   3  1 COM                   ----------------  Fast   Down DIS4c
+  50   H  4  -   4  1 COM                   ----------------  Fast   Down DIS4d
+  51   H  4  -   3  1 COM                   ----------------  Fast   Down DIS4e
+  52   H  4  -   4  1 COM                   ----------------  Fast   Down DIS4f
+  53   H  4  -   3  1 COM                   ----------------  Fast   Down DIS4g
+  40   G  7  4   4  1 DFF  *   S         5  -B-D--GH-----N--  Fast   Down LED0
+  39   G  7  5   4  1 DFF  *   S         5  -----FGH----MN--  Fast   Down LED1
+ 135   A  7  3   2  1 DFF  *   S         1  A---------------  Fast   Down LED10
+ 134   A  7  3   2  1 DFF  *   S         1  A---------------  Fast   Down LED11
+ 133   A  7  3   2  1 DFF  *   S         15 ABCDEFGHIJK-MNOP  Fast   Down LED12
+ 132   A  7  3   2  1 DFF  *   S         15 ABCDEFGHIJK-MNOP  Fast   Down LED13
+ 131   A  7  3   2  1 DFF  *   S         15 ABCDEFGHIJK-MNOP  Fast   Down LED14
+ 130   A  5  1   1  1 DFF  *   S         13 ABCDE-G-IJK-MNOP  Fast   Down LED15
+ 140   B  6  -   2  1 DFF  * * R         6  AB---FG------NO-  Fast   Down LED16
+ 141   B  1  1   1  1 COM                   ----------------  Fast   Down LED17
+ 142   B  1  1   1  1 COM                   ----------------  Fast   Down LED18
+  33   F  7  6   2  1 DFF  *   S         4  -----F-H------OP  Fast   Down LED2
+ 100   N  2  1   1  1 COM                   ----------------  Fast   Down LED20
+ 101   N  2  1   1  1 COM                   ----------------  Fast   Down LED21
+ 102   N  2  1   1  1 COM                   ----------------  Fast   Down LED22
+ 103   N  2  1   1  1 COM                   ----------------  Fast   Down LED23
+ 104   N 10  1   5  1 DFF  *   S         1  -------------N--  Fast   Down LED24
+ 105   N 10  1   5  1 DFF  *   S         1  -------------N--  Fast   Down LED25
+ 111   O 10  1   5  1 DFF  *   S         1  --------------O-  Fast   Down LED26
+ 112   O 10  1   5  1 DFF  *   S         1  --------------O-  Fast   Down LED27
+  63   I  2  -   3  1 DFF  * * R            ----------------  Fast   Down LED28
+  62   I  2  -   3  1 DFF  * * R            ----------------  Fast   Down LED29
+  32   F  7  6   2  1 DFF  *   S         5  -----F-H-JK---O-  Fast   Down LED3
+  31   F  9  5   4  1 DFF  *   S         1  -----F----------  Fast   Down LED4
+  30   F 10  6   2  1 DFF  *   S         1  -----F----------  Fast   Down LED5
+  29   F  7  6   2  1 DFF  *   S         1  -----F----------  Fast   Down LED6
+  28   F  9  5   4  1 DFF  *   S         1  -----F----------  Fast   Down LED7
+ 139   B  7  3   4  1 DFF  *   S         1  -B--------------  Fast   Down LED8
+ 138   B  7  3   4  2 DFF  *   S         1  -B--------------  Fast   Down LED9
+-------------------------------------------------------------------------------
+
+<Note> CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+
+Bidir_Signal_List
+~~~~~~~~~~~~~~~~~
+          I         C      P R P       O Bidir
+          N         L Mc   R E U C O F B Fanout
+ Pin GLB  P LL PTs  S Type E S P E E P P                     Slew Pullup Signal
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+
+<Note> CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+
+Buried_Signal_List
+~~~~~~~~~~~~~~~~~~
+        I         C      P R P       Node
+        N         L Mc   R E U C I F Fanout
+Mc GLB  P LL PTs  S Type E S P E R P                     Signal
+---------------------------------------------------------------
+11   H  6  -   4  1 COM              1  -----F----------  C1
+ 7   H  9  -   6  2 COM              2  -----F-H--------  C2
+ 3   H 12  -   8  2 COM              1  -----F----------  C3
+11   F  3  -   4  1 COM              1  -------H--------  P1
+10   F  3  -   4  1 COM              2  -----F-H--------  P2
+13   H  3  -   4  1 COM              1  -------H--------  P3
+ 2   I  2  -   2  1 DFF  * * R       6  AB---FG------NO-  S1BC
+ 3   I  2  -   2  1 DFF  * * R       6  AB---FG------NO-  S2BC
+13   B  5  -   3  1 COM              14 ABCDE-G-IJKLMNOP  ab0
+12   B  5  -   3  1 COM              14 ABCDE-G-IJKLMNOP  ab1
+12   A  5  -   3  1 COM              14 ABCDE-G-IJKLMNOP  ab2
+11   A  5  -   3  1 COM              14 ABCDE-G-IJKLMNOP  ab3
+14   B  5  -   3  1 COM              2  -----FG---------  ale
+10   H  8  -   5  1 COM              2  -----FG---------  alu0
+ 5   H 11  -   6  2 COM              2  -----FG---------  alu1
+ 9   F 10  -   5  1 COM              1  -----F----------  alu2
+ 9   H 10  -   5  1 COM              1  -----F----------  alu3
+13   A  3  -   2  1 COM              2  -----F-H--------  alx
+14   A  3  -   2  1 COM              2  -----F-H--------  aly
+ 1   D 19  -  15  3 COM              2  -B-----H--------  db0
+ 3   M 19  -  15  3 COM              3  -B---F-H--------  db1
+ 3   P 19  -  15  3 COM              3  A----F-H--------  db2
+ 1   J 19  -  15  3 COM              2  A------H--------  db3
+ 3   L 19  -  15  3 COM              1  A---------------  db4
+ 1   C 19  -  15  3 COM              1  A---------------  db5
+ 1   E 19  -  15  3 COM              1  A---------------  db6
+12   D 19  -  15  3 COM              2  ----------KL----  dm0
+13   M 19  -  15  3 COM              2  ----------KL----  dm1
+12   P 19  -  15  3 COM              2  ----------KL----  dm2
+11   J 19  -  15  3 COM              2  ----------KL----  dm3
+11   L 19  -  15  3 COM              2  -----------LM---  dm4
+13   C 19  -  15  3 COM              2  -----------LM---  dm5
+11   E 19  -  15  3 COM              2  -----------LM---  dm6
+ 3   B 13  2   4  2 TFF      R       2  -B-D------------  m0q0
+ 3   N 13  2   4  1 TFF      R       2  ------------MN--  m0q1
+ 5   P 13  2   4  1 TFF      R       1  ---------------P  m0q2
+ 0   K 13  2   4  1 TFF      R       2  ---------JK-----  m0q3
+ 9   K 12  2   3  1 TFF      R       2  ----------KL----  m0q4
+ 3   A 12  2   5  2 TFF      R       2  A-C-------------  m0q5
+ 0   E 12  2   3  1 TFF      R       1  ----E-----------  m0q6
+ 9   B 13  2   4  1 TFF      R       2  -B-D------------  m10q0
+14   N 13  2   4  1 TFF      R       2  ------------MN--  m10q1
+11   O 13  2   4  1 TFF      R       2  --------------OP  m10q2
+ 5   K 13  2   4  1 TFF      R       2  ---------JK-----  m10q3
+10   I 12  2   3  1 TFF      R       2  --------I--L----  m10q4
+ 7   C 12  2   3  1 TFF      R       1  --C-------------  m10q5
+ 6   E 12  2   3  1 TFF      R       1  ----E-----------  m10q6
+ 8   D 13  2   4  1 TFF      R       1  ---D------------  m11q0
+ 9   M 13  2   4  1 TFF      R       1  ------------M---  m11q1
+ 9   P 13  2   4  1 TFF      R       1  ---------------P  m11q2
+ 6   K 13  2   4  1 TFF      R       2  ---------JK-----  m11q3
+11   I 12  2   3  1 TFF      R       2  --------I--L----  m11q4
+ 8   C 12  2   3  1 TFF      R       1  --C-------------  m11q5
+11   G 12  2   3  1 TFF      R       2  ----E-G---------  m11q6
+ 9   D 13  2   4  1 TFF      R       1  ---D------------  m12q0
+10   M 13  2   4  1 TFF      R       1  ------------M---  m12q1
+12   O 13  2   4  1 TFF      R       2  --------------OP  m12q2
+ 8   J 13  2   4  1 TFF      R       1  ---------J------  m12q3
+12   I 12  2   3  1 TFF      R       2  --------I--L----  m12q4
+ 9   C 12  2   3  1 TFF      R       1  --C-------------  m12q5
+12   G 12  2   3  1 TFF      R       2  ----E-G---------  m12q6
+10   B 13  2   4  1 TFF      R       2  -B-D------------  m13q0
+15   N 13  2   4  1 TFF      R       2  ------------MN--  m13q1
+13   O 13  2   4  1 TFF      R       2  --------------OP  m13q2
+ 7   K 13  2   4  1 TFF      R       2  ---------JK-----  m13q3
+13   K 12  2   3  1 TFF      R       2  ----------KL----  m13q4
+10   A 12  2   5  1 TFF      R       2  A-C-------------  m13q5
+ 7   E 12  2   3  1 TFF      R       1  ----E-----------  m13q6
+11   B 13  2   4  1 TFF      R       2  -B-D------------  m14q0
+11   M 13  2   4  1 TFF      R       1  ------------M---  m14q1
+14   O 13  2   4  1 TFF      R       2  --------------OP  m14q2
+ 8   K 13  2   4  1 TFF      R       2  ---------JK-----  m14q3
+13   I 12  2   3  1 TFF      R       2  --------I--L----  m14q4
+10   C 12  2   3  1 TFF      R       1  --C-------------  m14q5
+ 9   E 12  2   3  1 TFF      R       1  ----E-----------  m14q6
+ 5   B 13  2   4  1 TFF      R       2  -B-D------------  m1q0
+ 5   N 13  2   4  1 TFF      R       2  ------------MN--  m1q1
+ 3   O 13  2   4  1 TFF      R       2  --------------OP  m1q2
+ 0   J 13  2   4  1 TFF      R       1  ---------J------  m1q3
+ 4   I 12  2   3  1 TFF      R       2  --------I--L----  m1q4
+ 5   A 12  2   5  2 TFF      R       2  A-C-------------  m1q5
+ 2   E 12  2   3  1 TFF      R       1  ----E-----------  m1q6
+ 0   D 13  2   4  1 TFF      R       1  ---D------------  m2q0
+ 7   N 13  2   4  1 TFF      R       2  ------------MN--  m2q1
+ 4   O 13  2   4  1 TFF      R       2  --------------OP  m2q2
+ 2   J 13  2   4  1 TFF      R       1  ---------J------  m2q3
+10   K 12  2   3  1 TFF      R       2  ----------KL----  m2q4
+ 0   C 12  2   3  1 TFF      R       1  --C-------------  m2q5
+ 6   G 12  2   3  1 TFF      R       2  ----E-G---------  m2q6
+ 2   D 13  2   4  1 TFF      R       1  ---D------------  m3q0
+ 9   N 13  2   4  1 TFF      R       2  ------------MN--  m3q1
+ 5   O 13  2   4  1 TFF      R       2  --------------OP  m3q2
+ 1   K 13  2   4  1 TFF      R       2  ---------JK-----  m3q3
+ 5   I 12  2   3  1 TFF      R       2  --------I--L----  m3q4
+ 2   C 12  2   3  1 TFF      R       1  --C-------------  m3q5
+ 7   G 12  2   3  1 TFF      R       2  ----E-G---------  m3q6
+ 3   D 13  2   4  1 TFF      R       1  ---D------------  m4q0
+10   N 13  2   4  1 TFF      R       2  ------------MN--  m4q1
+ 6   O 13  2   4  1 TFF      R       2  --------------OP  m4q2
+ 3   J 13  2   4  1 TFF      R       1  ---------J------  m4q3
+11   K 12  2   3  1 TFF      R       2  ----------KL----  m4q4
+ 3   C 12  2   3  1 TFF      R       1  --C-------------  m4q5
+ 3   E 12  2   3  1 TFF      R       1  ----E-----------  m4q6
+ 4   D 13  2   4  1 TFF      R       1  ---D------------  m5q0
+11   N 13  2   4  1 TFF      R       2  ------------MN--  m5q1
+ 7   O 13  2   4  1 TFF      R       2  --------------OP  m5q2
+ 4   J 13  2   4  1 TFF      R       1  ---------J------  m5q3
+ 6   I 12  2   3  1 TFF      R       2  --------I--L----  m5q4
+ 4   C 12  2   3  1 TFF      R       1  --C-------------  m5q5
+ 4   E 12  2   3  1 TFF      R       1  ----E-----------  m5q6
+ 5   D 13  2   4  1 TFF      R       1  ---D------------  m6q0
+ 5   M 13  2   4  1 TFF      R       1  ------------M---  m6q1
+ 8   O 13  2   4  1 TFF      R       2  --------------OP  m6q2
+ 3   K 13  2   4  1 TFF      R       2  ---------JK-----  m6q3
+12   K 12  2   3  1 TFF      R       2  ----------KL----  m6q4
+ 7   A 12  2   5  2 TFF      R       2  A-C-------------  m6q5
+ 8   G 12  2   3  1 TFF      R       2  ----E-G---------  m6q6
+ 6   D 13  2   4  1 TFF      R       1  ---D------------  m7q0
+12   N 13  2   4  1 TFF      R       2  ------------MN--  m7q1
+ 9   O 13  2   4  1 TFF      R       2  --------------OP  m7q2
+ 5   J 13  2   4  1 TFF      R       1  ---------J------  m7q3
+ 7   I 12  2   3  1 TFF      R       2  --------I--L----  m7q4
+ 5   C 12  2   3  1 TFF      R       1  --C-------------  m7q5
+ 5   E 12  2   3  1 TFF      R       1  ----E-----------  m7q6
+ 7   B 13  2   4  2 TFF      R       2  -B-D------------  m8q0
+13   N 13  2   4  1 TFF      R       2  ------------MN--  m8q1
+ 7   P 13  2   4  1 TFF      R       1  ---------------P  m8q2
+ 6   J 13  2   4  1 TFF      R       1  ---------J------  m8q3
+ 8   I 12  2   3  1 TFF      R       2  --------I--L----  m8q4
+ 9   A 12  2   5  1 TFF      R       2  A-C-------------  m8q5
+ 9   G 12  2   3  1 TFF      R       2  ----E-G---------  m8q6
+ 7   D 13  2   4  1 TFF      R       1  ---D------------  m9q0
+ 7   M 13  2   4  1 TFF      R       1  ------------M---  m9q1
+10   O 13  2   4  1 TFF      R       2  --------------OP  m9q2
+ 7   J 13  2   4  1 TFF      R       1  ---------J------  m9q3
+ 9   I 12  2   3  1 TFF      R       2  --------I--L----  m9q4
+ 6   C 12  2   3  1 TFF      R       1  --C-------------  m9q5
+10   G 12  2   3  1 TFF      R       2  ----E-G---------  m9q6
+13   F  3  1   4  1 DFF      R       10 -BCDEF---J-LM-OP  mar0
+ 7   F  6  1   6  2 DFF      R       10 -BCDEF---J-LM-OP  mar1
+ 5   F  6  1   6  2 DFF      R       10 A-CDEF---J-LM-OP  mar2
+ 3   F  6  1   6  2 DFF      R       10 A-CDEF---J-LM-OP  mar3
+13   G  3  -   2  1 COM              13 ABCDE-G-IJK-MNOP  memclk
+ 5   G  6  1   4  2 DFF    * R       3  -B----GH--------  pc0
+ 4   G  7  1   5  2 DFF    * R       3  -B----GH--------  pc1
+ 3   G  8  1   6  2 DFF    * R       4  AB----GH--------  pc2
+ 1   B  9  1   4  2 DFF    * R       4  AB----GH--------  pc3
+---------------------------------------------------------------
+
+<Note> CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        IR = Input register
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+
+PostFit_Equations
+~~~~~~~~~~~~~~~~~
+C1 = !LED1.Q & !aly & db1
+    # !LED1.Q & aly & !db1
+    # !LED0.Q & db0 & P1
+    # aly & !db0 & P1 ; (4 pterms, 6 signals)
+
+C2 = !LED0.Q & db0 & P2 & P1
+    # !LED2.Q & !aly & db2
+    # !LED2.Q & aly & !db2
+    # !LED1.Q & !aly & db1 & P2
+    # aly & !db0 & P2 & P1
+    # !LED1.Q & aly & !db1 & P2 ; (6 pterms, 9 signals)
+
+C3 = !LED0.Q & db0 & P3 & P2 & P1
+    # !LED1.Q & !aly & db1 & P3 & P2
+    # aly & !db0 & P3 & P2 & P1
+    # !LED1.Q & aly & !db1 & P3 & P2
+    # !LED3.Q & !aly & db3
+    # !LED3.Q & aly & !db3
+    # !LED2.Q & !aly & db2 & P3
+    # !LED2.Q & aly & !db2 & P3 ; (8 pterms, 12 signals)
+
+DIS1a = !dm3 & dm2 & !dm1 & !dm0
+    # dm3 & !dm2 & dm1 & dm0
+    # !dm3 & !dm2 & !dm1 & dm0
+    # dm3 & dm2 & !dm1 & dm0 ; (4 pterms, 4 signals)
+
+DIS1b = !dm3 & dm2 & !dm1 & dm0
+    # dm3 & dm1 & dm0
+    # dm3 & dm2 & !dm0
+    # dm2 & dm1 & !dm0 ; (4 pterms, 4 signals)
+
+DIS1c = !dm3 & !dm2 & dm1 & !dm0
+    # dm3 & dm2 & !dm0
+    # dm3 & dm2 & dm1 ; (3 pterms, 4 signals)
+
+DIS1d = dm3 & !dm2 & dm1 & !dm0
+    # !dm3 & dm2 & !dm1 & !dm0
+    # !dm3 & !dm2 & !dm1 & dm0
+    # dm2 & dm1 & dm0 ; (4 pterms, 4 signals)
+
+DIS1e = !dm3 & dm2 & !dm1
+    # !dm2 & !dm1 & dm0
+    # !dm3 & dm0 ; (3 pterms, 4 signals)
+
+DIS1f = dm3 & dm2 & !dm1 & dm0
+    # !dm3 & !dm2 & dm1
+    # !dm3 & !dm2 & dm0
+    # !dm3 & dm1 & dm0 ; (4 pterms, 4 signals)
+
+DIS1g = dm3 & dm2 & !dm1 & !dm0
+    # !dm3 & dm2 & dm1 & dm0
+    # !dm3 & !dm2 & !dm1 ; (3 pterms, 4 signals)
+
+DIS2a = dm6 & !dm5 & !dm4
+    # !dm6 & !dm5 & dm4 ; (2 pterms, 3 signals)
+
+DIS2b = dm6 & dm5 & !dm4
+    # dm6 & !dm5 & dm4 ; (2 pterms, 3 signals)
+
+DIS2c = !dm6 & dm5 & !dm4 ; (1 pterm, 3 signals)
+
+DIS2d = dm6 & !dm5 & !dm4
+    # !dm6 & !dm5 & dm4
+    # dm6 & dm5 & dm4 ; (3 pterms, 3 signals)
+
+DIS2e = dm6 & !dm5
+    # dm4 ; (2 pterms, 3 signals)
+
+DIS2f = !dm6 & dm5
+    # !dm6 & dm4
+    # dm5 & dm4 ; (3 pterms, 3 signals)
+
+DIS2g = dm6 & dm5 & dm4
+    # !dm6 & !dm5 ; (2 pterms, 3 signals)
+
+DIS3a = !mar3.Q & mar2.Q & !mar1.Q & !mar0.Q
+    # mar3.Q & !mar2.Q & mar1.Q & mar0.Q
+    # !mar3.Q & !mar2.Q & !mar1.Q & mar0.Q
+    # mar3.Q & mar2.Q & !mar1.Q & mar0.Q ; (4 pterms, 4 signals)
+
+DIS3b = !mar3.Q & mar2.Q & !mar1.Q & mar0.Q
+    # mar3.Q & mar1.Q & mar0.Q
+    # mar3.Q & mar2.Q & !mar0.Q
+    # mar2.Q & mar1.Q & !mar0.Q ; (4 pterms, 4 signals)
+
+DIS3c = !mar3.Q & !mar2.Q & mar1.Q & !mar0.Q
+    # mar3.Q & mar2.Q & !mar0.Q
+    # mar3.Q & mar2.Q & mar1.Q ; (3 pterms, 4 signals)
+
+DIS3d = mar3.Q & !mar2.Q & mar1.Q & !mar0.Q
+    # !mar3.Q & mar2.Q & !mar1.Q & !mar0.Q
+    # !mar3.Q & !mar2.Q & !mar1.Q & mar0.Q
+    # mar2.Q & mar1.Q & mar0.Q ; (4 pterms, 4 signals)
+
+DIS3e = !mar3.Q & mar2.Q & !mar1.Q
+    # !mar2.Q & !mar1.Q & mar0.Q
+    # !mar3.Q & mar0.Q ; (3 pterms, 4 signals)
+
+DIS3f = mar3.Q & mar2.Q & !mar1.Q & mar0.Q
+    # !mar3.Q & !mar2.Q & mar1.Q
+    # !mar3.Q & !mar2.Q & mar0.Q
+    # !mar3.Q & mar1.Q & mar0.Q ; (4 pterms, 4 signals)
+
+DIS3g = mar3.Q & mar2.Q & !mar1.Q & !mar0.Q
+    # !mar3.Q & mar2.Q & mar1.Q & mar0.Q
+    # !mar3.Q & !mar2.Q & !mar1.Q ; (3 pterms, 4 signals)
+
+DIS4a = !pc3.Q & pc2.Q & !pc1.Q & !pc0.Q
+    # pc3.Q & !pc2.Q & pc1.Q & pc0.Q
+    # !pc3.Q & !pc2.Q & !pc1.Q & pc0.Q
+    # pc3.Q & pc2.Q & !pc1.Q & pc0.Q ; (4 pterms, 4 signals)
+
+DIS4b = !pc3.Q & pc2.Q & !pc1.Q & pc0.Q
+    # pc3.Q & pc1.Q & pc0.Q
+    # pc3.Q & pc2.Q & !pc0.Q
+    # pc2.Q & pc1.Q & !pc0.Q ; (4 pterms, 4 signals)
+
+DIS4c = !pc3.Q & !pc2.Q & pc1.Q & !pc0.Q
+    # pc3.Q & pc2.Q & !pc0.Q
+    # pc3.Q & pc2.Q & pc1.Q ; (3 pterms, 4 signals)
+
+DIS4d = pc3.Q & !pc2.Q & pc1.Q & !pc0.Q
+    # !pc3.Q & pc2.Q & !pc1.Q & !pc0.Q
+    # !pc3.Q & !pc2.Q & !pc1.Q & pc0.Q
+    # pc2.Q & pc1.Q & pc0.Q ; (4 pterms, 4 signals)
+
+DIS4e = !pc3.Q & pc2.Q & !pc1.Q
+    # !pc2.Q & !pc1.Q & pc0.Q
+    # !pc3.Q & pc0.Q ; (3 pterms, 4 signals)
+
+DIS4f = pc3.Q & pc2.Q & !pc1.Q & pc0.Q
+    # !pc3.Q & !pc2.Q & pc1.Q
+    # !pc3.Q & !pc2.Q & pc0.Q
+    # !pc3.Q & pc1.Q & pc0.Q ; (4 pterms, 4 signals)
+
+DIS4g = pc3.Q & pc2.Q & !pc1.Q & !pc0.Q
+    # !pc3.Q & pc2.Q & pc1.Q & pc0.Q
+    # !pc3.Q & !pc2.Q & !pc1.Q ; (3 pterms, 4 signals)
+
+LED0.D = LED0.Q & !ale
+    # ale & !alu0 ; (2 pterms, 3 signals)
+LED0.C = DIP7 & LED16.Q & S1BC.Q ; (1 pterm, 3 signals)
+LED0.AP = DIP7 & S2BC.Q ; (1 pterm, 2 signals)
+
+LED1.D = LED1.Q & !ale
+    # ale & !alu1 ; (2 pterms, 3 signals)
+LED1.C = DIP7 & LED16.Q & S1BC.Q ; (1 pterm, 3 signals)
+LED1.AP = DIP7 & S2BC.Q ; (1 pterm, 2 signals)
+
+LED10.D = LED10.Q & !LED15.Q
+    # LED15.Q & !db2 ; (2 pterms, 3 signals)
+LED10.C = DIP7 & LED16.Q & S1BC.Q ; (1 pterm, 3 signals)
+LED10.AP = DIP7 & S2BC.Q ; (1 pterm, 2 signals)
+
+LED11.D = LED11.Q & !LED15.Q
+    # LED15.Q & !db3 ; (2 pterms, 3 signals)
+LED11.C = DIP7 & LED16.Q & S1BC.Q ; (1 pterm, 3 signals)
+LED11.AP = DIP7 & S2BC.Q ; (1 pterm, 2 signals)
+
+LED12.D = LED12.Q & !LED15.Q
+    # LED15.Q & !db4 ; (2 pterms, 3 signals)
+LED12.C = DIP7 & LED16.Q & S1BC.Q ; (1 pterm, 3 signals)
+LED12.AP = DIP7 & S2BC.Q ; (1 pterm, 2 signals)
+
+LED13.D = LED13.Q & !LED15.Q
+    # LED15.Q & !db5 ; (2 pterms, 3 signals)
+LED13.C = DIP7 & LED16.Q & S1BC.Q ; (1 pterm, 3 signals)
+LED13.AP = DIP7 & S2BC.Q ; (1 pterm, 2 signals)
+
+LED14.D = LED14.Q & !LED15.Q
+    # LED15.Q & !db6 ; (2 pterms, 3 signals)
+LED14.C = DIP7 & LED16.Q & S1BC.Q ; (1 pterm, 3 signals)
+LED14.AP = DIP7 & S2BC.Q ; (1 pterm, 2 signals)
+
+LED15.D = !LED15.Q ; (1 pterm, 1 signal)
+LED15.C = DIP7 & LED16.Q & S1BC.Q ; (1 pterm, 3 signals)
+LED15.AP = DIP7 & S2BC.Q ; (1 pterm, 2 signals)
+
+LED16.D = 0 ; (0 pterm, 0 signal)
+LED16.C = 0 ; (0 pterm, 0 signal)
+LED16.AR = LED12.Q & LED13.Q & LED14.Q & !LED15.Q ; (1 pterm, 4 signals)
+LED16.AP = DIP7 & S2BC.Q ; (1 pterm, 2 signals)
+
+LED17 = DIP7 ; (1 pterm, 1 signal)
+
+LED18 = !DIP7 ; (1 pterm, 1 signal)
+
+LED2.D = LED2.Q & !ale
+    # ale & !alu2 ; (2 pterms, 3 signals)
+LED2.C = DIP7 & LED16.Q & S1BC.Q ; (1 pterm, 3 signals)
+LED2.AP = DIP7 & S2BC.Q ; (1 pterm, 2 signals)
+
+LED20 = !( DIP0 & DIP7 ) ; (1 pterm, 2 signals)
+
+LED21 = !( DIP1 & DIP7 ) ; (1 pterm, 2 signals)
+
+LED22 = !( DIP2 & DIP7 ) ; (1 pterm, 2 signals)
+
+LED23 = !( DIP3 & DIP7 ) ; (1 pterm, 2 signals)
+
+LED24.D.X1 = !LED0.Q & !LED12.Q & !LED13.Q & !LED14.Q & !LED15.Q & LED24.Q
+    # LED0.Q & !LED12.Q & !LED13.Q & !LED14.Q & !LED15.Q & !LED24.Q ; (2 pterms, 6 signals)
+LED24.D.X2 = LED24.Q ; (1 pterm, 1 signal)
+LED24.C = DIP7 & LED16.Q & S1BC.Q ; (1 pterm, 3 signals)
+LED24.AP = DIP7 & S2BC.Q ; (1 pterm, 2 signals)
+
+LED25.D.X1 = !LED1.Q & !LED12.Q & !LED13.Q & !LED14.Q & !LED15.Q & LED25.Q
+    # LED1.Q & !LED12.Q & !LED13.Q & !LED14.Q & !LED15.Q & !LED25.Q ; (2 pterms, 6 signals)
+LED25.D.X2 = LED25.Q ; (1 pterm, 1 signal)
+LED25.C = DIP7 & LED16.Q & S1BC.Q ; (1 pterm, 3 signals)
+LED25.AP = DIP7 & S2BC.Q ; (1 pterm, 2 signals)
+
+LED26.D.X1 = !LED2.Q & !LED12.Q & !LED13.Q & !LED14.Q & !LED15.Q & LED26.Q
+    # LED2.Q & !LED12.Q & !LED13.Q & !LED14.Q & !LED15.Q & !LED26.Q ; (2 pterms, 6 signals)
+LED26.D.X2 = LED26.Q ; (1 pterm, 1 signal)
+LED26.C = DIP7 & LED16.Q & S1BC.Q ; (1 pterm, 3 signals)
+LED26.AP = DIP7 & S2BC.Q ; (1 pterm, 2 signals)
+
+LED27.D.X1 = !LED3.Q & !LED12.Q & !LED13.Q & !LED14.Q & !LED15.Q & LED27.Q
+    # LED3.Q & !LED12.Q & !LED13.Q & !LED14.Q & !LED15.Q & !LED27.Q ; (2 pterms, 6 signals)
+LED27.D.X2 = LED27.Q ; (1 pterm, 1 signal)
+LED27.C = DIP7 & LED16.Q & S1BC.Q ; (1 pterm, 3 signals)
+LED27.AP = DIP7 & S2BC.Q ; (1 pterm, 2 signals)
+
+LED28.D = 1 ; (1 pterm, 0 signal)
+LED28.C = 0 ; (0 pterm, 0 signal)
+LED28.AR = !S1_NO ; (1 pterm, 1 signal)
+LED28.AP = !S1_NC ; (1 pterm, 1 signal)
+
+LED29.D = 1 ; (1 pterm, 0 signal)
+LED29.C = 0 ; (0 pterm, 0 signal)
+LED29.AR = !S2_NO ; (1 pterm, 1 signal)
+LED29.AP = !S2_NC ; (1 pterm, 1 signal)
+
+LED3.D = LED3.Q & !ale
+    # ale & !alu3 ; (2 pterms, 3 signals)
+LED3.C = DIP7 & LED16.Q & S1BC.Q ; (1 pterm, 3 signals)
+LED3.AP = DIP7 & S2BC.Q ; (1 pterm, 2 signals)
+
+LED4.D = ale & !alx & !C3 & !C2
+    # ale & !alx & C3 & C2
+    # LED4.Q & alx
+    # LED4.Q & !ale ; (4 pterms, 5 signals)
+LED4.C = DIP7 & LED16.Q & S1BC.Q ; (1 pterm, 3 signals)
+LED4.AP = DIP7 & S2BC.Q ; (1 pterm, 2 signals)
+
+LED5.D = !( ale & !alu3 & !alu2 & !alu1 & !alu0
+    # !LED5.Q & !ale ) ; (2 pterms, 6 signals)
+LED5.C = DIP7 & LED16.Q & S1BC.Q ; (1 pterm, 3 signals)
+LED5.AP = DIP7 & S2BC.Q ; (1 pterm, 2 signals)
+
+LED6.D = ale & !alu3
+    # LED6.Q & !ale ; (2 pterms, 3 signals)
+LED6.C = DIP7 & LED16.Q & S1BC.Q ; (1 pterm, 3 signals)
+LED6.AP = DIP7 & S2BC.Q ; (1 pterm, 2 signals)
+
+LED7.D = ale & !alx & !aly & !C3
+    # ale & !alx & aly & C3
+    # LED7.Q & alx
+    # LED7.Q & !ale ; (4 pterms, 5 signals)
+LED7.C = DIP7 & LED16.Q & S1BC.Q ; (1 pterm, 3 signals)
+LED7.AP = DIP7 & S2BC.Q ; (1 pterm, 2 signals)
+
+LED8.D = LED8.Q & !LED15.Q
+    # LED15.Q & !db0 ; (2 pterms, 3 signals)
+LED8.C = DIP7 & LED16.Q & S1BC.Q ; (1 pterm, 3 signals)
+LED8.AP = DIP7 & S2BC.Q ; (1 pterm, 2 signals)
+
+LED9.D = LED9.Q & !LED15.Q
+    # LED15.Q & !db1 ; (2 pterms, 3 signals)
+LED9.C = DIP7 & LED16.Q & S1BC.Q ; (1 pterm, 3 signals)
+LED9.AP = DIP7 & S2BC.Q ; (1 pterm, 2 signals)
+
+P1 = !LED1.Q & !aly & !db1
+    # LED1.Q & !aly & db1
+    # LED1.Q & aly & !db1
+    # !LED1.Q & aly & db1 ; (4 pterms, 3 signals)
+
+P2 = !LED2.Q & !aly & !db2
+    # LED2.Q & !aly & db2
+    # LED2.Q & aly & !db2
+    # !LED2.Q & aly & db2 ; (4 pterms, 3 signals)
+
+P3 = !LED3.Q & !aly & !db3
+    # LED3.Q & !aly & db3
+    # LED3.Q & aly & !db3
+    # !LED3.Q & aly & db3 ; (4 pterms, 3 signals)
+
+S1BC.D = 0 ; (0 pterm, 0 signal)
+S1BC.C = 0 ; (0 pterm, 0 signal)
+S1BC.AR = !S1_NC ; (1 pterm, 1 signal)
+S1BC.AP = !S1_NO ; (1 pterm, 1 signal)
+
+S2BC.D = 0 ; (0 pterm, 0 signal)
+S2BC.C = 0 ; (0 pterm, 0 signal)
+S2BC.AR = !S2_NC ; (1 pterm, 1 signal)
+S2BC.AP = !S2_NO ; (1 pterm, 1 signal)
+
+ab0 = DIP7 & LED15.Q & pc0.Q
+    # !DIP7 & mar0.Q
+    # DIP7 & !LED8.Q & !LED15.Q ; (3 pterms, 5 signals)
+
+ab1 = DIP7 & LED15.Q & pc1.Q
+    # !DIP7 & mar1.Q
+    # DIP7 & !LED9.Q & !LED15.Q ; (3 pterms, 5 signals)
+
+ab2 = DIP7 & LED15.Q & pc2.Q
+    # !DIP7 & mar2.Q
+    # DIP7 & !LED10.Q & !LED15.Q ; (3 pterms, 5 signals)
+
+ab3 = DIP7 & LED15.Q & pc3.Q
+    # !DIP7 & mar3.Q
+    # DIP7 & !LED11.Q & !LED15.Q ; (3 pterms, 5 signals)
+
+ale = LED12.Q & !LED13.Q & !LED15.Q & LED16.Q
+    # LED12.Q & !LED14.Q & !LED15.Q & LED16.Q
+    # !LED12.Q & LED14.Q & !LED15.Q & LED16.Q ; (3 pterms, 5 signals)
+
+alu0 = !LED12.Q & LED13.Q & LED14.Q & alx & aly & db0
+    # DIP0 & LED12.Q & !LED13.Q & !LED14.Q & alx & aly
+    # !LED0.Q & alx & !aly & db0
+    # !LED0.Q & !alx & !db0
+    # LED0.Q & !alx & db0 ; (5 pterms, 8 signals)
+
+alu1.X1 = !alx & !aly & !db0
+    # LED0.Q & !alx & db0
+    # !LED1.Q & alx & !aly & db1
+    # !LED12.Q & LED13.Q & LED14.Q & alx & aly & db1
+    # DIP1 & LED12.Q & !LED13.Q & !LED14.Q & alx & aly ; (5 pterms, 10 signals)
+alu1.X2 = !alx & !P1 ; (1 pterm, 2 signals)
+
+alu2 = DIP2 & LED12.Q & !LED13.Q & !LED14.Q & alx & aly
+    # !LED12.Q & LED13.Q & LED14.Q & alx & aly & db2
+    # !LED2.Q & alx & !aly & db2
+    # !alx & !C1 & P2
+    # !alx & C1 & !P2 ; (5 pterms, 10 signals)
+
+alu3 = DIP3 & LED12.Q & !LED13.Q & !LED14.Q & alx & aly
+    # !LED12.Q & LED13.Q & LED14.Q & alx & aly & db3
+    # !LED3.Q & alx & !aly & db3
+    # !alx & !C2 & P3
+    # !alx & C2 & !P3 ; (5 pterms, 10 signals)
+
+alx = !LED12.Q & LED13.Q & LED14.Q
+    # LED12.Q & !LED14.Q ; (2 pterms, 3 signals)
+
+aly = LED12.Q & !LED13.Q & !LED14.Q
+    # !LED12.Q & LED14.Q ; (2 pterms, 3 signals)
+
+db0 = m7q0.Q & !ab3 & ab2 & ab1 & ab0
+    # m11q0.Q & ab3 & !ab2 & ab1 & ab0
+    # m13q0.Q & ab3 & ab2 & !ab1 & ab0
+    # m14q0.Q & ab3 & ab2 & ab1 & !ab0
+    # m3q0.Q & !ab3 & !ab2 & ab1 & ab0
+    # m5q0.Q & !ab3 & ab2 & !ab1 & ab0
+    # m6q0.Q & !ab3 & ab2 & ab1 & !ab0
+    # m9q0.Q & ab3 & !ab2 & !ab1 & ab0
+    # m10q0.Q & ab3 & !ab2 & ab1 & !ab0
+    # m12q0.Q & ab3 & ab2 & !ab1 & !ab0
+    # m1q0.Q & !ab3 & !ab2 & !ab1 & ab0
+    # m2q0.Q & !ab3 & !ab2 & ab1 & !ab0
+    # m4q0.Q & !ab3 & ab2 & !ab1 & !ab0
+    # m8q0.Q & ab3 & !ab2 & !ab1 & !ab0
+    # m0q0.Q & !ab3 & !ab2 & !ab1 & !ab0 ; (15 pterms, 19 signals)
+
+db1 = m7q1.Q & !ab3 & ab2 & ab1 & ab0
+    # m11q1.Q & ab3 & !ab2 & ab1 & ab0
+    # m13q1.Q & ab3 & ab2 & !ab1 & ab0
+    # m14q1.Q & ab3 & ab2 & ab1 & !ab0
+    # m3q1.Q & !ab3 & !ab2 & ab1 & ab0
+    # m5q1.Q & !ab3 & ab2 & !ab1 & ab0
+    # m6q1.Q & !ab3 & ab2 & ab1 & !ab0
+    # m9q1.Q & ab3 & !ab2 & !ab1 & ab0
+    # m10q1.Q & ab3 & !ab2 & ab1 & !ab0
+    # m12q1.Q & ab3 & ab2 & !ab1 & !ab0
+    # m1q1.Q & !ab3 & !ab2 & !ab1 & ab0
+    # m2q1.Q & !ab3 & !ab2 & ab1 & !ab0
+    # m4q1.Q & !ab3 & ab2 & !ab1 & !ab0
+    # m8q1.Q & ab3 & !ab2 & !ab1 & !ab0
+    # m0q1.Q & !ab3 & !ab2 & !ab1 & !ab0 ; (15 pterms, 19 signals)
+
+db2 = m7q2.Q & !ab3 & ab2 & ab1 & ab0
+    # m11q2.Q & ab3 & !ab2 & ab1 & ab0
+    # m13q2.Q & ab3 & ab2 & !ab1 & ab0
+    # m14q2.Q & ab3 & ab2 & ab1 & !ab0
+    # m3q2.Q & !ab3 & !ab2 & ab1 & ab0
+    # m5q2.Q & !ab3 & ab2 & !ab1 & ab0
+    # m6q2.Q & !ab3 & ab2 & ab1 & !ab0
+    # m9q2.Q & ab3 & !ab2 & !ab1 & ab0
+    # m10q2.Q & ab3 & !ab2 & ab1 & !ab0
+    # m12q2.Q & ab3 & ab2 & !ab1 & !ab0
+    # m1q2.Q & !ab3 & !ab2 & !ab1 & ab0
+    # m2q2.Q & !ab3 & !ab2 & ab1 & !ab0
+    # m4q2.Q & !ab3 & ab2 & !ab1 & !ab0
+    # m8q2.Q & ab3 & !ab2 & !ab1 & !ab0
+    # m0q2.Q & !ab3 & !ab2 & !ab1 & !ab0 ; (15 pterms, 19 signals)
+
+db3 = m7q3.Q & !ab3 & ab2 & ab1 & ab0
+    # m11q3.Q & ab3 & !ab2 & ab1 & ab0
+    # m13q3.Q & ab3 & ab2 & !ab1 & ab0
+    # m14q3.Q & ab3 & ab2 & ab1 & !ab0
+    # m3q3.Q & !ab3 & !ab2 & ab1 & ab0
+    # m5q3.Q & !ab3 & ab2 & !ab1 & ab0
+    # m6q3.Q & !ab3 & ab2 & ab1 & !ab0
+    # m9q3.Q & ab3 & !ab2 & !ab1 & ab0
+    # m10q3.Q & ab3 & !ab2 & ab1 & !ab0
+    # m12q3.Q & ab3 & ab2 & !ab1 & !ab0
+    # m1q3.Q & !ab3 & !ab2 & !ab1 & ab0
+    # m2q3.Q & !ab3 & !ab2 & ab1 & !ab0
+    # m4q3.Q & !ab3 & ab2 & !ab1 & !ab0
+    # m8q3.Q & ab3 & !ab2 & !ab1 & !ab0
+    # m0q3.Q & !ab3 & !ab2 & !ab1 & !ab0 ; (15 pterms, 19 signals)
+
+db4 = m7q4.Q & !ab3 & ab2 & ab1 & ab0
+    # m11q4.Q & ab3 & !ab2 & ab1 & ab0
+    # m13q4.Q & ab3 & ab2 & !ab1 & ab0
+    # m14q4.Q & ab3 & ab2 & ab1 & !ab0
+    # m3q4.Q & !ab3 & !ab2 & ab1 & ab0
+    # m5q4.Q & !ab3 & ab2 & !ab1 & ab0
+    # m6q4.Q & !ab3 & ab2 & ab1 & !ab0
+    # m9q4.Q & ab3 & !ab2 & !ab1 & ab0
+    # m10q4.Q & ab3 & !ab2 & ab1 & !ab0
+    # m12q4.Q & ab3 & ab2 & !ab1 & !ab0
+    # m1q4.Q & !ab3 & !ab2 & !ab1 & ab0
+    # m2q4.Q & !ab3 & !ab2 & ab1 & !ab0
+    # m4q4.Q & !ab3 & ab2 & !ab1 & !ab0
+    # m8q4.Q & ab3 & !ab2 & !ab1 & !ab0
+    # m0q4.Q & !ab3 & !ab2 & !ab1 & !ab0 ; (15 pterms, 19 signals)
+
+db5 = m7q5.Q & !ab3 & ab2 & ab1 & ab0
+    # m11q5.Q & ab3 & !ab2 & ab1 & ab0
+    # m13q5.Q & ab3 & ab2 & !ab1 & ab0
+    # m14q5.Q & ab3 & ab2 & ab1 & !ab0
+    # m3q5.Q & !ab3 & !ab2 & ab1 & ab0
+    # m5q5.Q & !ab3 & ab2 & !ab1 & ab0
+    # m6q5.Q & !ab3 & ab2 & ab1 & !ab0
+    # m9q5.Q & ab3 & !ab2 & !ab1 & ab0
+    # m10q5.Q & ab3 & !ab2 & ab1 & !ab0
+    # m12q5.Q & ab3 & ab2 & !ab1 & !ab0
+    # m1q5.Q & !ab3 & !ab2 & !ab1 & ab0
+    # m2q5.Q & !ab3 & !ab2 & ab1 & !ab0
+    # m4q5.Q & !ab3 & ab2 & !ab1 & !ab0
+    # m8q5.Q & ab3 & !ab2 & !ab1 & !ab0
+    # m0q5.Q & !ab3 & !ab2 & !ab1 & !ab0 ; (15 pterms, 19 signals)
+
+db6 = m7q6.Q & !ab3 & ab2 & ab1 & ab0
+    # m11q6.Q & ab3 & !ab2 & ab1 & ab0
+    # m13q6.Q & ab3 & ab2 & !ab1 & ab0
+    # m14q6.Q & ab3 & ab2 & ab1 & !ab0
+    # m3q6.Q & !ab3 & !ab2 & ab1 & ab0
+    # m5q6.Q & !ab3 & ab2 & !ab1 & ab0
+    # m6q6.Q & !ab3 & ab2 & ab1 & !ab0
+    # m9q6.Q & ab3 & !ab2 & !ab1 & ab0
+    # m10q6.Q & ab3 & !ab2 & ab1 & !ab0
+    # m12q6.Q & ab3 & ab2 & !ab1 & !ab0
+    # m1q6.Q & !ab3 & !ab2 & !ab1 & ab0
+    # m2q6.Q & !ab3 & !ab2 & ab1 & !ab0
+    # m4q6.Q & !ab3 & ab2 & !ab1 & !ab0
+    # m8q6.Q & ab3 & !ab2 & !ab1 & !ab0
+    # m0q6.Q & !ab3 & !ab2 & !ab1 & !ab0 ; (15 pterms, 19 signals)
+
+dm0 = m13q0.Q & mar3.Q & mar2.Q & !mar1.Q & mar0.Q
+    # m11q0.Q & mar3.Q & !mar2.Q & mar1.Q & mar0.Q
+    # m7q0.Q & !mar3.Q & mar2.Q & mar1.Q & mar0.Q
+    # m12q0.Q & mar3.Q & mar2.Q & !mar1.Q & !mar0.Q
+    # m10q0.Q & mar3.Q & !mar2.Q & mar1.Q & !mar0.Q
+    # m6q0.Q & !mar3.Q & mar2.Q & mar1.Q & !mar0.Q
+    # m9q0.Q & mar3.Q & !mar2.Q & !mar1.Q & mar0.Q
+    # m5q0.Q & !mar3.Q & mar2.Q & !mar1.Q & mar0.Q
+    # m3q0.Q & !mar3.Q & !mar2.Q & mar1.Q & mar0.Q
+    # m8q0.Q & mar3.Q & !mar2.Q & !mar1.Q & !mar0.Q
+    # m4q0.Q & !mar3.Q & mar2.Q & !mar1.Q & !mar0.Q
+    # m2q0.Q & !mar3.Q & !mar2.Q & mar1.Q & !mar0.Q
+    # m1q0.Q & !mar3.Q & !mar2.Q & !mar1.Q & mar0.Q
+    # m0q0.Q & !mar3.Q & !mar2.Q & !mar1.Q & !mar0.Q
+    # m14q0.Q & mar3.Q & mar2.Q & mar1.Q & !mar0.Q ; (15 pterms, 19 signals)
+
+dm1 = m13q1.Q & mar3.Q & mar2.Q & !mar1.Q & mar0.Q
+    # m11q1.Q & mar3.Q & !mar2.Q & mar1.Q & mar0.Q
+    # m7q1.Q & !mar3.Q & mar2.Q & mar1.Q & mar0.Q
+    # m12q1.Q & mar3.Q & mar2.Q & !mar1.Q & !mar0.Q
+    # m10q1.Q & mar3.Q & !mar2.Q & mar1.Q & !mar0.Q
+    # m6q1.Q & !mar3.Q & mar2.Q & mar1.Q & !mar0.Q
+    # m9q1.Q & mar3.Q & !mar2.Q & !mar1.Q & mar0.Q
+    # m5q1.Q & !mar3.Q & mar2.Q & !mar1.Q & mar0.Q
+    # m3q1.Q & !mar3.Q & !mar2.Q & mar1.Q & mar0.Q
+    # m8q1.Q & mar3.Q & !mar2.Q & !mar1.Q & !mar0.Q
+    # m4q1.Q & !mar3.Q & mar2.Q & !mar1.Q & !mar0.Q
+    # m2q1.Q & !mar3.Q & !mar2.Q & mar1.Q & !mar0.Q
+    # m1q1.Q & !mar3.Q & !mar2.Q & !mar1.Q & mar0.Q
+    # m0q1.Q & !mar3.Q & !mar2.Q & !mar1.Q & !mar0.Q
+    # m14q1.Q & mar3.Q & mar2.Q & mar1.Q & !mar0.Q ; (15 pterms, 19 signals)
+
+dm2 = m13q2.Q & mar3.Q & mar2.Q & !mar1.Q & mar0.Q
+    # m11q2.Q & mar3.Q & !mar2.Q & mar1.Q & mar0.Q
+    # m7q2.Q & !mar3.Q & mar2.Q & mar1.Q & mar0.Q
+    # m12q2.Q & mar3.Q & mar2.Q & !mar1.Q & !mar0.Q
+    # m10q2.Q & mar3.Q & !mar2.Q & mar1.Q & !mar0.Q
+    # m6q2.Q & !mar3.Q & mar2.Q & mar1.Q & !mar0.Q
+    # m9q2.Q & mar3.Q & !mar2.Q & !mar1.Q & mar0.Q
+    # m5q2.Q & !mar3.Q & mar2.Q & !mar1.Q & mar0.Q
+    # m3q2.Q & !mar3.Q & !mar2.Q & mar1.Q & mar0.Q
+    # m8q2.Q & mar3.Q & !mar2.Q & !mar1.Q & !mar0.Q
+    # m4q2.Q & !mar3.Q & mar2.Q & !mar1.Q & !mar0.Q
+    # m2q2.Q & !mar3.Q & !mar2.Q & mar1.Q & !mar0.Q
+    # m1q2.Q & !mar3.Q & !mar2.Q & !mar1.Q & mar0.Q
+    # m0q2.Q & !mar3.Q & !mar2.Q & !mar1.Q & !mar0.Q
+    # m14q2.Q & mar3.Q & mar2.Q & mar1.Q & !mar0.Q ; (15 pterms, 19 signals)
+
+dm3 = m13q3.Q & mar3.Q & mar2.Q & !mar1.Q & mar0.Q
+    # m11q3.Q & mar3.Q & !mar2.Q & mar1.Q & mar0.Q
+    # m7q3.Q & !mar3.Q & mar2.Q & mar1.Q & mar0.Q
+    # m12q3.Q & mar3.Q & mar2.Q & !mar1.Q & !mar0.Q
+    # m10q3.Q & mar3.Q & !mar2.Q & mar1.Q & !mar0.Q
+    # m6q3.Q & !mar3.Q & mar2.Q & mar1.Q & !mar0.Q
+    # m9q3.Q & mar3.Q & !mar2.Q & !mar1.Q & mar0.Q
+    # m5q3.Q & !mar3.Q & mar2.Q & !mar1.Q & mar0.Q
+    # m3q3.Q & !mar3.Q & !mar2.Q & mar1.Q & mar0.Q
+    # m8q3.Q & mar3.Q & !mar2.Q & !mar1.Q & !mar0.Q
+    # m4q3.Q & !mar3.Q & mar2.Q & !mar1.Q & !mar0.Q
+    # m2q3.Q & !mar3.Q & !mar2.Q & mar1.Q & !mar0.Q
+    # m1q3.Q & !mar3.Q & !mar2.Q & !mar1.Q & mar0.Q
+    # m0q3.Q & !mar3.Q & !mar2.Q & !mar1.Q & !mar0.Q
+    # m14q3.Q & mar3.Q & mar2.Q & mar1.Q & !mar0.Q ; (15 pterms, 19 signals)
+
+dm4 = m13q4.Q & mar3.Q & mar2.Q & !mar1.Q & mar0.Q
+    # m11q4.Q & mar3.Q & !mar2.Q & mar1.Q & mar0.Q
+    # m7q4.Q & !mar3.Q & mar2.Q & mar1.Q & mar0.Q
+    # m12q4.Q & mar3.Q & mar2.Q & !mar1.Q & !mar0.Q
+    # m10q4.Q & mar3.Q & !mar2.Q & mar1.Q & !mar0.Q
+    # m6q4.Q & !mar3.Q & mar2.Q & mar1.Q & !mar0.Q
+    # m9q4.Q & mar3.Q & !mar2.Q & !mar1.Q & mar0.Q
+    # m5q4.Q & !mar3.Q & mar2.Q & !mar1.Q & mar0.Q
+    # m3q4.Q & !mar3.Q & !mar2.Q & mar1.Q & mar0.Q
+    # m8q4.Q & mar3.Q & !mar2.Q & !mar1.Q & !mar0.Q
+    # m4q4.Q & !mar3.Q & mar2.Q & !mar1.Q & !mar0.Q
+    # m2q4.Q & !mar3.Q & !mar2.Q & mar1.Q & !mar0.Q
+    # m1q4.Q & !mar3.Q & !mar2.Q & !mar1.Q & mar0.Q
+    # m0q4.Q & !mar3.Q & !mar2.Q & !mar1.Q & !mar0.Q
+    # m14q4.Q & mar3.Q & mar2.Q & mar1.Q & !mar0.Q ; (15 pterms, 19 signals)
+
+dm5 = m13q5.Q & mar3.Q & mar2.Q & !mar1.Q & mar0.Q
+    # m11q5.Q & mar3.Q & !mar2.Q & mar1.Q & mar0.Q
+    # m7q5.Q & !mar3.Q & mar2.Q & mar1.Q & mar0.Q
+    # m12q5.Q & mar3.Q & mar2.Q & !mar1.Q & !mar0.Q
+    # m10q5.Q & mar3.Q & !mar2.Q & mar1.Q & !mar0.Q
+    # m6q5.Q & !mar3.Q & mar2.Q & mar1.Q & !mar0.Q
+    # m9q5.Q & mar3.Q & !mar2.Q & !mar1.Q & mar0.Q
+    # m5q5.Q & !mar3.Q & mar2.Q & !mar1.Q & mar0.Q
+    # m3q5.Q & !mar3.Q & !mar2.Q & mar1.Q & mar0.Q
+    # m8q5.Q & mar3.Q & !mar2.Q & !mar1.Q & !mar0.Q
+    # m4q5.Q & !mar3.Q & mar2.Q & !mar1.Q & !mar0.Q
+    # m2q5.Q & !mar3.Q & !mar2.Q & mar1.Q & !mar0.Q
+    # m1q5.Q & !mar3.Q & !mar2.Q & !mar1.Q & mar0.Q
+    # m0q5.Q & !mar3.Q & !mar2.Q & !mar1.Q & !mar0.Q
+    # m14q5.Q & mar3.Q & mar2.Q & mar1.Q & !mar0.Q ; (15 pterms, 19 signals)
+
+dm6 = m13q6.Q & mar3.Q & mar2.Q & !mar1.Q & mar0.Q
+    # m11q6.Q & mar3.Q & !mar2.Q & mar1.Q & mar0.Q
+    # m7q6.Q & !mar3.Q & mar2.Q & mar1.Q & mar0.Q
+    # m12q6.Q & mar3.Q & mar2.Q & !mar1.Q & !mar0.Q
+    # m10q6.Q & mar3.Q & !mar2.Q & mar1.Q & !mar0.Q
+    # m6q6.Q & !mar3.Q & mar2.Q & mar1.Q & !mar0.Q
+    # m9q6.Q & mar3.Q & !mar2.Q & !mar1.Q & mar0.Q
+    # m5q6.Q & !mar3.Q & mar2.Q & !mar1.Q & mar0.Q
+    # m3q6.Q & !mar3.Q & !mar2.Q & mar1.Q & mar0.Q
+    # m8q6.Q & mar3.Q & !mar2.Q & !mar1.Q & !mar0.Q
+    # m4q6.Q & !mar3.Q & mar2.Q & !mar1.Q & !mar0.Q
+    # m2q6.Q & !mar3.Q & !mar2.Q & mar1.Q & !mar0.Q
+    # m1q6.Q & !mar3.Q & !mar2.Q & !mar1.Q & mar0.Q
+    # m0q6.Q & !mar3.Q & !mar2.Q & !mar1.Q & !mar0.Q
+    # m14q6.Q & mar3.Q & mar2.Q & mar1.Q & !mar0.Q ; (15 pterms, 19 signals)
+
+m0q0.T = DIP7 & LED0.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m0q0.Q
+       & !ab3 & !ab2 & !ab1 & !ab0
+    # DIP7 & !LED0.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m0q0.Q
+       & !ab3 & !ab2 & !ab1 & !ab0
+    # !DIP0 & !DIP7 & m0q0.Q & !ab3 & !ab2 & !ab1 & !ab0
+    # DIP0 & !DIP7 & !m0q0.Q & !ab3 & !ab2 & !ab1 & !ab0 ; (4 pterms, 12 signals)
+m0q0.C = memclk ; (1 pterm, 1 signal)
+
+m0q1.T = DIP7 & LED1.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m0q1.Q
+       & !ab3 & !ab2 & !ab1 & !ab0
+    # DIP7 & !LED1.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m0q1.Q
+       & !ab3 & !ab2 & !ab1 & !ab0
+    # !DIP1 & !DIP7 & m0q1.Q & !ab3 & !ab2 & !ab1 & !ab0
+    # DIP1 & !DIP7 & !m0q1.Q & !ab3 & !ab2 & !ab1 & !ab0 ; (4 pterms, 12 signals)
+m0q1.C = memclk ; (1 pterm, 1 signal)
+
+m0q2.T = DIP7 & LED2.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m0q2.Q
+       & !ab3 & !ab2 & !ab1 & !ab0
+    # DIP7 & !LED2.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m0q2.Q
+       & !ab3 & !ab2 & !ab1 & !ab0
+    # !DIP2 & !DIP7 & m0q2.Q & !ab3 & !ab2 & !ab1 & !ab0
+    # DIP2 & !DIP7 & !m0q2.Q & !ab3 & !ab2 & !ab1 & !ab0 ; (4 pterms, 12 signals)
+m0q2.C = memclk ; (1 pterm, 1 signal)
+
+m0q3.T = DIP7 & LED3.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m0q3.Q
+       & !ab3 & !ab2 & !ab1 & !ab0
+    # DIP7 & !LED3.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m0q3.Q
+       & !ab3 & !ab2 & !ab1 & !ab0
+    # !DIP3 & !DIP7 & m0q3.Q & !ab3 & !ab2 & !ab1 & !ab0
+    # DIP3 & !DIP7 & !m0q3.Q & !ab3 & !ab2 & !ab1 & !ab0 ; (4 pterms, 12 signals)
+m0q3.C = memclk ; (1 pterm, 1 signal)
+
+m0q4.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m0q4.Q & !ab3
+       & !ab2 & !ab1 & !ab0
+    # DIP4 & !DIP7 & !m0q4.Q & !ab3 & !ab2 & !ab1 & !ab0
+    # !DIP4 & !DIP7 & m0q4.Q & !ab3 & !ab2 & !ab1 & !ab0 ; (3 pterms, 11 signals)
+m0q4.C = memclk ; (1 pterm, 1 signal)
+
+m0q5.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m0q5.Q & !ab3
+       & !ab2 & !ab1 & !ab0
+    # DIP5 & !DIP7 & !m0q5.Q & !ab3 & !ab2 & !ab1 & !ab0
+    # !DIP5 & !DIP7 & m0q5.Q & !ab3 & !ab2 & !ab1 & !ab0 ; (3 pterms, 11 signals)
+m0q5.C = memclk ; (1 pterm, 1 signal)
+
+m0q6.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m0q6.Q & !ab3
+       & !ab2 & !ab1 & !ab0
+    # DIP6 & !DIP7 & !m0q6.Q & !ab3 & !ab2 & !ab1 & !ab0
+    # !DIP6 & !DIP7 & m0q6.Q & !ab3 & !ab2 & !ab1 & !ab0 ; (3 pterms, 11 signals)
+m0q6.C = memclk ; (1 pterm, 1 signal)
+
+m10q0.T = DIP7 & LED0.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m10q0.Q
+       & ab3 & !ab2 & ab1 & !ab0
+    # DIP7 & !LED0.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m10q0.Q
+       & ab3 & !ab2 & ab1 & !ab0
+    # !DIP0 & !DIP7 & m10q0.Q & ab3 & !ab2 & ab1 & !ab0
+    # DIP0 & !DIP7 & !m10q0.Q & ab3 & !ab2 & ab1 & !ab0 ; (4 pterms, 12 signals)
+m10q0.C = memclk ; (1 pterm, 1 signal)
+
+m10q1.T = DIP7 & LED1.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m10q1.Q
+       & ab3 & !ab2 & ab1 & !ab0
+    # DIP7 & !LED1.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m10q1.Q
+       & ab3 & !ab2 & ab1 & !ab0
+    # !DIP1 & !DIP7 & m10q1.Q & ab3 & !ab2 & ab1 & !ab0
+    # DIP1 & !DIP7 & !m10q1.Q & ab3 & !ab2 & ab1 & !ab0 ; (4 pterms, 12 signals)
+m10q1.C = memclk ; (1 pterm, 1 signal)
+
+m10q2.T = DIP7 & LED2.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m10q2.Q
+       & ab3 & !ab2 & ab1 & !ab0
+    # DIP7 & !LED2.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m10q2.Q
+       & ab3 & !ab2 & ab1 & !ab0
+    # !DIP2 & !DIP7 & m10q2.Q & ab3 & !ab2 & ab1 & !ab0
+    # DIP2 & !DIP7 & !m10q2.Q & ab3 & !ab2 & ab1 & !ab0 ; (4 pterms, 12 signals)
+m10q2.C = memclk ; (1 pterm, 1 signal)
+
+m10q3.T = DIP7 & LED3.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m10q3.Q
+       & ab3 & !ab2 & ab1 & !ab0
+    # DIP7 & !LED3.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m10q3.Q
+       & ab3 & !ab2 & ab1 & !ab0
+    # !DIP3 & !DIP7 & m10q3.Q & ab3 & !ab2 & ab1 & !ab0
+    # DIP3 & !DIP7 & !m10q3.Q & ab3 & !ab2 & ab1 & !ab0 ; (4 pterms, 12 signals)
+m10q3.C = memclk ; (1 pterm, 1 signal)
+
+m10q4.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m10q4.Q & ab3
+       & !ab2 & ab1 & !ab0
+    # DIP4 & !DIP7 & !m10q4.Q & ab3 & !ab2 & ab1 & !ab0
+    # !DIP4 & !DIP7 & m10q4.Q & ab3 & !ab2 & ab1 & !ab0 ; (3 pterms, 11 signals)
+m10q4.C = memclk ; (1 pterm, 1 signal)
+
+m10q5.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m10q5.Q & ab3
+       & !ab2 & ab1 & !ab0
+    # DIP5 & !DIP7 & !m10q5.Q & ab3 & !ab2 & ab1 & !ab0
+    # !DIP5 & !DIP7 & m10q5.Q & ab3 & !ab2 & ab1 & !ab0 ; (3 pterms, 11 signals)
+m10q5.C = memclk ; (1 pterm, 1 signal)
+
+m10q6.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m10q6.Q & ab3
+       & !ab2 & ab1 & !ab0
+    # DIP6 & !DIP7 & !m10q6.Q & ab3 & !ab2 & ab1 & !ab0
+    # !DIP6 & !DIP7 & m10q6.Q & ab3 & !ab2 & ab1 & !ab0 ; (3 pterms, 11 signals)
+m10q6.C = memclk ; (1 pterm, 1 signal)
+
+m11q0.T = DIP7 & LED0.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m11q0.Q
+       & ab3 & !ab2 & ab1 & ab0
+    # DIP7 & !LED0.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m11q0.Q
+       & ab3 & !ab2 & ab1 & ab0
+    # !DIP0 & !DIP7 & m11q0.Q & ab3 & !ab2 & ab1 & ab0
+    # DIP0 & !DIP7 & !m11q0.Q & ab3 & !ab2 & ab1 & ab0 ; (4 pterms, 12 signals)
+m11q0.C = memclk ; (1 pterm, 1 signal)
+
+m11q1.T = DIP7 & LED1.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m11q1.Q
+       & ab3 & !ab2 & ab1 & ab0
+    # DIP7 & !LED1.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m11q1.Q
+       & ab3 & !ab2 & ab1 & ab0
+    # !DIP1 & !DIP7 & m11q1.Q & ab3 & !ab2 & ab1 & ab0
+    # DIP1 & !DIP7 & !m11q1.Q & ab3 & !ab2 & ab1 & ab0 ; (4 pterms, 12 signals)
+m11q1.C = memclk ; (1 pterm, 1 signal)
+
+m11q2.T = DIP7 & LED2.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m11q2.Q
+       & ab3 & !ab2 & ab1 & ab0
+    # DIP7 & !LED2.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m11q2.Q
+       & ab3 & !ab2 & ab1 & ab0
+    # !DIP2 & !DIP7 & m11q2.Q & ab3 & !ab2 & ab1 & ab0
+    # DIP2 & !DIP7 & !m11q2.Q & ab3 & !ab2 & ab1 & ab0 ; (4 pterms, 12 signals)
+m11q2.C = memclk ; (1 pterm, 1 signal)
+
+m11q3.T = DIP7 & LED3.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m11q3.Q
+       & ab3 & !ab2 & ab1 & ab0
+    # DIP7 & !LED3.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m11q3.Q
+       & ab3 & !ab2 & ab1 & ab0
+    # !DIP3 & !DIP7 & m11q3.Q & ab3 & !ab2 & ab1 & ab0
+    # DIP3 & !DIP7 & !m11q3.Q & ab3 & !ab2 & ab1 & ab0 ; (4 pterms, 12 signals)
+m11q3.C = memclk ; (1 pterm, 1 signal)
+
+m11q4.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m11q4.Q & ab3
+       & !ab2 & ab1 & ab0
+    # DIP4 & !DIP7 & !m11q4.Q & ab3 & !ab2 & ab1 & ab0
+    # !DIP4 & !DIP7 & m11q4.Q & ab3 & !ab2 & ab1 & ab0 ; (3 pterms, 11 signals)
+m11q4.C = memclk ; (1 pterm, 1 signal)
+
+m11q5.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m11q5.Q & ab3
+       & !ab2 & ab1 & ab0
+    # DIP5 & !DIP7 & !m11q5.Q & ab3 & !ab2 & ab1 & ab0
+    # !DIP5 & !DIP7 & m11q5.Q & ab3 & !ab2 & ab1 & ab0 ; (3 pterms, 11 signals)
+m11q5.C = memclk ; (1 pterm, 1 signal)
+
+m11q6.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m11q6.Q & ab3
+       & !ab2 & ab1 & ab0
+    # DIP6 & !DIP7 & !m11q6.Q & ab3 & !ab2 & ab1 & ab0
+    # !DIP6 & !DIP7 & m11q6.Q & ab3 & !ab2 & ab1 & ab0 ; (3 pterms, 11 signals)
+m11q6.C = memclk ; (1 pterm, 1 signal)
+
+m12q0.T = DIP7 & LED0.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m12q0.Q
+       & ab3 & ab2 & !ab1 & !ab0
+    # DIP7 & !LED0.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m12q0.Q
+       & ab3 & ab2 & !ab1 & !ab0
+    # !DIP0 & !DIP7 & m12q0.Q & ab3 & ab2 & !ab1 & !ab0
+    # DIP0 & !DIP7 & !m12q0.Q & ab3 & ab2 & !ab1 & !ab0 ; (4 pterms, 12 signals)
+m12q0.C = memclk ; (1 pterm, 1 signal)
+
+m12q1.T = DIP7 & LED1.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m12q1.Q
+       & ab3 & ab2 & !ab1 & !ab0
+    # DIP7 & !LED1.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m12q1.Q
+       & ab3 & ab2 & !ab1 & !ab0
+    # !DIP1 & !DIP7 & m12q1.Q & ab3 & ab2 & !ab1 & !ab0
+    # DIP1 & !DIP7 & !m12q1.Q & ab3 & ab2 & !ab1 & !ab0 ; (4 pterms, 12 signals)
+m12q1.C = memclk ; (1 pterm, 1 signal)
+
+m12q2.T = DIP7 & LED2.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m12q2.Q
+       & ab3 & ab2 & !ab1 & !ab0
+    # DIP7 & !LED2.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m12q2.Q
+       & ab3 & ab2 & !ab1 & !ab0
+    # !DIP2 & !DIP7 & m12q2.Q & ab3 & ab2 & !ab1 & !ab0
+    # DIP2 & !DIP7 & !m12q2.Q & ab3 & ab2 & !ab1 & !ab0 ; (4 pterms, 12 signals)
+m12q2.C = memclk ; (1 pterm, 1 signal)
+
+m12q3.T = DIP7 & LED3.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m12q3.Q
+       & ab3 & ab2 & !ab1 & !ab0
+    # DIP7 & !LED3.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m12q3.Q
+       & ab3 & ab2 & !ab1 & !ab0
+    # !DIP3 & !DIP7 & m12q3.Q & ab3 & ab2 & !ab1 & !ab0
+    # DIP3 & !DIP7 & !m12q3.Q & ab3 & ab2 & !ab1 & !ab0 ; (4 pterms, 12 signals)
+m12q3.C = memclk ; (1 pterm, 1 signal)
+
+m12q4.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m12q4.Q & ab3
+       & ab2 & !ab1 & !ab0
+    # DIP4 & !DIP7 & !m12q4.Q & ab3 & ab2 & !ab1 & !ab0
+    # !DIP4 & !DIP7 & m12q4.Q & ab3 & ab2 & !ab1 & !ab0 ; (3 pterms, 11 signals)
+m12q4.C = memclk ; (1 pterm, 1 signal)
+
+m12q5.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m12q5.Q & ab3
+       & ab2 & !ab1 & !ab0
+    # DIP5 & !DIP7 & !m12q5.Q & ab3 & ab2 & !ab1 & !ab0
+    # !DIP5 & !DIP7 & m12q5.Q & ab3 & ab2 & !ab1 & !ab0 ; (3 pterms, 11 signals)
+m12q5.C = memclk ; (1 pterm, 1 signal)
+
+m12q6.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m12q6.Q & ab3
+       & ab2 & !ab1 & !ab0
+    # DIP6 & !DIP7 & !m12q6.Q & ab3 & ab2 & !ab1 & !ab0
+    # !DIP6 & !DIP7 & m12q6.Q & ab3 & ab2 & !ab1 & !ab0 ; (3 pterms, 11 signals)
+m12q6.C = memclk ; (1 pterm, 1 signal)
+
+m13q0.T = DIP7 & LED0.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m13q0.Q
+       & ab3 & ab2 & !ab1 & ab0
+    # DIP7 & !LED0.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m13q0.Q
+       & ab3 & ab2 & !ab1 & ab0
+    # !DIP0 & !DIP7 & m13q0.Q & ab3 & ab2 & !ab1 & ab0
+    # DIP0 & !DIP7 & !m13q0.Q & ab3 & ab2 & !ab1 & ab0 ; (4 pterms, 12 signals)
+m13q0.C = memclk ; (1 pterm, 1 signal)
+
+m13q1.T = DIP7 & LED1.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m13q1.Q
+       & ab3 & ab2 & !ab1 & ab0
+    # DIP7 & !LED1.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m13q1.Q
+       & ab3 & ab2 & !ab1 & ab0
+    # !DIP1 & !DIP7 & m13q1.Q & ab3 & ab2 & !ab1 & ab0
+    # DIP1 & !DIP7 & !m13q1.Q & ab3 & ab2 & !ab1 & ab0 ; (4 pterms, 12 signals)
+m13q1.C = memclk ; (1 pterm, 1 signal)
+
+m13q2.T = DIP7 & LED2.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m13q2.Q
+       & ab3 & ab2 & !ab1 & ab0
+    # DIP7 & !LED2.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m13q2.Q
+       & ab3 & ab2 & !ab1 & ab0
+    # !DIP2 & !DIP7 & m13q2.Q & ab3 & ab2 & !ab1 & ab0
+    # DIP2 & !DIP7 & !m13q2.Q & ab3 & ab2 & !ab1 & ab0 ; (4 pterms, 12 signals)
+m13q2.C = memclk ; (1 pterm, 1 signal)
+
+m13q3.T = DIP7 & LED3.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m13q3.Q
+       & ab3 & ab2 & !ab1 & ab0
+    # DIP7 & !LED3.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m13q3.Q
+       & ab3 & ab2 & !ab1 & ab0
+    # !DIP3 & !DIP7 & m13q3.Q & ab3 & ab2 & !ab1 & ab0
+    # DIP3 & !DIP7 & !m13q3.Q & ab3 & ab2 & !ab1 & ab0 ; (4 pterms, 12 signals)
+m13q3.C = memclk ; (1 pterm, 1 signal)
+
+m13q4.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m13q4.Q & ab3
+       & ab2 & !ab1 & ab0
+    # DIP4 & !DIP7 & !m13q4.Q & ab3 & ab2 & !ab1 & ab0
+    # !DIP4 & !DIP7 & m13q4.Q & ab3 & ab2 & !ab1 & ab0 ; (3 pterms, 11 signals)
+m13q4.C = memclk ; (1 pterm, 1 signal)
+
+m13q5.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m13q5.Q & ab3
+       & ab2 & !ab1 & ab0
+    # DIP5 & !DIP7 & !m13q5.Q & ab3 & ab2 & !ab1 & ab0
+    # !DIP5 & !DIP7 & m13q5.Q & ab3 & ab2 & !ab1 & ab0 ; (3 pterms, 11 signals)
+m13q5.C = memclk ; (1 pterm, 1 signal)
+
+m13q6.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m13q6.Q & ab3
+       & ab2 & !ab1 & ab0
+    # DIP6 & !DIP7 & !m13q6.Q & ab3 & ab2 & !ab1 & ab0
+    # !DIP6 & !DIP7 & m13q6.Q & ab3 & ab2 & !ab1 & ab0 ; (3 pterms, 11 signals)
+m13q6.C = memclk ; (1 pterm, 1 signal)
+
+m14q0.T = DIP7 & LED0.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m14q0.Q
+       & ab3 & ab2 & ab1 & !ab0
+    # DIP7 & !LED0.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m14q0.Q
+       & ab3 & ab2 & ab1 & !ab0
+    # !DIP0 & !DIP7 & m14q0.Q & ab3 & ab2 & ab1 & !ab0
+    # DIP0 & !DIP7 & !m14q0.Q & ab3 & ab2 & ab1 & !ab0 ; (4 pterms, 12 signals)
+m14q0.C = memclk ; (1 pterm, 1 signal)
+
+m14q1.T = DIP7 & LED1.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m14q1.Q
+       & ab3 & ab2 & ab1 & !ab0
+    # DIP7 & !LED1.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m14q1.Q
+       & ab3 & ab2 & ab1 & !ab0
+    # !DIP1 & !DIP7 & m14q1.Q & ab3 & ab2 & ab1 & !ab0
+    # DIP1 & !DIP7 & !m14q1.Q & ab3 & ab2 & ab1 & !ab0 ; (4 pterms, 12 signals)
+m14q1.C = memclk ; (1 pterm, 1 signal)
+
+m14q2.T = DIP7 & LED2.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m14q2.Q
+       & ab3 & ab2 & ab1 & !ab0
+    # DIP7 & !LED2.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m14q2.Q
+       & ab3 & ab2 & ab1 & !ab0
+    # !DIP2 & !DIP7 & m14q2.Q & ab3 & ab2 & ab1 & !ab0
+    # DIP2 & !DIP7 & !m14q2.Q & ab3 & ab2 & ab1 & !ab0 ; (4 pterms, 12 signals)
+m14q2.C = memclk ; (1 pterm, 1 signal)
+
+m14q3.T = DIP7 & LED3.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m14q3.Q
+       & ab3 & ab2 & ab1 & !ab0
+    # DIP7 & !LED3.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m14q3.Q
+       & ab3 & ab2 & ab1 & !ab0
+    # !DIP3 & !DIP7 & m14q3.Q & ab3 & ab2 & ab1 & !ab0
+    # DIP3 & !DIP7 & !m14q3.Q & ab3 & ab2 & ab1 & !ab0 ; (4 pterms, 12 signals)
+m14q3.C = memclk ; (1 pterm, 1 signal)
+
+m14q4.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m14q4.Q & ab3
+       & ab2 & ab1 & !ab0
+    # DIP4 & !DIP7 & !m14q4.Q & ab3 & ab2 & ab1 & !ab0
+    # !DIP4 & !DIP7 & m14q4.Q & ab3 & ab2 & ab1 & !ab0 ; (3 pterms, 11 signals)
+m14q4.C = memclk ; (1 pterm, 1 signal)
+
+m14q5.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m14q5.Q & ab3
+       & ab2 & ab1 & !ab0
+    # DIP5 & !DIP7 & !m14q5.Q & ab3 & ab2 & ab1 & !ab0
+    # !DIP5 & !DIP7 & m14q5.Q & ab3 & ab2 & ab1 & !ab0 ; (3 pterms, 11 signals)
+m14q5.C = memclk ; (1 pterm, 1 signal)
+
+m14q6.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m14q6.Q & ab3
+       & ab2 & ab1 & !ab0
+    # DIP6 & !DIP7 & !m14q6.Q & ab3 & ab2 & ab1 & !ab0
+    # !DIP6 & !DIP7 & m14q6.Q & ab3 & ab2 & ab1 & !ab0 ; (3 pterms, 11 signals)
+m14q6.C = memclk ; (1 pterm, 1 signal)
+
+m1q0.T = DIP7 & LED0.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m1q0.Q
+       & !ab3 & !ab2 & !ab1 & ab0
+    # DIP7 & !LED0.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m1q0.Q
+       & !ab3 & !ab2 & !ab1 & ab0
+    # !DIP0 & !DIP7 & m1q0.Q & !ab3 & !ab2 & !ab1 & ab0
+    # DIP0 & !DIP7 & !m1q0.Q & !ab3 & !ab2 & !ab1 & ab0 ; (4 pterms, 12 signals)
+m1q0.C = memclk ; (1 pterm, 1 signal)
+
+m1q1.T = DIP7 & LED1.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m1q1.Q
+       & !ab3 & !ab2 & !ab1 & ab0
+    # DIP7 & !LED1.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m1q1.Q
+       & !ab3 & !ab2 & !ab1 & ab0
+    # !DIP1 & !DIP7 & m1q1.Q & !ab3 & !ab2 & !ab1 & ab0
+    # DIP1 & !DIP7 & !m1q1.Q & !ab3 & !ab2 & !ab1 & ab0 ; (4 pterms, 12 signals)
+m1q1.C = memclk ; (1 pterm, 1 signal)
+
+m1q2.T = DIP7 & LED2.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m1q2.Q
+       & !ab3 & !ab2 & !ab1 & ab0
+    # DIP7 & !LED2.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m1q2.Q
+       & !ab3 & !ab2 & !ab1 & ab0
+    # !DIP2 & !DIP7 & m1q2.Q & !ab3 & !ab2 & !ab1 & ab0
+    # DIP2 & !DIP7 & !m1q2.Q & !ab3 & !ab2 & !ab1 & ab0 ; (4 pterms, 12 signals)
+m1q2.C = memclk ; (1 pterm, 1 signal)
+
+m1q3.T = DIP7 & LED3.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m1q3.Q
+       & !ab3 & !ab2 & !ab1 & ab0
+    # DIP7 & !LED3.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m1q3.Q
+       & !ab3 & !ab2 & !ab1 & ab0
+    # !DIP3 & !DIP7 & m1q3.Q & !ab3 & !ab2 & !ab1 & ab0
+    # DIP3 & !DIP7 & !m1q3.Q & !ab3 & !ab2 & !ab1 & ab0 ; (4 pterms, 12 signals)
+m1q3.C = memclk ; (1 pterm, 1 signal)
+
+m1q4.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m1q4.Q & !ab3
+       & !ab2 & !ab1 & ab0
+    # DIP4 & !DIP7 & !m1q4.Q & !ab3 & !ab2 & !ab1 & ab0
+    # !DIP4 & !DIP7 & m1q4.Q & !ab3 & !ab2 & !ab1 & ab0 ; (3 pterms, 11 signals)
+m1q4.C = memclk ; (1 pterm, 1 signal)
+
+m1q5.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m1q5.Q & !ab3
+       & !ab2 & !ab1 & ab0
+    # DIP5 & !DIP7 & !m1q5.Q & !ab3 & !ab2 & !ab1 & ab0
+    # !DIP5 & !DIP7 & m1q5.Q & !ab3 & !ab2 & !ab1 & ab0 ; (3 pterms, 11 signals)
+m1q5.C = memclk ; (1 pterm, 1 signal)
+
+m1q6.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m1q6.Q & !ab3
+       & !ab2 & !ab1 & ab0
+    # DIP6 & !DIP7 & !m1q6.Q & !ab3 & !ab2 & !ab1 & ab0
+    # !DIP6 & !DIP7 & m1q6.Q & !ab3 & !ab2 & !ab1 & ab0 ; (3 pterms, 11 signals)
+m1q6.C = memclk ; (1 pterm, 1 signal)
+
+m2q0.T = DIP7 & LED0.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m2q0.Q
+       & !ab3 & !ab2 & ab1 & !ab0
+    # DIP7 & !LED0.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m2q0.Q
+       & !ab3 & !ab2 & ab1 & !ab0
+    # !DIP0 & !DIP7 & m2q0.Q & !ab3 & !ab2 & ab1 & !ab0
+    # DIP0 & !DIP7 & !m2q0.Q & !ab3 & !ab2 & ab1 & !ab0 ; (4 pterms, 12 signals)
+m2q0.C = memclk ; (1 pterm, 1 signal)
+
+m2q1.T = DIP7 & LED1.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m2q1.Q
+       & !ab3 & !ab2 & ab1 & !ab0
+    # DIP7 & !LED1.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m2q1.Q
+       & !ab3 & !ab2 & ab1 & !ab0
+    # !DIP1 & !DIP7 & m2q1.Q & !ab3 & !ab2 & ab1 & !ab0
+    # DIP1 & !DIP7 & !m2q1.Q & !ab3 & !ab2 & ab1 & !ab0 ; (4 pterms, 12 signals)
+m2q1.C = memclk ; (1 pterm, 1 signal)
+
+m2q2.T = DIP7 & LED2.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m2q2.Q
+       & !ab3 & !ab2 & ab1 & !ab0
+    # DIP7 & !LED2.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m2q2.Q
+       & !ab3 & !ab2 & ab1 & !ab0
+    # !DIP2 & !DIP7 & m2q2.Q & !ab3 & !ab2 & ab1 & !ab0
+    # DIP2 & !DIP7 & !m2q2.Q & !ab3 & !ab2 & ab1 & !ab0 ; (4 pterms, 12 signals)
+m2q2.C = memclk ; (1 pterm, 1 signal)
+
+m2q3.T = DIP7 & LED3.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m2q3.Q
+       & !ab3 & !ab2 & ab1 & !ab0
+    # DIP7 & !LED3.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m2q3.Q
+       & !ab3 & !ab2 & ab1 & !ab0
+    # !DIP3 & !DIP7 & m2q3.Q & !ab3 & !ab2 & ab1 & !ab0
+    # DIP3 & !DIP7 & !m2q3.Q & !ab3 & !ab2 & ab1 & !ab0 ; (4 pterms, 12 signals)
+m2q3.C = memclk ; (1 pterm, 1 signal)
+
+m2q4.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m2q4.Q & !ab3
+       & !ab2 & ab1 & !ab0
+    # DIP4 & !DIP7 & !m2q4.Q & !ab3 & !ab2 & ab1 & !ab0
+    # !DIP4 & !DIP7 & m2q4.Q & !ab3 & !ab2 & ab1 & !ab0 ; (3 pterms, 11 signals)
+m2q4.C = memclk ; (1 pterm, 1 signal)
+
+m2q5.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m2q5.Q & !ab3
+       & !ab2 & ab1 & !ab0
+    # DIP5 & !DIP7 & !m2q5.Q & !ab3 & !ab2 & ab1 & !ab0
+    # !DIP5 & !DIP7 & m2q5.Q & !ab3 & !ab2 & ab1 & !ab0 ; (3 pterms, 11 signals)
+m2q5.C = memclk ; (1 pterm, 1 signal)
+
+m2q6.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m2q6.Q & !ab3
+       & !ab2 & ab1 & !ab0
+    # DIP6 & !DIP7 & !m2q6.Q & !ab3 & !ab2 & ab1 & !ab0
+    # !DIP6 & !DIP7 & m2q6.Q & !ab3 & !ab2 & ab1 & !ab0 ; (3 pterms, 11 signals)
+m2q6.C = memclk ; (1 pterm, 1 signal)
+
+m3q0.T = DIP7 & LED0.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m3q0.Q
+       & !ab3 & !ab2 & ab1 & ab0
+    # DIP7 & !LED0.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m3q0.Q
+       & !ab3 & !ab2 & ab1 & ab0
+    # !DIP0 & !DIP7 & m3q0.Q & !ab3 & !ab2 & ab1 & ab0
+    # DIP0 & !DIP7 & !m3q0.Q & !ab3 & !ab2 & ab1 & ab0 ; (4 pterms, 12 signals)
+m3q0.C = memclk ; (1 pterm, 1 signal)
+
+m3q1.T = DIP7 & LED1.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m3q1.Q
+       & !ab3 & !ab2 & ab1 & ab0
+    # DIP7 & !LED1.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m3q1.Q
+       & !ab3 & !ab2 & ab1 & ab0
+    # !DIP1 & !DIP7 & m3q1.Q & !ab3 & !ab2 & ab1 & ab0
+    # DIP1 & !DIP7 & !m3q1.Q & !ab3 & !ab2 & ab1 & ab0 ; (4 pterms, 12 signals)
+m3q1.C = memclk ; (1 pterm, 1 signal)
+
+m3q2.T = DIP7 & LED2.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m3q2.Q
+       & !ab3 & !ab2 & ab1 & ab0
+    # DIP7 & !LED2.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m3q2.Q
+       & !ab3 & !ab2 & ab1 & ab0
+    # !DIP2 & !DIP7 & m3q2.Q & !ab3 & !ab2 & ab1 & ab0
+    # DIP2 & !DIP7 & !m3q2.Q & !ab3 & !ab2 & ab1 & ab0 ; (4 pterms, 12 signals)
+m3q2.C = memclk ; (1 pterm, 1 signal)
+
+m3q3.T = DIP7 & LED3.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m3q3.Q
+       & !ab3 & !ab2 & ab1 & ab0
+    # DIP7 & !LED3.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m3q3.Q
+       & !ab3 & !ab2 & ab1 & ab0
+    # !DIP3 & !DIP7 & m3q3.Q & !ab3 & !ab2 & ab1 & ab0
+    # DIP3 & !DIP7 & !m3q3.Q & !ab3 & !ab2 & ab1 & ab0 ; (4 pterms, 12 signals)
+m3q3.C = memclk ; (1 pterm, 1 signal)
+
+m3q4.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m3q4.Q & !ab3
+       & !ab2 & ab1 & ab0
+    # DIP4 & !DIP7 & !m3q4.Q & !ab3 & !ab2 & ab1 & ab0
+    # !DIP4 & !DIP7 & m3q4.Q & !ab3 & !ab2 & ab1 & ab0 ; (3 pterms, 11 signals)
+m3q4.C = memclk ; (1 pterm, 1 signal)
+
+m3q5.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m3q5.Q & !ab3
+       & !ab2 & ab1 & ab0
+    # DIP5 & !DIP7 & !m3q5.Q & !ab3 & !ab2 & ab1 & ab0
+    # !DIP5 & !DIP7 & m3q5.Q & !ab3 & !ab2 & ab1 & ab0 ; (3 pterms, 11 signals)
+m3q5.C = memclk ; (1 pterm, 1 signal)
+
+m3q6.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m3q6.Q & !ab3
+       & !ab2 & ab1 & ab0
+    # DIP6 & !DIP7 & !m3q6.Q & !ab3 & !ab2 & ab1 & ab0
+    # !DIP6 & !DIP7 & m3q6.Q & !ab3 & !ab2 & ab1 & ab0 ; (3 pterms, 11 signals)
+m3q6.C = memclk ; (1 pterm, 1 signal)
+
+m4q0.T = DIP7 & LED0.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m4q0.Q
+       & !ab3 & ab2 & !ab1 & !ab0
+    # DIP7 & !LED0.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m4q0.Q
+       & !ab3 & ab2 & !ab1 & !ab0
+    # !DIP0 & !DIP7 & m4q0.Q & !ab3 & ab2 & !ab1 & !ab0
+    # DIP0 & !DIP7 & !m4q0.Q & !ab3 & ab2 & !ab1 & !ab0 ; (4 pterms, 12 signals)
+m4q0.C = memclk ; (1 pterm, 1 signal)
+
+m4q1.T = DIP7 & LED1.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m4q1.Q
+       & !ab3 & ab2 & !ab1 & !ab0
+    # DIP7 & !LED1.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m4q1.Q
+       & !ab3 & ab2 & !ab1 & !ab0
+    # !DIP1 & !DIP7 & m4q1.Q & !ab3 & ab2 & !ab1 & !ab0
+    # DIP1 & !DIP7 & !m4q1.Q & !ab3 & ab2 & !ab1 & !ab0 ; (4 pterms, 12 signals)
+m4q1.C = memclk ; (1 pterm, 1 signal)
+
+m4q2.T = DIP7 & LED2.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m4q2.Q
+       & !ab3 & ab2 & !ab1 & !ab0
+    # DIP7 & !LED2.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m4q2.Q
+       & !ab3 & ab2 & !ab1 & !ab0
+    # !DIP2 & !DIP7 & m4q2.Q & !ab3 & ab2 & !ab1 & !ab0
+    # DIP2 & !DIP7 & !m4q2.Q & !ab3 & ab2 & !ab1 & !ab0 ; (4 pterms, 12 signals)
+m4q2.C = memclk ; (1 pterm, 1 signal)
+
+m4q3.T = DIP7 & LED3.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m4q3.Q
+       & !ab3 & ab2 & !ab1 & !ab0
+    # DIP7 & !LED3.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m4q3.Q
+       & !ab3 & ab2 & !ab1 & !ab0
+    # !DIP3 & !DIP7 & m4q3.Q & !ab3 & ab2 & !ab1 & !ab0
+    # DIP3 & !DIP7 & !m4q3.Q & !ab3 & ab2 & !ab1 & !ab0 ; (4 pterms, 12 signals)
+m4q3.C = memclk ; (1 pterm, 1 signal)
+
+m4q4.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m4q4.Q & !ab3 & ab2
+       & !ab1 & !ab0
+    # DIP4 & !DIP7 & !m4q4.Q & !ab3 & ab2 & !ab1 & !ab0
+    # !DIP4 & !DIP7 & m4q4.Q & !ab3 & ab2 & !ab1 & !ab0 ; (3 pterms, 11 signals)
+m4q4.C = memclk ; (1 pterm, 1 signal)
+
+m4q5.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m4q5.Q & !ab3 & ab2
+       & !ab1 & !ab0
+    # DIP5 & !DIP7 & !m4q5.Q & !ab3 & ab2 & !ab1 & !ab0
+    # !DIP5 & !DIP7 & m4q5.Q & !ab3 & ab2 & !ab1 & !ab0 ; (3 pterms, 11 signals)
+m4q5.C = memclk ; (1 pterm, 1 signal)
+
+m4q6.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m4q6.Q & !ab3 & ab2
+       & !ab1 & !ab0
+    # DIP6 & !DIP7 & !m4q6.Q & !ab3 & ab2 & !ab1 & !ab0
+    # !DIP6 & !DIP7 & m4q6.Q & !ab3 & ab2 & !ab1 & !ab0 ; (3 pterms, 11 signals)
+m4q6.C = memclk ; (1 pterm, 1 signal)
+
+m5q0.T = DIP7 & LED0.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m5q0.Q
+       & !ab3 & ab2 & !ab1 & ab0
+    # DIP7 & !LED0.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m5q0.Q
+       & !ab3 & ab2 & !ab1 & ab0
+    # !DIP0 & !DIP7 & m5q0.Q & !ab3 & ab2 & !ab1 & ab0
+    # DIP0 & !DIP7 & !m5q0.Q & !ab3 & ab2 & !ab1 & ab0 ; (4 pterms, 12 signals)
+m5q0.C = memclk ; (1 pterm, 1 signal)
+
+m5q1.T = DIP7 & LED1.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m5q1.Q
+       & !ab3 & ab2 & !ab1 & ab0
+    # DIP7 & !LED1.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m5q1.Q
+       & !ab3 & ab2 & !ab1 & ab0
+    # !DIP1 & !DIP7 & m5q1.Q & !ab3 & ab2 & !ab1 & ab0
+    # DIP1 & !DIP7 & !m5q1.Q & !ab3 & ab2 & !ab1 & ab0 ; (4 pterms, 12 signals)
+m5q1.C = memclk ; (1 pterm, 1 signal)
+
+m5q2.T = DIP7 & LED2.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m5q2.Q
+       & !ab3 & ab2 & !ab1 & ab0
+    # DIP7 & !LED2.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m5q2.Q
+       & !ab3 & ab2 & !ab1 & ab0
+    # !DIP2 & !DIP7 & m5q2.Q & !ab3 & ab2 & !ab1 & ab0
+    # DIP2 & !DIP7 & !m5q2.Q & !ab3 & ab2 & !ab1 & ab0 ; (4 pterms, 12 signals)
+m5q2.C = memclk ; (1 pterm, 1 signal)
+
+m5q3.T = DIP7 & LED3.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m5q3.Q
+       & !ab3 & ab2 & !ab1 & ab0
+    # DIP7 & !LED3.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m5q3.Q
+       & !ab3 & ab2 & !ab1 & ab0
+    # !DIP3 & !DIP7 & m5q3.Q & !ab3 & ab2 & !ab1 & ab0
+    # DIP3 & !DIP7 & !m5q3.Q & !ab3 & ab2 & !ab1 & ab0 ; (4 pterms, 12 signals)
+m5q3.C = memclk ; (1 pterm, 1 signal)
+
+m5q4.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m5q4.Q & !ab3 & ab2
+       & !ab1 & ab0
+    # DIP4 & !DIP7 & !m5q4.Q & !ab3 & ab2 & !ab1 & ab0
+    # !DIP4 & !DIP7 & m5q4.Q & !ab3 & ab2 & !ab1 & ab0 ; (3 pterms, 11 signals)
+m5q4.C = memclk ; (1 pterm, 1 signal)
+
+m5q5.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m5q5.Q & !ab3 & ab2
+       & !ab1 & ab0
+    # DIP5 & !DIP7 & !m5q5.Q & !ab3 & ab2 & !ab1 & ab0
+    # !DIP5 & !DIP7 & m5q5.Q & !ab3 & ab2 & !ab1 & ab0 ; (3 pterms, 11 signals)
+m5q5.C = memclk ; (1 pterm, 1 signal)
+
+m5q6.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m5q6.Q & !ab3 & ab2
+       & !ab1 & ab0
+    # DIP6 & !DIP7 & !m5q6.Q & !ab3 & ab2 & !ab1 & ab0
+    # !DIP6 & !DIP7 & m5q6.Q & !ab3 & ab2 & !ab1 & ab0 ; (3 pterms, 11 signals)
+m5q6.C = memclk ; (1 pterm, 1 signal)
+
+m6q0.T = DIP7 & LED0.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m6q0.Q
+       & !ab3 & ab2 & ab1 & !ab0
+    # DIP7 & !LED0.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m6q0.Q
+       & !ab3 & ab2 & ab1 & !ab0
+    # !DIP0 & !DIP7 & m6q0.Q & !ab3 & ab2 & ab1 & !ab0
+    # DIP0 & !DIP7 & !m6q0.Q & !ab3 & ab2 & ab1 & !ab0 ; (4 pterms, 12 signals)
+m6q0.C = memclk ; (1 pterm, 1 signal)
+
+m6q1.T = DIP7 & LED1.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m6q1.Q
+       & !ab3 & ab2 & ab1 & !ab0
+    # DIP7 & !LED1.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m6q1.Q
+       & !ab3 & ab2 & ab1 & !ab0
+    # !DIP1 & !DIP7 & m6q1.Q & !ab3 & ab2 & ab1 & !ab0
+    # DIP1 & !DIP7 & !m6q1.Q & !ab3 & ab2 & ab1 & !ab0 ; (4 pterms, 12 signals)
+m6q1.C = memclk ; (1 pterm, 1 signal)
+
+m6q2.T = DIP7 & LED2.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m6q2.Q
+       & !ab3 & ab2 & ab1 & !ab0
+    # DIP7 & !LED2.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m6q2.Q
+       & !ab3 & ab2 & ab1 & !ab0
+    # !DIP2 & !DIP7 & m6q2.Q & !ab3 & ab2 & ab1 & !ab0
+    # DIP2 & !DIP7 & !m6q2.Q & !ab3 & ab2 & ab1 & !ab0 ; (4 pterms, 12 signals)
+m6q2.C = memclk ; (1 pterm, 1 signal)
+
+m6q3.T = DIP7 & LED3.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m6q3.Q
+       & !ab3 & ab2 & ab1 & !ab0
+    # DIP7 & !LED3.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m6q3.Q
+       & !ab3 & ab2 & ab1 & !ab0
+    # !DIP3 & !DIP7 & m6q3.Q & !ab3 & ab2 & ab1 & !ab0
+    # DIP3 & !DIP7 & !m6q3.Q & !ab3 & ab2 & ab1 & !ab0 ; (4 pterms, 12 signals)
+m6q3.C = memclk ; (1 pterm, 1 signal)
+
+m6q4.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m6q4.Q & !ab3 & ab2
+       & ab1 & !ab0
+    # DIP4 & !DIP7 & !m6q4.Q & !ab3 & ab2 & ab1 & !ab0
+    # !DIP4 & !DIP7 & m6q4.Q & !ab3 & ab2 & ab1 & !ab0 ; (3 pterms, 11 signals)
+m6q4.C = memclk ; (1 pterm, 1 signal)
+
+m6q5.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m6q5.Q & !ab3 & ab2
+       & ab1 & !ab0
+    # DIP5 & !DIP7 & !m6q5.Q & !ab3 & ab2 & ab1 & !ab0
+    # !DIP5 & !DIP7 & m6q5.Q & !ab3 & ab2 & ab1 & !ab0 ; (3 pterms, 11 signals)
+m6q5.C = memclk ; (1 pterm, 1 signal)
+
+m6q6.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m6q6.Q & !ab3 & ab2
+       & ab1 & !ab0
+    # DIP6 & !DIP7 & !m6q6.Q & !ab3 & ab2 & ab1 & !ab0
+    # !DIP6 & !DIP7 & m6q6.Q & !ab3 & ab2 & ab1 & !ab0 ; (3 pterms, 11 signals)
+m6q6.C = memclk ; (1 pterm, 1 signal)
+
+m7q0.T = DIP7 & LED0.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m7q0.Q
+       & !ab3 & ab2 & ab1 & ab0
+    # DIP7 & !LED0.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m7q0.Q
+       & !ab3 & ab2 & ab1 & ab0
+    # !DIP0 & !DIP7 & m7q0.Q & !ab3 & ab2 & ab1 & ab0
+    # DIP0 & !DIP7 & !m7q0.Q & !ab3 & ab2 & ab1 & ab0 ; (4 pterms, 12 signals)
+m7q0.C = memclk ; (1 pterm, 1 signal)
+
+m7q1.T = DIP7 & LED1.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m7q1.Q
+       & !ab3 & ab2 & ab1 & ab0
+    # DIP7 & !LED1.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m7q1.Q
+       & !ab3 & ab2 & ab1 & ab0
+    # !DIP1 & !DIP7 & m7q1.Q & !ab3 & ab2 & ab1 & ab0
+    # DIP1 & !DIP7 & !m7q1.Q & !ab3 & ab2 & ab1 & ab0 ; (4 pterms, 12 signals)
+m7q1.C = memclk ; (1 pterm, 1 signal)
+
+m7q2.T = DIP7 & LED2.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m7q2.Q
+       & !ab3 & ab2 & ab1 & ab0
+    # DIP7 & !LED2.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m7q2.Q
+       & !ab3 & ab2 & ab1 & ab0
+    # !DIP2 & !DIP7 & m7q2.Q & !ab3 & ab2 & ab1 & ab0
+    # DIP2 & !DIP7 & !m7q2.Q & !ab3 & ab2 & ab1 & ab0 ; (4 pterms, 12 signals)
+m7q2.C = memclk ; (1 pterm, 1 signal)
+
+m7q3.T = DIP7 & LED3.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m7q3.Q
+       & !ab3 & ab2 & ab1 & ab0
+    # DIP7 & !LED3.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m7q3.Q
+       & !ab3 & ab2 & ab1 & ab0
+    # !DIP3 & !DIP7 & m7q3.Q & !ab3 & ab2 & ab1 & ab0
+    # DIP3 & !DIP7 & !m7q3.Q & !ab3 & ab2 & ab1 & ab0 ; (4 pterms, 12 signals)
+m7q3.C = memclk ; (1 pterm, 1 signal)
+
+m7q4.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m7q4.Q & !ab3 & ab2
+       & ab1 & ab0
+    # DIP4 & !DIP7 & !m7q4.Q & !ab3 & ab2 & ab1 & ab0
+    # !DIP4 & !DIP7 & m7q4.Q & !ab3 & ab2 & ab1 & ab0 ; (3 pterms, 11 signals)
+m7q4.C = memclk ; (1 pterm, 1 signal)
+
+m7q5.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m7q5.Q & !ab3 & ab2
+       & ab1 & ab0
+    # DIP5 & !DIP7 & !m7q5.Q & !ab3 & ab2 & ab1 & ab0
+    # !DIP5 & !DIP7 & m7q5.Q & !ab3 & ab2 & ab1 & ab0 ; (3 pterms, 11 signals)
+m7q5.C = memclk ; (1 pterm, 1 signal)
+
+m7q6.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m7q6.Q & !ab3 & ab2
+       & ab1 & ab0
+    # DIP6 & !DIP7 & !m7q6.Q & !ab3 & ab2 & ab1 & ab0
+    # !DIP6 & !DIP7 & m7q6.Q & !ab3 & ab2 & ab1 & ab0 ; (3 pterms, 11 signals)
+m7q6.C = memclk ; (1 pterm, 1 signal)
+
+m8q0.T = DIP7 & LED0.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m8q0.Q
+       & ab3 & !ab2 & !ab1 & !ab0
+    # DIP7 & !LED0.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m8q0.Q
+       & ab3 & !ab2 & !ab1 & !ab0
+    # !DIP0 & !DIP7 & m8q0.Q & ab3 & !ab2 & !ab1 & !ab0
+    # DIP0 & !DIP7 & !m8q0.Q & ab3 & !ab2 & !ab1 & !ab0 ; (4 pterms, 12 signals)
+m8q0.C = memclk ; (1 pterm, 1 signal)
+
+m8q1.T = DIP7 & LED1.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m8q1.Q
+       & ab3 & !ab2 & !ab1 & !ab0
+    # DIP7 & !LED1.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m8q1.Q
+       & ab3 & !ab2 & !ab1 & !ab0
+    # !DIP1 & !DIP7 & m8q1.Q & ab3 & !ab2 & !ab1 & !ab0
+    # DIP1 & !DIP7 & !m8q1.Q & ab3 & !ab2 & !ab1 & !ab0 ; (4 pterms, 12 signals)
+m8q1.C = memclk ; (1 pterm, 1 signal)
+
+m8q2.T = DIP7 & LED2.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m8q2.Q
+       & ab3 & !ab2 & !ab1 & !ab0
+    # DIP7 & !LED2.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m8q2.Q
+       & ab3 & !ab2 & !ab1 & !ab0
+    # !DIP2 & !DIP7 & m8q2.Q & ab3 & !ab2 & !ab1 & !ab0
+    # DIP2 & !DIP7 & !m8q2.Q & ab3 & !ab2 & !ab1 & !ab0 ; (4 pterms, 12 signals)
+m8q2.C = memclk ; (1 pterm, 1 signal)
+
+m8q3.T = DIP7 & LED3.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m8q3.Q
+       & ab3 & !ab2 & !ab1 & !ab0
+    # DIP7 & !LED3.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m8q3.Q
+       & ab3 & !ab2 & !ab1 & !ab0
+    # !DIP3 & !DIP7 & m8q3.Q & ab3 & !ab2 & !ab1 & !ab0
+    # DIP3 & !DIP7 & !m8q3.Q & ab3 & !ab2 & !ab1 & !ab0 ; (4 pterms, 12 signals)
+m8q3.C = memclk ; (1 pterm, 1 signal)
+
+m8q4.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m8q4.Q & ab3 & !ab2
+       & !ab1 & !ab0
+    # DIP4 & !DIP7 & !m8q4.Q & ab3 & !ab2 & !ab1 & !ab0
+    # !DIP4 & !DIP7 & m8q4.Q & ab3 & !ab2 & !ab1 & !ab0 ; (3 pterms, 11 signals)
+m8q4.C = memclk ; (1 pterm, 1 signal)
+
+m8q5.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m8q5.Q & ab3 & !ab2
+       & !ab1 & !ab0
+    # DIP5 & !DIP7 & !m8q5.Q & ab3 & !ab2 & !ab1 & !ab0
+    # !DIP5 & !DIP7 & m8q5.Q & ab3 & !ab2 & !ab1 & !ab0 ; (3 pterms, 11 signals)
+m8q5.C = memclk ; (1 pterm, 1 signal)
+
+m8q6.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m8q6.Q & ab3 & !ab2
+       & !ab1 & !ab0
+    # DIP6 & !DIP7 & !m8q6.Q & ab3 & !ab2 & !ab1 & !ab0
+    # !DIP6 & !DIP7 & m8q6.Q & ab3 & !ab2 & !ab1 & !ab0 ; (3 pterms, 11 signals)
+m8q6.C = memclk ; (1 pterm, 1 signal)
+
+m9q0.T = DIP7 & LED0.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m9q0.Q
+       & ab3 & !ab2 & !ab1 & ab0
+    # DIP7 & !LED0.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m9q0.Q
+       & ab3 & !ab2 & !ab1 & ab0
+    # !DIP0 & !DIP7 & m9q0.Q & ab3 & !ab2 & !ab1 & ab0
+    # DIP0 & !DIP7 & !m9q0.Q & ab3 & !ab2 & !ab1 & ab0 ; (4 pterms, 12 signals)
+m9q0.C = memclk ; (1 pterm, 1 signal)
+
+m9q1.T = DIP7 & LED1.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m9q1.Q
+       & ab3 & !ab2 & !ab1 & ab0
+    # DIP7 & !LED1.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m9q1.Q
+       & ab3 & !ab2 & !ab1 & ab0
+    # !DIP1 & !DIP7 & m9q1.Q & ab3 & !ab2 & !ab1 & ab0
+    # DIP1 & !DIP7 & !m9q1.Q & ab3 & !ab2 & !ab1 & ab0 ; (4 pterms, 12 signals)
+m9q1.C = memclk ; (1 pterm, 1 signal)
+
+m9q2.T = DIP7 & LED2.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m9q2.Q
+       & ab3 & !ab2 & !ab1 & ab0
+    # DIP7 & !LED2.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m9q2.Q
+       & ab3 & !ab2 & !ab1 & ab0
+    # !DIP2 & !DIP7 & m9q2.Q & ab3 & !ab2 & !ab1 & ab0
+    # DIP2 & !DIP7 & !m9q2.Q & ab3 & !ab2 & !ab1 & ab0 ; (4 pterms, 12 signals)
+m9q2.C = memclk ; (1 pterm, 1 signal)
+
+m9q3.T = DIP7 & LED3.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m9q3.Q
+       & ab3 & !ab2 & !ab1 & ab0
+    # DIP7 & !LED3.Q & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & !m9q3.Q
+       & ab3 & !ab2 & !ab1 & ab0
+    # !DIP3 & !DIP7 & m9q3.Q & ab3 & !ab2 & !ab1 & ab0
+    # DIP3 & !DIP7 & !m9q3.Q & ab3 & !ab2 & !ab1 & ab0 ; (4 pterms, 12 signals)
+m9q3.C = memclk ; (1 pterm, 1 signal)
+
+m9q4.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m9q4.Q & ab3 & !ab2
+       & !ab1 & ab0
+    # DIP4 & !DIP7 & !m9q4.Q & ab3 & !ab2 & !ab1 & ab0
+    # !DIP4 & !DIP7 & m9q4.Q & ab3 & !ab2 & !ab1 & ab0 ; (3 pterms, 11 signals)
+m9q4.C = memclk ; (1 pterm, 1 signal)
+
+m9q5.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m9q5.Q & ab3 & !ab2
+       & !ab1 & ab0
+    # DIP5 & !DIP7 & !m9q5.Q & ab3 & !ab2 & !ab1 & ab0
+    # !DIP5 & !DIP7 & m9q5.Q & ab3 & !ab2 & !ab1 & ab0 ; (3 pterms, 11 signals)
+m9q5.C = memclk ; (1 pterm, 1 signal)
+
+m9q6.T = DIP7 & !LED12.Q & LED13.Q & !LED14.Q & !LED15.Q & m9q6.Q & ab3 & !ab2
+       & !ab1 & ab0
+    # DIP6 & !DIP7 & !m9q6.Q & ab3 & !ab2 & !ab1 & ab0
+    # !DIP6 & !DIP7 & m9q6.Q & ab3 & !ab2 & !ab1 & ab0 ; (3 pterms, 11 signals)
+m9q6.C = memclk ; (1 pterm, 1 signal)
+
+mar0.D = !DIP7 & !mar0.Q
+    # DIP7 & mar0.Q ; (2 pterms, 2 signals)
+mar0.C = !DIP7 & S1BC.Q ; (1 pterm, 2 signals)
+
+mar1.D = !DIP7 & !mar2.Q & !mar1.Q & mar0.Q
+    # !DIP7 & !mar3.Q & !mar1.Q & mar0.Q
+    # DIP7 & mar1.Q
+    # mar1.Q & !mar0.Q ; (4 pterms, 5 signals)
+mar1.C = !DIP7 & S1BC.Q ; (1 pterm, 2 signals)
+
+mar2.D = !DIP7 & !mar2.Q & mar1.Q & mar0.Q
+    # !mar3.Q & mar2.Q & !mar1.Q
+    # DIP7 & mar2.Q
+    # mar2.Q & !mar0.Q ; (4 pterms, 5 signals)
+mar2.C = !DIP7 & S1BC.Q ; (1 pterm, 2 signals)
+
+mar3.D = !DIP7 & !mar3.Q & mar2.Q & mar1.Q & mar0.Q
+    # mar3.Q & !mar2.Q
+    # DIP7 & mar3.Q
+    # mar3.Q & !mar0.Q ; (4 pterms, 5 signals)
+mar3.C = !DIP7 & S1BC.Q ; (1 pterm, 2 signals)
+
+memclk = !DIP7 & S2BC.Q
+    # DIP7 & S1BC.Q ; (2 pterms, 3 signals)
+
+pc0.D = LED15.Q & !pc0.Q
+    # !LED15.Q & pc0.Q ; (2 pterms, 2 signals)
+pc0.C = DIP7 & LED16.Q & S1BC.Q ; (1 pterm, 3 signals)
+pc0.AR = DIP7 & S2BC.Q ; (1 pterm, 2 signals)
+
+pc1.D = LED15.Q & !pc1.Q & pc0.Q
+    # !LED15.Q & pc1.Q
+    # pc1.Q & !pc0.Q ; (3 pterms, 3 signals)
+pc1.C = DIP7 & LED16.Q & S1BC.Q ; (1 pterm, 3 signals)
+pc1.AR = DIP7 & S2BC.Q ; (1 pterm, 2 signals)
+
+pc2.D = LED15.Q & !pc2.Q & pc1.Q & pc0.Q
+    # pc2.Q & !pc1.Q
+    # !LED15.Q & pc2.Q
+    # pc2.Q & !pc0.Q ; (4 pterms, 4 signals)
+pc2.C = DIP7 & LED16.Q & S1BC.Q ; (1 pterm, 3 signals)
+pc2.AR = DIP7 & S2BC.Q ; (1 pterm, 2 signals)
+
+pc3.D.X1 = pc3.Q ; (1 pterm, 1 signal)
+pc3.D.X2 = LED15.Q & pc2.Q & pc1.Q & pc0.Q ; (1 pterm, 4 signals)
+pc3.C = DIP7 & LED16.Q & S1BC.Q ; (1 pterm, 3 signals)
+pc3.AR = DIP7 & S2BC.Q ; (1 pterm, 2 signals)
+
+
+
+

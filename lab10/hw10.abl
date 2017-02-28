@@ -1,0 +1,15 @@
+MODULE hw10
+
+TITLE 'hw10'
+
+DECLARATIONS
+Q1..10 PIN istype 'reg';
+L2..L0 PIN istype 'com';
+R2..R0 PIN istype 'com';
+LEFT, RIGHT, EMERG pin;
+clock pin;
+
+
+
+END
+

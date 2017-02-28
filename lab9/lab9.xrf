@@ -1,0 +1,17 @@
+Signal Name Cross Reference File
+
+ispLEVER Classic 1.7.00.05.28.13
+
+Design 'lab9' created Thu Mar 24 16:26:48 2016
+
+Title:  isp4256ZE Development Board I/O Configuration
+
+ LEGEND:  '>'  Functional Block Port Separator
+          '/'  Hierarchy Path Separator
+          '@'  Automatically Generated Node
+
+
+Short Name                              Hierarchical Name
+----------                              -----------------
+
+ *** Shortened names not required for this design. ***

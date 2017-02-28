@@ -1,0 +1,743 @@
+#$ TOOL ispLEVER Classic 1.7.00.05.28.13
+#$ DATE Thu Apr 07 15:34:24 2016
+#$ TITLE isp4256ZE Development Board I/O Configuration
+#$ PROPERTY Lattice OSCTIMER TIMER_DIV= 1048576;
+#$ MODULE isp4256zeio
+#$ JEDECFILE isp4256zeio
+#$ PINS 96 DIP0:79 DIP1:78 DIP2:77 DIP3:76 DIP4:23 DIP5:24 DIP6:25 DIP7:26 S1_NC:58 \
+#  S1_NO:59 S2_NC:60 S2_NO:61 LED0:40 LED1:39 LED2:33 LED3:32 LED4:31 LED5:30 LED6:29 \
+#  LED7:28 LED8:139 LED9:138 LED10:135 LED11:134 LED12:133 LED13:132 LED14:131 LED15:130 \
+#  DIS1a:87 DIS1b:86 DIS1c:85 DIS1d:84 DIS1e:83 DIS1f:81 DIS1g:80 DIS2a:98 DIS2b:97 \
+#  DIS2c:96 DIS2d:95 DIS2e:94 DIS2f:93 DIS2g:88 DIS3a:125 DIS3b:124 DIS3c:123 DIS3d:122 \
+#  DIS3e:121 DIS3f:120 DIS3g:116 DIS4a:44 DIS4b:48 DIS4c:49 DIS4d:50 DIS4e:51 DIS4f:52 \
+#  DIS4g:53 LED16:140 LED17:141 LED18:142 LED19:143 LED20:100 LED21:101 LED22:102 \
+#  LED23:103 LED24:104 LED25:105 LED26:111 LED27:112 LED28:63 LED29:62 X0 X1 X2 X3 X4 X5 X6 X7 \
+#  Y0 Y1 Y2 Y3 Y4 Y5 Y6 Y7 S1 Q3 Q2 Q1 Q0 P3 P2 P1 P0 L16
+#$ NODES 43 osc_dis osc_rst osc_out tmr_out timediv+ timediv2+ dd0 dd1 dd2 dd3 dd4 dd5 dd6 \
+#  dd7 dd8 dd9 dd10 dd11 dd12 dd13 dd14 dd15 dd16 dd17 dd18 dd19 dd20 dd21 dd22 dd23 dd24 dd25 dd26 \
+#  dd27 I E O A S I1>DYNOSCDIS'co'  I1>TIMERRES'co'  I1>OSCOUT'co'  I1>TIMEROUT'co' 
+#$ EXTERNAL osctimer  4 DYNOSCDIS'i'  TIMERRES'i'  OSCOUT'o'  TIMEROUT'o' 
+#$ INSTANCE I1 osctimer 4 I1>DYNOSCDIS I1>TIMERRES I1>OSCOUT I1>TIMEROUT
+.model isp4256zeio
+.inputs I1>OSCOUT.BLIF I1>TIMEROUT.BLIF osc_dis.BLIF osc_rst.BLIF X6.BLIF \
+X5.BLIF X4.BLIF X3.BLIF X2.BLIF X1.BLIF X0.BLIF DIP7.BLIF timediv2.BLIF \
+DIP0.BLIF X7.BLIF DIP1.BLIF tmr_out.BLIF timediv.BLIF Y6.BLIF Y5.BLIF Y4.BLIF \
+Y3.BLIF Y2.BLIF Y1.BLIF Y0.BLIF S1.BLIF Y7.BLIF S1_NO.BLIF S1_NC.BLIF \
+S2_NO.BLIF DIP2.BLIF O.BLIF Q3.FB Q2.FB Q1.FB Q0.FB S.BLIF P3.FB P2.FB P1.FB \
+P0.FB I.BLIF E.BLIF A.BLIF P0.BLIF P1.BLIF P2.BLIF P3.BLIF Q3.BLIF Q2.BLIF \
+Q1.BLIF Q0.BLIF L16.BLIF dd14.BLIF dd15.BLIF dd16.BLIF dd17.BLIF dd18.BLIF \
+dd19.BLIF dd20.BLIF dd7.BLIF dd8.BLIF dd9.BLIF dd10.BLIF dd11.BLIF dd12.BLIF \
+dd13.BLIF dd0.BLIF dd1.BLIF dd2.BLIF dd3.BLIF dd4.BLIF dd5.BLIF dd6.BLIF \
+dd21.BLIF dd22.BLIF dd23.BLIF dd24.BLIF dd25.BLIF dd26.BLIF dd27.BLIF
+.outputs osc_dis osc_rst osc_out tmr_out LED0 LED1 LED2 LED3 LED4 LED5 LED6 \
+LED7 LED8 LED9 LED10 LED11 LED12 LED13 LED14 LED15 DIS1a DIS1b DIS1c DIS1d \
+DIS1e DIS1f DIS1g DIS2a DIS2b DIS2c DIS2d DIS2e DIS2f DIS2g DIS3a DIS3b DIS3c \
+DIS3d DIS3e DIS3f DIS3g DIS4a DIS4b DIS4c DIS4d DIS4e DIS4f DIS4g LED16 LED17 \
+LED18 I E O A S I1>DYNOSCDIS I1>TIMERRES X7.REG X6.REG X5.REG X4.REG X3.REG \
+X2.REG X1.REG X0.REG X0.AR X1.AR X2.AR X3.AR X4.AR X5.AR X6.AR X7.AR X0.C X1.C \
+X2.C X3.C X4.C X5.C X6.C X7.C X0.CE X1.CE X2.CE X3.CE X4.CE X5.CE X6.CE X7.CE \
+timediv.C timediv.D timediv2.C timediv2.D Y7.REG Y6.REG Y5.REG Y4.REG Y3.REG \
+Y2.REG Y1.REG Y0.REG Y0.C Y1.C Y2.C Y3.C Y4.C Y5.C Y6.C Y7.C Y1.AR Y2.AR Y3.AR \
+Y4.AR Y5.AR Y6.AR Y7.AR Y0.AP S1.D S1.C S1.AP S1.AR Q3.C Q2.C Q1.C Q0.C Q0.AR \
+Q1.AR Q2.AR Q3.AR P3.C P2.C P1.C P0.C Q0.REG Q1.REG Q2.REG Q3.REG P0.REG \
+P1.REG P2.REG P3.REG L16.REG L16.C Y0.CE Y1.CE Y2.CE Y3.CE Y4.CE Y5.CE Y6.CE \
+Y7.CE dd21.REG dd22.REG dd23.REG dd24.REG dd25.REG dd26.REG dd27.REG dd14.REG \
+dd15.REG dd16.REG dd17.REG dd18.REG dd19.REG dd20.REG dd7.REG dd8.REG dd9.REG \
+dd10.REG dd11.REG dd12.REG dd13.REG dd21.C dd22.C dd23.C dd24.C dd25.C dd26.C \
+dd27.C dd14.C dd15.C dd16.C dd17.C dd18.C dd19.C dd20.C dd7.C dd8.C dd9.C \
+dd10.C dd11.C dd12.C dd13.C dd0 dd1 dd2 dd3 dd4 dd5 dd6
+.names osc_dis
+.names osc_rst
+.names X0.BLIF DIP1.BLIF LED0
+0- 1
+-0 1
+.names X1.BLIF DIP1.BLIF LED1
+0- 1
+-0 1
+.names X2.BLIF DIP1.BLIF LED2
+0- 1
+-0 1
+.names X3.BLIF DIP1.BLIF LED3
+0- 1
+-0 1
+.names X4.BLIF DIP1.BLIF LED4
+0- 1
+-0 1
+.names X5.BLIF DIP1.BLIF LED5
+0- 1
+-0 1
+.names X6.BLIF DIP1.BLIF LED6
+0- 1
+-0 1
+.names X7.BLIF DIP1.BLIF LED7
+0- 1
+-0 1
+.names Y0.BLIF LED8
+0 1
+.names Y1.BLIF LED9
+0 1
+.names Y2.BLIF LED10
+0 1
+.names Y3.BLIF LED11
+0 1
+.names Y4.BLIF LED12
+0 1
+.names Y5.BLIF LED13
+0 1
+.names Y6.BLIF LED14
+0 1
+.names Y7.BLIF LED15
+0 1
+.names dd0.BLIF DIS1a
+0 1
+.names dd1.BLIF DIS1b
+0 1
+.names dd2.BLIF DIS1c
+0 1
+.names dd3.BLIF DIS1d
+0 1
+.names dd4.BLIF DIS1e
+0 1
+.names dd5.BLIF DIS1f
+0 1
+.names dd6.BLIF DIS1g
+0 1
+.names dd7.BLIF DIS2a
+0 1
+.names dd8.BLIF DIS2b
+0 1
+.names dd9.BLIF DIS2c
+0 1
+.names dd10.BLIF DIS2d
+0 1
+.names dd11.BLIF DIS2e
+0 1
+.names dd12.BLIF DIS2f
+0 1
+.names dd13.BLIF DIS2g
+0 1
+.names dd14.BLIF DIS3a
+0 1
+.names dd15.BLIF DIS3b
+0 1
+.names dd16.BLIF DIS3c
+0 1
+.names dd17.BLIF DIS3d
+0 1
+.names dd18.BLIF DIS3e
+0 1
+.names dd19.BLIF DIS3f
+0 1
+.names dd20.BLIF DIS3g
+0 1
+.names dd21.BLIF DIS4a
+0 1
+.names dd22.BLIF DIS4b
+0 1
+.names dd23.BLIF DIS4c
+0 1
+.names dd24.BLIF DIS4d
+0 1
+.names dd25.BLIF DIS4e
+0 1
+.names dd26.BLIF DIS4f
+0 1
+.names dd27.BLIF DIS4g
+0 1
+.names I.BLIF A.BLIF L16.BLIF LED16
+1-- 1
+-0- 1
+--0 1
+.names I.BLIF E.BLIF LED17
+1- 1
+-0 1
+.names O.BLIF I.BLIF LED18
+0- 1
+-1 1
+.names Q3.BLIF Q2.BLIF Q1.BLIF Q0.BLIF I
+0000 1
+.names O.BLIF I.BLIF A.BLIF E
+000 1
+.names Q3.BLIF Q2.BLIF Q1.BLIF Q0.BLIF O
+1000 1
+.names Q3.BLIF Q2.BLIF Q1.BLIF Q0.BLIF A
+1111 1
+.names S2_NO.BLIF S
+0 1
+.names X4.BLIF X3.BLIF X2.BLIF X0.BLIF X0.REG
+1111 1
+0011 1
+0101 1
+1001 1
+0110 1
+1010 1
+1100 1
+0000 1
+.names timediv.BLIF timediv.D
+0 1
+.names timediv2.BLIF timediv2.D
+0 1
+.names Y6.BLIF Y5.BLIF Y4.BLIF Y3.BLIF Y2.BLIF Y1.BLIF Y0.BLIF Y0.REG
+0000000 1
+.names S1.D
+.names S1.C
+.names S1_NO.BLIF S1.AP
+0 1
+.names S1_NC.BLIF S1.AR
+0 1
+.names DIP7.BLIF S1.BLIF DIP2.BLIF O.BLIF Q0.AR
+1--- 1
+-111 1
+.names DIP7.BLIF S1.BLIF DIP2.BLIF O.BLIF Q1.AR
+1--- 1
+-111 1
+.names DIP7.BLIF S1.BLIF DIP2.BLIF O.BLIF Q2.AR
+1--- 1
+-111 1
+.names DIP7.BLIF S1.BLIF DIP2.BLIF O.BLIF Q3.AR
+1--- 1
+-111 1
+.names X6.BLIF X5.BLIF X4.BLIF X3.BLIF X2.BLIF X1.BLIF X0.BLIF X7.BLIF Q3.FB \
+Q2.FB Q1.FB Q0.FB S.BLIF Q0.REG
+--------1111- 1
+-------001111 1
+---0----00111 1
+-0------01011 1
+-----0--00011 1
+1-------01101 1
+0-------01101 1
+----1---00101 1
+----0---00101 1
+--1-----01001 1
+--0-----01001 1
+------1-00001 1
+------0-00001 1
+-------101110 1
+---1----00110 1
+-1------01010 1
+-----1--00010 1
+1-------01100 1
+0-------01100 1
+----1---00100 1
+----0---00100 1
+--1-----01000 1
+--0-----01000 1
+------1-00000 1
+------0-00000 1
+.names X6.BLIF X5.BLIF X4.BLIF X3.BLIF X2.BLIF X1.BLIF X0.BLIF X7.BLIF Q3.FB \
+Q2.FB Q1.FB Q0.FB S.BLIF Q1.REG
+--------1111- 1
+-------001111 1
+---0----00111 1
+-1------01011 1
+-0------01011 1
+-----1--00011 1
+-----0--00011 1
+1-------01101 1
+0-------01101 1
+----1---00101 1
+----0---00101 1
+--0-----01001 1
+------0-00001 1
+-------101110 1
+---1----00110 1
+-1------01010 1
+-0------01010 1
+-----1--00010 1
+-----0--00010 1
+1-------01100 1
+0-------01100 1
+----1---00100 1
+----0---00100 1
+--1-----01000 1
+------1-00000 1
+.names X6.BLIF X5.BLIF X4.BLIF X3.BLIF X2.BLIF X1.BLIF X0.BLIF X7.BLIF Q3.FB \
+Q2.FB Q1.FB Q0.FB S.BLIF Q2.REG
+--------1111- 1
+-------001111 1
+---1----00111 1
+---0----00111 1
+-1------01011 1
+-0------01011 1
+-----0--00011 1
+1-------01101 1
+0-------01101 1
+----0---00101 1
+--1-----01001 1
+--0-----01001 1
+------0-00001 1
+-------101110 1
+---1----00110 1
+---0----00110 1
+-1------01010 1
+-0------01010 1
+-----1--00010 1
+1-------01100 1
+0-------01100 1
+----1---00100 1
+--1-----01000 1
+--0-----01000 1
+------1-00000 1
+.names X6.BLIF X5.BLIF X4.BLIF X3.BLIF X2.BLIF X1.BLIF X0.BLIF X7.BLIF Q3.FB \
+Q2.FB Q1.FB Q0.FB S.BLIF Q3.REG
+--------1111- 1
+--------1000- 1
+-------101111 1
+-------001111 1
+---0----00111 1
+-0------01011 1
+-----0--00011 1
+0-------01101 1
+----0---00101 1
+--0-----01001 1
+------0-00001 1
+-------101110 1
+-------001110 1
+---1----00110 1
+-1------01010 1
+-----1--00010 1
+1-------01100 1
+----1---00100 1
+--1-----01000 1
+------1-00000 1
+.names O.BLIF P3.FB P2.FB P1.FB P0.FB I.BLIF E.BLIF A.BLIF P0.REG
+11000--- 1
+-00101-- 1
+-01001-- 1
+-00001-- 1
+-0010-1- 1
+-0100-1- 1
+-0000-1- 1
+-1110--1 1
+-1100--1 1
+1000000- 1
+00000001 1
+.names O.BLIF P3.FB P2.FB P1.FB P0.FB I.BLIF E.BLIF A.BLIF P1.REG
+11001--- 1
+-01011-- 1
+-00011-- 1
+-00101-- 1
+-0101-1- 1
+-0001-1- 1
+-0010-1- 1
+-1101--1 1
+-1110--1 1
+1000000- 1
+00000001 1
+.names O.BLIF P3.FB P2.FB P1.FB P0.FB I.BLIF E.BLIF A.BLIF P2.REG
+-00111-- 1
+-01011-- 1
+-01001-- 1
+-0011-1- 1
+-0101-1- 1
+-0100-1- 1
+-1011--1 1
+-1101--1 1
+-1110--1 1
+-1100--1 1
+1000000- 1
+.names O.BLIF P3.FB P2.FB P1.FB P0.FB I.BLIF E.BLIF A.BLIF P3.REG
+10111--- 1
+11001--- 1
+11000--- 1
+-1011--1 1
+-1101--1 1
+-1110--1 1
+-1100--1 1
+00000001 1
+.names L16.BLIF L16.REG
+0 1
+.names O.BLIF Y0.CE
+0 1
+.names O.BLIF Y1.CE
+0 1
+.names O.BLIF Y2.CE
+0 1
+.names O.BLIF Y3.CE
+0 1
+.names O.BLIF Y4.CE
+0 1
+.names O.BLIF Y5.CE
+0 1
+.names O.BLIF Y6.CE
+0 1
+.names O.BLIF Y7.CE
+0 1
+.names DIP7.BLIF dd14.BLIF dd21.REG
+01 1
+.names DIP7.BLIF dd15.BLIF dd22.REG
+01 1
+.names DIP7.BLIF dd16.BLIF dd23.REG
+01 1
+.names DIP7.BLIF dd17.BLIF dd24.REG
+01 1
+.names DIP7.BLIF dd18.BLIF dd25.REG
+01 1
+.names DIP7.BLIF dd19.BLIF dd26.REG
+01 1
+.names DIP7.BLIF dd20.BLIF dd27.REG
+01 1
+.names DIP7.BLIF dd7.BLIF dd14.REG
+01 1
+.names DIP7.BLIF dd8.BLIF dd15.REG
+01 1
+.names DIP7.BLIF dd9.BLIF dd16.REG
+01 1
+.names DIP7.BLIF dd10.BLIF dd17.REG
+01 1
+.names DIP7.BLIF dd11.BLIF dd18.REG
+01 1
+.names DIP7.BLIF dd12.BLIF dd19.REG
+01 1
+.names DIP7.BLIF dd13.BLIF dd20.REG
+01 1
+.names DIP7.BLIF dd0.BLIF dd7.REG
+01 1
+.names DIP7.BLIF dd1.BLIF dd8.REG
+01 1
+.names DIP7.BLIF dd2.BLIF dd9.REG
+01 1
+.names DIP7.BLIF dd3.BLIF dd10.REG
+01 1
+.names DIP7.BLIF dd4.BLIF dd11.REG
+01 1
+.names DIP7.BLIF dd5.BLIF dd12.REG
+01 1
+.names DIP7.BLIF dd6.BLIF dd13.REG
+01 1
+.names P3.BLIF P2.BLIF P1.BLIF P0.BLIF dd0
+1011 1
+0011 1
+1001 1
+0001 1
+0110 1
+0010 1
+1000 1
+.names P3.BLIF P2.BLIF P1.BLIF P0.BLIF dd1
+0100 1
+1000 1
+.names P3.BLIF P2.BLIF P1.BLIF P0.BLIF dd2
+0111 1
+0001 1
+1110 1
+1010 1
+0100 1
+.names P3.BLIF P2.BLIF P1.BLIF P0.BLIF dd3
+0111 1
+1011 1
+0011 1
+1001 1
+0001 1
+1110 1
+0110 1
+0010 1
+0100 1
+.names P3.BLIF P2.BLIF P1.BLIF P0.BLIF dd4
+1111 1
+0111 1
+1011 1
+0011 1
+1101 1
+0101 1
+1001 1
+1110 1
+0110 1
+1010 1
+0010 1
+1100 1
+0100 1
+1000 1
+.names P3.BLIF P2.BLIF P1.BLIF P0.BLIF dd5
+1011 1
+0011 1
+1001 1
+0001 1
+0110 1
+0010 1
+0100 1
+1000 1
+.names P3.BLIF P2.BLIF P1.BLIF P0.BLIF dd6
+1111 1
+0111 1
+1011 1
+1101 1
+0101 1
+1001 1
+0001 1
+1110 1
+0110 1
+1010 1
+0010 1
+1100 1
+1000 1
+.names I1>OSCOUT.BLIF osc_out
+1 1
+0 0
+.names I1>TIMEROUT.BLIF tmr_out
+1 1
+0 0
+.names osc_dis.BLIF I1>DYNOSCDIS
+1 1
+0 0
+.names osc_rst.BLIF I1>TIMERRES
+1 1
+0 0
+.names X6.BLIF X7.REG
+1 1
+0 0
+.names X5.BLIF X6.REG
+1 1
+0 0
+.names X4.BLIF X5.REG
+1 1
+0 0
+.names X3.BLIF X4.REG
+1 1
+0 0
+.names X2.BLIF X3.REG
+1 1
+0 0
+.names X1.BLIF X2.REG
+1 1
+0 0
+.names X0.BLIF X1.REG
+1 1
+0 0
+.names DIP7.BLIF X0.AR
+1 1
+0 0
+.names DIP7.BLIF X1.AR
+1 1
+0 0
+.names DIP7.BLIF X2.AR
+1 1
+0 0
+.names DIP7.BLIF X3.AR
+1 1
+0 0
+.names DIP7.BLIF X4.AR
+1 1
+0 0
+.names DIP7.BLIF X5.AR
+1 1
+0 0
+.names DIP7.BLIF X6.AR
+1 1
+0 0
+.names DIP7.BLIF X7.AR
+1 1
+0 0
+.names timediv2.BLIF X0.C
+1 1
+0 0
+.names timediv2.BLIF X1.C
+1 1
+0 0
+.names timediv2.BLIF X2.C
+1 1
+0 0
+.names timediv2.BLIF X3.C
+1 1
+0 0
+.names timediv2.BLIF X4.C
+1 1
+0 0
+.names timediv2.BLIF X5.C
+1 1
+0 0
+.names timediv2.BLIF X6.C
+1 1
+0 0
+.names timediv2.BLIF X7.C
+1 1
+0 0
+.names DIP0.BLIF X0.CE
+1 1
+0 0
+.names DIP0.BLIF X1.CE
+1 1
+0 0
+.names DIP0.BLIF X2.CE
+1 1
+0 0
+.names DIP0.BLIF X3.CE
+1 1
+0 0
+.names DIP0.BLIF X4.CE
+1 1
+0 0
+.names DIP0.BLIF X5.CE
+1 1
+0 0
+.names DIP0.BLIF X6.CE
+1 1
+0 0
+.names DIP0.BLIF X7.CE
+1 1
+0 0
+.names tmr_out.BLIF timediv.C
+1 1
+0 0
+.names timediv.BLIF timediv2.C
+1 1
+0 0
+.names Y6.BLIF Y7.REG
+1 1
+0 0
+.names Y5.BLIF Y6.REG
+1 1
+0 0
+.names Y4.BLIF Y5.REG
+1 1
+0 0
+.names Y3.BLIF Y4.REG
+1 1
+0 0
+.names Y2.BLIF Y3.REG
+1 1
+0 0
+.names Y1.BLIF Y2.REG
+1 1
+0 0
+.names Y0.BLIF Y1.REG
+1 1
+0 0
+.names S1.BLIF Y0.C
+1 1
+0 0
+.names S1.BLIF Y1.C
+1 1
+0 0
+.names S1.BLIF Y2.C
+1 1
+0 0
+.names S1.BLIF Y3.C
+1 1
+0 0
+.names S1.BLIF Y4.C
+1 1
+0 0
+.names S1.BLIF Y5.C
+1 1
+0 0
+.names S1.BLIF Y6.C
+1 1
+0 0
+.names S1.BLIF Y7.C
+1 1
+0 0
+.names DIP7.BLIF Y1.AR
+1 1
+0 0
+.names DIP7.BLIF Y2.AR
+1 1
+0 0
+.names DIP7.BLIF Y3.AR
+1 1
+0 0
+.names DIP7.BLIF Y4.AR
+1 1
+0 0
+.names DIP7.BLIF Y5.AR
+1 1
+0 0
+.names DIP7.BLIF Y6.AR
+1 1
+0 0
+.names DIP7.BLIF Y7.AR
+1 1
+0 0
+.names DIP7.BLIF Y0.AP
+1 1
+0 0
+.names S1.BLIF Q3.C
+1 1
+0 0
+.names S1.BLIF Q2.C
+1 1
+0 0
+.names S1.BLIF Q1.C
+1 1
+0 0
+.names S1.BLIF Q0.C
+1 1
+0 0
+.names timediv2.BLIF P3.C
+1 1
+0 0
+.names timediv2.BLIF P2.C
+1 1
+0 0
+.names timediv2.BLIF P1.C
+1 1
+0 0
+.names timediv2.BLIF P0.C
+1 1
+0 0
+.names timediv2.BLIF L16.C
+1 1
+0 0
+.names timediv2.BLIF dd21.C
+1 1
+0 0
+.names timediv2.BLIF dd22.C
+1 1
+0 0
+.names timediv2.BLIF dd23.C
+1 1
+0 0
+.names timediv2.BLIF dd24.C
+1 1
+0 0
+.names timediv2.BLIF dd25.C
+1 1
+0 0
+.names timediv2.BLIF dd26.C
+1 1
+0 0
+.names timediv2.BLIF dd27.C
+1 1
+0 0
+.names timediv2.BLIF dd14.C
+1 1
+0 0
+.names timediv2.BLIF dd15.C
+1 1
+0 0
+.names timediv2.BLIF dd16.C
+1 1
+0 0
+.names timediv2.BLIF dd17.C
+1 1
+0 0
+.names timediv2.BLIF dd18.C
+1 1
+0 0
+.names timediv2.BLIF dd19.C
+1 1
+0 0
+.names timediv2.BLIF dd20.C
+1 1
+0 0
+.names timediv2.BLIF dd7.C
+1 1
+0 0
+.names timediv2.BLIF dd8.C
+1 1
+0 0
+.names timediv2.BLIF dd9.C
+1 1
+0 0
+.names timediv2.BLIF dd10.C
+1 1
+0 0
+.names timediv2.BLIF dd11.C
+1 1
+0 0
+.names timediv2.BLIF dd12.C
+1 1
+0 0
+.names timediv2.BLIF dd13.C
+1 1
+0 0
+.end

@@ -1,0 +1,77 @@
+#$ TOOL ispLEVER Classic 1.7.00.05.28.13
+#$ DATE Thu Mar 03 15:23:26 2016
+#$ TITLE lab7c3
+#$ MODULE lab7c3
+#$ JEDECFILE lab7c3
+#$ PINS 16 I0:2 I1:3 I2:4 I3:5 I4:6 I5:7 I6:8 I7:9 a:14 b:15 c:16 d:17 e:18 f:19 g:20 dp:21
+
+.model lab7c3
+.inputs I7.BLIF I6.BLIF I5.BLIF I4.BLIF I3.BLIF I2.BLIF I1.BLIF I0.BLIF
+.outputs a b c d e f g
+.names I0.BLIF I1.BLIF I2.BLIF I3.BLIF I4.BLIF I5.BLIF I6.BLIF I7.BLIF a
+-100-000 1
+----1000 1
+0------- 1
+1--10--- 0
+1-1-0--- 0
+10--0--- 0
+1-----1- 0
+1----1-- 0
+1------1 0
+.names I0.BLIF I1.BLIF I2.BLIF I3.BLIF I4.BLIF I5.BLIF I6.BLIF I7.BLIF b
+11000--0 1
+1-----10 1
+1----1-0 1
+----100- 0
+---1-00- 0
+--1--00- 0
+-0---00- 0
+0------- 0
+-------1 0
+.names I0.BLIF I1.BLIF I2.BLIF I3.BLIF I4.BLIF I5.BLIF I6.BLIF I7.BLIF c
+1-100000 1
+11-00000 1
+-00----- 0
+------1- 0
+-----1-- 0
+----1--- 0
+---1---- 0
+0------- 0
+-------1 0
+.names I0.BLIF I2.BLIF I3.BLIF I4.BLIF I5.BLIF I6.BLIF I7.BLIF d
+100-00- 1
+1--100- 1
+1-----1 1
+--10--0 0
+-1-0--0 0
+0------ 0
+-----10 0
+----1-0 0
+.names I0.BLIF I3.BLIF I4.BLIF I5.BLIF I6.BLIF I7.BLIF e
+1--10- 1
+1-1-0- 1
+11--0- 1
+1----1 1
+-000-0 0
+0----- 0
+----10 0
+.names I0.BLIF I2.BLIF I3.BLIF I4.BLIF I5.BLIF I6.BLIF I7.BLIF f
+1-1000- 1
+11-000- 1
+1-----1 1
+-00---0 0
+0------ 0
+-----10 0
+----1-0 0
+---1--0 0
+.names I0.BLIF I1.BLIF I2.BLIF I3.BLIF I4.BLIF I5.BLIF I6.BLIF I7.BLIF g
+-100000- 1
+0------- 1
+-------1 1
+1-----10 0
+1----1-0 0
+1---1--0 0
+1--1---0 0
+1-1----0 0
+10-----0 0
+.end

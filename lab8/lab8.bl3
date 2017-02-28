@@ -1,0 +1,42 @@
+#$ TOOL ispLEVER Classic 1.7.00.05.28.13
+#$ DATE Thu Mar 10 15:18:04 2016
+#$ TITLE Experiment 8 Skeleton File
+#$ MODULE lab8_skel
+#$ JEDECFILE lab8_skel
+#$ PINS 10 CLKIN:1 D:8 NC:9 NO:10 QS_N:14 QS:15 QM_N:16 QM:17 QFF:18 BQ:23
+
+.model lab8_skel
+.inputs NO.BLIF NC.BLIF BQ.BLIF QM_N.BLIF D.BLIF CLKIN.BLIF QM.BLIF QS_N.BLIF QS.BLIF
+.outputs QS_N QS QM_N QM BQ QFF.REG QFF.C
+.names QM_N.BLIF CLKIN.BLIF QS.BLIF QS_N
+11- 1
+--0 1
+-01 0
+0-1 0
+.names CLKIN.BLIF QM.BLIF QS_N.BLIF QS
+11- 1
+--0 1
+-01 0
+0-1 0
+.names D.BLIF CLKIN.BLIF QM.BLIF QM_N
+00- 1
+--0 1
+-11 0
+1-1 0
+.names QM_N.BLIF D.BLIF CLKIN.BLIF QM
+-10 1
+0-- 1
+10- 0
+1-1 0
+.names NO.BLIF NC.BLIF BQ.BLIF BQ
+0-- 1
+-11 1
+10- 0
+1-0 0
+.names D.BLIF QFF.REG
+1 1
+0 0
+.names CLKIN.BLIF QFF.C
+1 1
+0 0
+.end

@@ -1,0 +1,2329 @@
+#$ TOOL ispLEVER Classic 1.7.00.05.28.13
+#$ DATE Thu Apr 21 17:19:46 2016
+#$ TITLE isp4256ZE Simple Computer Skeleton File for Raulmatic 714 - Spring 2016
+#$ MODULE isp4256zesc
+#$ JEDECFILE isp4256zesc
+#$ PINS 70 DIP0:79 DIP1:78 DIP2:77 DIP3:76 DIP4:23 DIP5:24 DIP6:25 DIP7:26 S1_NC:58 S1_NO:59 S2_NC:60 S2_NO:61 LED0:40 LED1:39 LED2:33 LED3:32 LED4:31 \
+#  LED5:30 LED6:29 LED7:28 LED8:139 LED9:138 LED10:135 LED11:134 LED12:133 LED13:132 LED14:131 LED15:130 DIS1a:87 DIS1b:86 DIS1c:85 DIS1d:84 DIS1e:83 \
+#  DIS1f:81 DIS1g:80 DIS2a:98 DIS2b:97 DIS2c:96 DIS2d:95 DIS2e:94 DIS2f:93 DIS2g:88 DIS3a:125 DIS3b:124 DIS3c:123 DIS3d:122 DIS3e:121 DIS3f:120 DIS3g:116 \
+#  DIS4a:44 DIS4b:48 DIS4c:49 DIS4d:50 DIS4e:51 DIS4f:52 DIS4g:53 LED16:140 LED17:141 LED18:142 LED19:143 LED20:100 LED21:101 LED22:102 LED23:103 LED24:104 \
+#  LED25:105 LED26:111 LED27:112 LED28:63 LED29:62
+#$ NODES 180 S1BC+ S2BC+ m0q6+ m0q5+ m0q4+ m0q3+ m0q2+ m0q1+ m0q0+ m1q6+ m1q5+ m1q4+ m1q3+ m1q2+ m1q1+ m1q0+ m2q6+ m2q5+ m2q4+ m2q3+ m2q2+ m2q1+ m2q0+ m3q6+ m3q5+ \
+#  m3q4+ m3q3+ m3q2+ m3q1+ m3q0+ m4q6+ m4q5+ m4q4+ m4q3+ m4q2+ m4q1+ m4q0+ m5q6+ m5q5+ m5q4+ m5q3+ m5q2+ m5q1+ m5q0+ m6q6+ m6q5+ m6q4+ m6q3+ m6q2+ m6q1+ m6q0+ m7q6+ \
+#  m7q5+ m7q4+ m7q3+ m7q2+ m7q1+ m7q0+ m8q6+ m8q5+ m8q4+ m8q3+ m8q2+ m8q1+ m8q0+ m9q6+ m9q5+ m9q4+ m9q3+ m9q2+ m9q1+ m9q0+ m10q6+ m10q5+ m10q4+ m10q3+ m10q2+ m10q1+ \
+#  m10q0+ m11q6+ m11q5+ m11q4+ m11q3+ m11q2+ m11q1+ m11q0+ m12q6+ m12q5+ m12q4+ m12q3+ m12q2+ m12q1+ m12q0+ m13q6+ m13q5+ m13q4+ m13q3+ m13q2+ m13q1+ m13q0+ m14q6+ \
+#  m14q5+ m14q4+ m14q3+ m14q2+ m14q1+ m14q0+ memclk cpuclk start run+ sq+ ab3 ab2 ab1 ab0 pc3+ pc2+ pc1+ pc0+ ir6+ ir5+ ir4+ ir3+ ir2+ ir1+ ir0+ ale alx aly alu3 alu2 alu1 \
+#  alu0 areg3+ areg2+ areg1+ areg0+ db6 db5 db4 db3 db2 db1 db0 dm6 dm5 dm4 dm3 dm2 dm1 dm0 mar3+ mar2+ mar1+ mar0+ op3+ op2+ op1+ op0+ S3 S2 S1 S0 C3 C2 C1 C0 P3 P2 P1 P0 G3 G2 G1 G0 \
+#  CF+ NF+ ZF+ VF+
+
+.model isp4256zesc
+.inputs S1_NO.BLIF S1_NC.BLIF S1BC.Q S2_NO.BLIF S2_NC.BLIF S2BC.Q run.Q DIP7.BLIF \
+mar3.BLIF mar2.BLIF mar1.BLIF mar0.BLIF m0q6.BLIF m1q6.BLIF m2q6.BLIF \
+m3q6.BLIF m4q6.BLIF m5q6.BLIF m6q6.BLIF m7q6.BLIF m8q6.BLIF m9q6.BLIF \
+m10q6.BLIF m11q6.BLIF m12q6.BLIF m13q6.BLIF m14q6.BLIF m0q5.BLIF m1q5.BLIF \
+m2q5.BLIF m3q5.BLIF m4q5.BLIF m5q5.BLIF m6q5.BLIF m7q5.BLIF m8q5.BLIF \
+m9q5.BLIF m10q5.BLIF m11q5.BLIF m12q5.BLIF m13q5.BLIF m14q5.BLIF m0q4.BLIF \
+m1q4.BLIF m2q4.BLIF m3q4.BLIF m4q4.BLIF m5q4.BLIF m6q4.BLIF m7q4.BLIF \
+m8q4.BLIF m9q4.BLIF m10q4.BLIF m11q4.BLIF m12q4.BLIF m13q4.BLIF m14q4.BLIF \
+m0q3.BLIF m1q3.BLIF m2q3.BLIF m3q3.BLIF m4q3.BLIF m5q3.BLIF m6q3.BLIF \
+m7q3.BLIF m8q3.BLIF m9q3.BLIF m10q3.BLIF m11q3.BLIF m12q3.BLIF m13q3.BLIF \
+m14q3.BLIF m0q2.BLIF m1q2.BLIF m2q2.BLIF m3q2.BLIF m4q2.BLIF m5q2.BLIF \
+m6q2.BLIF m7q2.BLIF m8q2.BLIF m9q2.BLIF m10q2.BLIF m11q2.BLIF m12q2.BLIF \
+m13q2.BLIF m14q2.BLIF m0q1.BLIF m1q1.BLIF m2q1.BLIF m3q1.BLIF m4q1.BLIF \
+m5q1.BLIF m6q1.BLIF m7q1.BLIF m8q1.BLIF m9q1.BLIF m10q1.BLIF m11q1.BLIF \
+m12q1.BLIF m13q1.BLIF m14q1.BLIF m0q0.BLIF m1q0.BLIF m2q0.BLIF m3q0.BLIF \
+m4q0.BLIF m5q0.BLIF m6q0.BLIF m7q0.BLIF m8q0.BLIF m9q0.BLIF m10q0.BLIF \
+m11q0.BLIF m12q0.BLIF m13q0.BLIF m14q0.BLIF ab0.BLIF ab1.BLIF ab2.BLIF \
+ab3.BLIF sq.BLIF pc3.BLIF ir3.BLIF pc2.BLIF ir2.BLIF pc1.BLIF ir1.BLIF \
+pc0.BLIF ir0.BLIF DIP6.BLIF ir6.BLIF ir5.BLIF ir4.BLIF DIP5.BLIF DIP4.BLIF \
+DIP3.BLIF areg3.BLIF DIP2.BLIF areg2.BLIF DIP1.BLIF areg1.BLIF DIP0.BLIF \
+areg0.BLIF memclk.BLIF start.BLIF cpuclk.BLIF db6.BLIF db5.BLIF db4.BLIF \
+db3.BLIF db2.BLIF db1.BLIF db0.BLIF sq.Q aly.BLIF G0.BLIF P0.BLIF G1.BLIF \
+P1.BLIF G2.BLIF P2.BLIF G3.BLIF P3.BLIF C0.BLIF C1.BLIF C2.BLIF CF.Q ale.BLIF \
+alx.BLIF C3.BLIF ZF.Q alu3.BLIF alu2.BLIF alu1.BLIF alu0.BLIF NF.Q VF.Q \
+CF.BLIF NF.BLIF ZF.BLIF VF.BLIF S3.BLIF S2.BLIF S1.BLIF S0.BLIF op3.BLIF \
+op2.BLIF op1.BLIF op0.BLIF dm4.BLIF dm5.BLIF dm6.BLIF dm0.BLIF dm1.BLIF \
+dm2.BLIF dm3.BLIF
+.outputs LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7 LED8 LED9 LED10 LED11 LED12 \
+LED13 LED14 LED15 LED16 LED17 LED18 LED20 LED21 LED22 LED23 LED24 LED25 LED26 \
+LED27 LED28 LED29 memclk cpuclk start ab3 ab2 ab1 ab0 ale alx aly alu3 alu2 \
+alu1 alu0 db6 db5 db4 db3 db2 db1 db0 dm6 dm5 dm4 dm3 dm2 dm1 dm0 S3 S2 S1 S0 \
+C3 C2 C1 C0 P3 P2 P1 P0 G3 G2 G1 G0 S1BC.D S1BC.C S1BC.AP S1BC.AR S2BC.D \
+S2BC.C S2BC.AP S2BC.AR mar3.D mar2.D mar1.D mar0.D mar3.C mar2.C mar1.C mar0.C \
+m0q6.D m0q5.D m0q4.D m0q3.D m0q2.D m0q1.D m0q0.D m0q6.C m0q5.C m0q4.C m0q3.C \
+m0q2.C m0q1.C m0q0.C m1q6.D m1q5.D m1q4.D m1q3.D m1q2.D m1q1.D m1q0.D m1q6.C \
+m1q5.C m1q4.C m1q3.C m1q2.C m1q1.C m1q0.C m2q6.D m2q5.D m2q4.D m2q3.D m2q2.D \
+m2q1.D m2q0.D m2q6.C m2q5.C m2q4.C m2q3.C m2q2.C m2q1.C m2q0.C m3q6.D m3q5.D \
+m3q4.D m3q3.D m3q2.D m3q1.D m3q0.D m3q6.C m3q5.C m3q4.C m3q3.C m3q2.C m3q1.C \
+m3q0.C m4q6.D m4q5.D m4q4.D m4q3.D m4q2.D m4q1.D m4q0.D m4q6.C m4q5.C m4q4.C \
+m4q3.C m4q2.C m4q1.C m4q0.C m5q6.D m5q5.D m5q4.D m5q3.D m5q2.D m5q1.D m5q0.D \
+m5q6.C m5q5.C m5q4.C m5q3.C m5q2.C m5q1.C m5q0.C m6q6.D m6q5.D m6q4.D m6q3.D \
+m6q2.D m6q1.D m6q0.D m6q6.C m6q5.C m6q4.C m6q3.C m6q2.C m6q1.C m6q0.C m7q6.D \
+m7q5.D m7q4.D m7q3.D m7q2.D m7q1.D m7q0.D m7q6.C m7q5.C m7q4.C m7q3.C m7q2.C \
+m7q1.C m7q0.C m8q6.D m8q5.D m8q4.D m8q3.D m8q2.D m8q1.D m8q0.D m8q6.C m8q5.C \
+m8q4.C m8q3.C m8q2.C m8q1.C m8q0.C m9q6.D m9q5.D m9q4.D m9q3.D m9q2.D m9q1.D \
+m9q0.D m9q6.C m9q5.C m9q4.C m9q3.C m9q2.C m9q1.C m9q0.C m10q6.D m10q5.D \
+m10q4.D m10q3.D m10q2.D m10q1.D m10q0.D m10q6.C m10q5.C m10q4.C m10q3.C \
+m10q2.C m10q1.C m10q0.C m11q6.D m11q5.D m11q4.D m11q3.D m11q2.D m11q1.D \
+m11q0.D m11q6.C m11q5.C m11q4.C m11q3.C m11q2.C m11q1.C m11q0.C m12q6.D \
+m12q5.D m12q4.D m12q3.D m12q2.D m12q1.D m12q0.D m12q6.C m12q5.C m12q4.C \
+m12q3.C m12q2.C m12q1.C m12q0.C m13q6.D m13q5.D m13q4.D m13q3.D m13q2.D \
+m13q1.D m13q0.D m13q6.C m13q5.C m13q4.C m13q3.C m13q2.C m13q1.C m13q0.C \
+m14q6.D m14q5.D m14q4.D m14q3.D m14q2.D m14q1.D m14q0.D m14q6.C m14q5.C \
+m14q4.C m14q3.C m14q2.C m14q1.C m14q0.C sq.D sq.AR sq.C run.AP run.C run.D \
+run.AR pc3.D pc2.D pc1.D pc0.D pc3.AR pc2.AR pc1.AR pc0.AR pc3.C pc2.C pc1.C \
+pc0.C ir6.D ir5.D ir4.D ir3.D ir2.D ir1.D ir0.D ir6.AR ir5.AR ir4.AR ir3.AR \
+ir2.AR ir1.AR ir0.AR ir6.C ir5.C ir4.C ir3.C ir2.C ir1.C ir0.C CF.D CF.C CF.AR \
+ZF.D ZF.C ZF.AR NF.D NF.C NF.AR VF.D VF.C VF.AR areg3.D areg2.D areg1.D \
+areg0.D areg3.C areg2.C areg1.C areg0.C areg3.AR areg2.AR areg1.AR areg0.AR \
+op3.D op2.D op1.D op0.D op3.C op2.C op1.C op0.C op3.AR op2.AR op1.AR op0.AR \
+DIS3a DIS3b DIS3c DIS3d DIS3e DIS3f DIS3g DIS2a DIS2b DIS2c DIS2d DIS2e DIS2f \
+DIS2g DIS1a DIS1b DIS1c DIS1d DIS1e DIS1f DIS1g DIS4a DIS4b DIS4c DIS4d DIS4e \
+DIS4f DIS4g
+.names areg0.BLIF LED0
+0 1
+.names areg1.BLIF LED1
+0 1
+.names areg2.BLIF LED2
+0 1
+.names areg3.BLIF LED3
+0 1
+.names VF.BLIF LED4
+0 1
+.names ZF.BLIF LED5
+0 1
+.names NF.BLIF LED6
+0 1
+.names CF.BLIF LED7
+0 1
+.names ir0.BLIF LED8
+0 1
+.names ir1.BLIF LED9
+0 1
+.names ir2.BLIF LED10
+0 1
+.names ir3.BLIF LED11
+0 1
+.names ir4.BLIF LED12
+0 1
+.names ir5.BLIF LED13
+0 1
+.names ir6.BLIF LED14
+0 1
+.names sq.BLIF LED15
+0 1
+.names run.Q LED16
+1 1
+.names DIP7.BLIF LED17
+1 1
+.names DIP7.BLIF LED18
+0 1
+.names DIP7.BLIF DIP0.BLIF LED20
+0- 1
+-0 1
+.names DIP7.BLIF DIP1.BLIF LED21
+0- 1
+-0 1
+.names DIP7.BLIF DIP2.BLIF LED22
+0- 1
+-0 1
+.names DIP7.BLIF DIP3.BLIF LED23
+0- 1
+-0 1
+.names op0.BLIF LED24
+0 1
+.names op1.BLIF LED25
+0 1
+.names op2.BLIF LED26
+0 1
+.names op3.BLIF LED27
+0 1
+.names S1BC.Q LED28
+0 1
+.names S2BC.Q LED29
+0 1
+.names S1BC.Q S2BC.Q DIP7.BLIF memclk
+1-1 1
+-10 1
+.names S1BC.Q run.Q DIP7.BLIF cpuclk
+111 1
+.names S2BC.Q DIP7.BLIF start
+11 1
+.names DIP7.BLIF mar3.BLIF sq.BLIF pc3.BLIF ir3.BLIF ab3
+01--- 1
+1-01- 1
+1-1-1 1
+.names DIP7.BLIF mar2.BLIF sq.BLIF pc2.BLIF ir2.BLIF ab2
+01--- 1
+1-01- 1
+1-1-1 1
+.names DIP7.BLIF mar1.BLIF sq.BLIF pc1.BLIF ir1.BLIF ab1
+01--- 1
+1-01- 1
+1-1-1 1
+.names DIP7.BLIF mar0.BLIF sq.BLIF pc0.BLIF ir0.BLIF ab0
+01--- 1
+1-01- 1
+1-1-1 1
+.names run.Q ir6.BLIF ir5.BLIF ir4.BLIF sq.Q ale
+10111 1
+10011 1
+11101 1
+10101 1
+11001 1
+.names ir6.BLIF ir5.BLIF ir4.BLIF alx
+001 1
+110 1
+100 1
+.names ir6.BLIF ir5.BLIF ir4.BLIF aly
+011 1
+001 1
+110 1
+.names ir6.BLIF ir5.BLIF ir4.BLIF DIP3.BLIF areg3.BLIF db3.BLIF aly.BLIF \
+alx.BLIF S3.BLIF alu3
+-------01 1
+----1101- 1
+1101--11- 1
+001--111- 1
+.names ir6.BLIF ir5.BLIF ir4.BLIF DIP2.BLIF areg2.BLIF db2.BLIF aly.BLIF \
+alx.BLIF S2.BLIF alu2
+-------01 1
+----1101- 1
+1101--11- 1
+001--111- 1
+.names ir6.BLIF ir5.BLIF ir4.BLIF DIP1.BLIF areg1.BLIF db1.BLIF aly.BLIF \
+alx.BLIF S1.BLIF alu1
+-------01 1
+----1101- 1
+1101--11- 1
+001--111- 1
+.names ir6.BLIF ir5.BLIF ir4.BLIF DIP0.BLIF areg0.BLIF db0.BLIF aly.BLIF \
+alx.BLIF S0.BLIF alu0
+-------01 1
+----1101- 1
+1101--11- 1
+001--111- 1
+.names m0q6.BLIF m1q6.BLIF m2q6.BLIF m3q6.BLIF m4q6.BLIF m5q6.BLIF m6q6.BLIF \
+m7q6.BLIF m8q6.BLIF m9q6.BLIF m10q6.BLIF m11q6.BLIF m12q6.BLIF m13q6.BLIF \
+m14q6.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF db6
+--------------10111 1
+-------------1-1011 1
+------------1--0011 1
+-----------1---1101 1
+----------1----0101 1
+---------1-----1001 1
+--------1------0001 1
+-------1-------1110 1
+------1--------0110 1
+-----1---------1010 1
+----1----------0010 1
+---1-----------1100 1
+--1------------0100 1
+-1-------------1000 1
+1--------------0000 1
+.names m0q5.BLIF m1q5.BLIF m2q5.BLIF m3q5.BLIF m4q5.BLIF m5q5.BLIF m6q5.BLIF \
+m7q5.BLIF m8q5.BLIF m9q5.BLIF m10q5.BLIF m11q5.BLIF m12q5.BLIF m13q5.BLIF \
+m14q5.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF db5
+--------------10111 1
+-------------1-1011 1
+------------1--0011 1
+-----------1---1101 1
+----------1----0101 1
+---------1-----1001 1
+--------1------0001 1
+-------1-------1110 1
+------1--------0110 1
+-----1---------1010 1
+----1----------0010 1
+---1-----------1100 1
+--1------------0100 1
+-1-------------1000 1
+1--------------0000 1
+.names m0q4.BLIF m1q4.BLIF m2q4.BLIF m3q4.BLIF m4q4.BLIF m5q4.BLIF m6q4.BLIF \
+m7q4.BLIF m8q4.BLIF m9q4.BLIF m10q4.BLIF m11q4.BLIF m12q4.BLIF m13q4.BLIF \
+m14q4.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF db4
+--------------10111 1
+-------------1-1011 1
+------------1--0011 1
+-----------1---1101 1
+----------1----0101 1
+---------1-----1001 1
+--------1------0001 1
+-------1-------1110 1
+------1--------0110 1
+-----1---------1010 1
+----1----------0010 1
+---1-----------1100 1
+--1------------0100 1
+-1-------------1000 1
+1--------------0000 1
+.names m0q3.BLIF m1q3.BLIF m2q3.BLIF m3q3.BLIF m4q3.BLIF m5q3.BLIF m6q3.BLIF \
+m7q3.BLIF m8q3.BLIF m9q3.BLIF m10q3.BLIF m11q3.BLIF m12q3.BLIF m13q3.BLIF \
+m14q3.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF db3
+--------------10111 1
+-------------1-1011 1
+------------1--0011 1
+-----------1---1101 1
+----------1----0101 1
+---------1-----1001 1
+--------1------0001 1
+-------1-------1110 1
+------1--------0110 1
+-----1---------1010 1
+----1----------0010 1
+---1-----------1100 1
+--1------------0100 1
+-1-------------1000 1
+1--------------0000 1
+.names m0q2.BLIF m1q2.BLIF m2q2.BLIF m3q2.BLIF m4q2.BLIF m5q2.BLIF m6q2.BLIF \
+m7q2.BLIF m8q2.BLIF m9q2.BLIF m10q2.BLIF m11q2.BLIF m12q2.BLIF m13q2.BLIF \
+m14q2.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF db2
+--------------10111 1
+-------------1-1011 1
+------------1--0011 1
+-----------1---1101 1
+----------1----0101 1
+---------1-----1001 1
+--------1------0001 1
+-------1-------1110 1
+------1--------0110 1
+-----1---------1010 1
+----1----------0010 1
+---1-----------1100 1
+--1------------0100 1
+-1-------------1000 1
+1--------------0000 1
+.names m0q1.BLIF m1q1.BLIF m2q1.BLIF m3q1.BLIF m4q1.BLIF m5q1.BLIF m6q1.BLIF \
+m7q1.BLIF m8q1.BLIF m9q1.BLIF m10q1.BLIF m11q1.BLIF m12q1.BLIF m13q1.BLIF \
+m14q1.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF db1
+--------------10111 1
+-------------1-1011 1
+------------1--0011 1
+-----------1---1101 1
+----------1----0101 1
+---------1-----1001 1
+--------1------0001 1
+-------1-------1110 1
+------1--------0110 1
+-----1---------1010 1
+----1----------0010 1
+---1-----------1100 1
+--1------------0100 1
+-1-------------1000 1
+1--------------0000 1
+.names m0q0.BLIF m1q0.BLIF m2q0.BLIF m3q0.BLIF m4q0.BLIF m5q0.BLIF m6q0.BLIF \
+m7q0.BLIF m8q0.BLIF m9q0.BLIF m10q0.BLIF m11q0.BLIF m12q0.BLIF m13q0.BLIF \
+m14q0.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF db0
+--------------10111 1
+-------------1-1011 1
+------------1--0011 1
+-----------1---1101 1
+----------1----0101 1
+---------1-----1001 1
+--------1------0001 1
+-------1-------1110 1
+------1--------0110 1
+-----1---------1010 1
+----1----------0010 1
+---1-----------1100 1
+--1------------0100 1
+-1-------------1000 1
+1--------------0000 1
+.names mar3.BLIF mar2.BLIF mar1.BLIF mar0.BLIF m0q6.BLIF m1q6.BLIF m2q6.BLIF \
+m3q6.BLIF m4q6.BLIF m5q6.BLIF m6q6.BLIF m7q6.BLIF m8q6.BLIF m9q6.BLIF \
+m10q6.BLIF m11q6.BLIF m12q6.BLIF m13q6.BLIF m14q6.BLIF dm6
+00001-------------- 1
+0001-1------------- 1
+0010--1------------ 1
+0011---1----------- 1
+0100----1---------- 1
+0101-----1--------- 1
+0110------1-------- 1
+0111-------1------- 1
+1000--------1------ 1
+1001---------1----- 1
+1010----------1---- 1
+1011-----------1--- 1
+1100------------1-- 1
+1101-------------1- 1
+1110--------------1 1
+.names mar3.BLIF mar2.BLIF mar1.BLIF mar0.BLIF m0q5.BLIF m1q5.BLIF m2q5.BLIF \
+m3q5.BLIF m4q5.BLIF m5q5.BLIF m6q5.BLIF m7q5.BLIF m8q5.BLIF m9q5.BLIF \
+m10q5.BLIF m11q5.BLIF m12q5.BLIF m13q5.BLIF m14q5.BLIF dm5
+00001-------------- 1
+0001-1------------- 1
+0010--1------------ 1
+0011---1----------- 1
+0100----1---------- 1
+0101-----1--------- 1
+0110------1-------- 1
+0111-------1------- 1
+1000--------1------ 1
+1001---------1----- 1
+1010----------1---- 1
+1011-----------1--- 1
+1100------------1-- 1
+1101-------------1- 1
+1110--------------1 1
+.names mar3.BLIF mar2.BLIF mar1.BLIF mar0.BLIF m0q4.BLIF m1q4.BLIF m2q4.BLIF \
+m3q4.BLIF m4q4.BLIF m5q4.BLIF m6q4.BLIF m7q4.BLIF m8q4.BLIF m9q4.BLIF \
+m10q4.BLIF m11q4.BLIF m12q4.BLIF m13q4.BLIF m14q4.BLIF dm4
+00001-------------- 1
+0001-1------------- 1
+0010--1------------ 1
+0011---1----------- 1
+0100----1---------- 1
+0101-----1--------- 1
+0110------1-------- 1
+0111-------1------- 1
+1000--------1------ 1
+1001---------1----- 1
+1010----------1---- 1
+1011-----------1--- 1
+1100------------1-- 1
+1101-------------1- 1
+1110--------------1 1
+.names mar3.BLIF mar2.BLIF mar1.BLIF mar0.BLIF m0q3.BLIF m1q3.BLIF m2q3.BLIF \
+m3q3.BLIF m4q3.BLIF m5q3.BLIF m6q3.BLIF m7q3.BLIF m8q3.BLIF m9q3.BLIF \
+m10q3.BLIF m11q3.BLIF m12q3.BLIF m13q3.BLIF m14q3.BLIF dm3
+00001-------------- 1
+0001-1------------- 1
+0010--1------------ 1
+0011---1----------- 1
+0100----1---------- 1
+0101-----1--------- 1
+0110------1-------- 1
+0111-------1------- 1
+1000--------1------ 1
+1001---------1----- 1
+1010----------1---- 1
+1011-----------1--- 1
+1100------------1-- 1
+1101-------------1- 1
+1110--------------1 1
+.names mar3.BLIF mar2.BLIF mar1.BLIF mar0.BLIF m0q2.BLIF m1q2.BLIF m2q2.BLIF \
+m3q2.BLIF m4q2.BLIF m5q2.BLIF m6q2.BLIF m7q2.BLIF m8q2.BLIF m9q2.BLIF \
+m10q2.BLIF m11q2.BLIF m12q2.BLIF m13q2.BLIF m14q2.BLIF dm2
+00001-------------- 1
+0001-1------------- 1
+0010--1------------ 1
+0011---1----------- 1
+0100----1---------- 1
+0101-----1--------- 1
+0110------1-------- 1
+0111-------1------- 1
+1000--------1------ 1
+1001---------1----- 1
+1010----------1---- 1
+1011-----------1--- 1
+1100------------1-- 1
+1101-------------1- 1
+1110--------------1 1
+.names mar3.BLIF mar2.BLIF mar1.BLIF mar0.BLIF m0q1.BLIF m1q1.BLIF m2q1.BLIF \
+m3q1.BLIF m4q1.BLIF m5q1.BLIF m6q1.BLIF m7q1.BLIF m8q1.BLIF m9q1.BLIF \
+m10q1.BLIF m11q1.BLIF m12q1.BLIF m13q1.BLIF m14q1.BLIF dm1
+00001-------------- 1
+0001-1------------- 1
+0010--1------------ 1
+0011---1----------- 1
+0100----1---------- 1
+0101-----1--------- 1
+0110------1-------- 1
+0111-------1------- 1
+1000--------1------ 1
+1001---------1----- 1
+1010----------1---- 1
+1011-----------1--- 1
+1100------------1-- 1
+1101-------------1- 1
+1110--------------1 1
+.names mar3.BLIF mar2.BLIF mar1.BLIF mar0.BLIF m0q0.BLIF m1q0.BLIF m2q0.BLIF \
+m3q0.BLIF m4q0.BLIF m5q0.BLIF m6q0.BLIF m7q0.BLIF m8q0.BLIF m9q0.BLIF \
+m10q0.BLIF m11q0.BLIF m12q0.BLIF m13q0.BLIF m14q0.BLIF dm0
+00001-------------- 1
+0001-1------------- 1
+0010--1------------ 1
+0011---1----------- 1
+0100----1---------- 1
+0101-----1--------- 1
+0110------1-------- 1
+0111-------1------- 1
+1000--------1------ 1
+1001---------1----- 1
+1010----------1---- 1
+1011-----------1--- 1
+1100------------1-- 1
+1101-------------1- 1
+1110--------------1 1
+.names P3.BLIF C2.BLIF S3
+01 1
+10 1
+.names P2.BLIF C1.BLIF S2
+01 1
+10 1
+.names P1.BLIF C0.BLIF S1
+01 1
+10 1
+.names aly.BLIF P0.BLIF S0
+01 1
+10 1
+.names aly.BLIF G0.BLIF P0.BLIF G1.BLIF P1.BLIF G2.BLIF P2.BLIF G3.BLIF \
+P3.BLIF C3
+-------1- 1
+-----1--1 1
+---1--1-1 1
+-1--1-1-1 1
+1-1-1-1-1 1
+.names aly.BLIF G0.BLIF P0.BLIF G1.BLIF P1.BLIF G2.BLIF P2.BLIF C2
+-----1- 1
+---1--1 1
+-1--1-1 1
+1-1-1-1 1
+.names aly.BLIF G0.BLIF P0.BLIF G1.BLIF P1.BLIF C1
+---1- 1
+-1--1 1
+1-1-1 1
+.names aly.BLIF G0.BLIF P0.BLIF C0
+-1- 1
+1-1 1
+.names areg3.BLIF db3.BLIF aly.BLIF P3
+111 1
+001 1
+010 1
+100 1
+.names areg2.BLIF db2.BLIF aly.BLIF P2
+111 1
+001 1
+010 1
+100 1
+.names areg1.BLIF db1.BLIF aly.BLIF P1
+111 1
+001 1
+010 1
+100 1
+.names areg0.BLIF db0.BLIF aly.BLIF P0
+111 1
+001 1
+010 1
+100 1
+.names areg3.BLIF db3.BLIF aly.BLIF G3
+101 1
+110 1
+.names areg2.BLIF db2.BLIF aly.BLIF G2
+101 1
+110 1
+.names areg1.BLIF db1.BLIF aly.BLIF G1
+101 1
+110 1
+.names areg0.BLIF db0.BLIF aly.BLIF G0
+101 1
+110 1
+.names S1BC.D
+.names S1BC.C
+.names S1_NO.BLIF S1BC.AP
+0 1
+.names S1_NC.BLIF S1BC.AR
+0 1
+.names S2BC.D
+.names S2BC.C
+.names S2_NO.BLIF S2BC.AP
+0 1
+.names S2_NC.BLIF S2BC.AR
+0 1
+.names DIP7.BLIF mar3.BLIF mar2.BLIF mar1.BLIF mar0.BLIF mar3.D
+11--- 1
+010-- 1
+01--0 1
+00111 1
+.names DIP7.BLIF mar3.BLIF mar2.BLIF mar1.BLIF mar0.BLIF mar2.D
+1-1-- 1
+0-1-0 1
+0010- 1
+0-011 1
+.names DIP7.BLIF mar3.BLIF mar2.BLIF mar1.BLIF mar0.BLIF mar1.D
+1--1- 1
+0--10 1
+00-01 1
+0-001 1
+.names DIP7.BLIF mar0.BLIF mar0.D
+11 1
+00 1
+.names S1BC.Q DIP7.BLIF mar3.C
+10 1
+.names S1BC.Q DIP7.BLIF mar2.C
+10 1
+.names S1BC.Q DIP7.BLIF mar1.C
+10 1
+.names S1BC.Q DIP7.BLIF mar0.C
+10 1
+.names DIP7.BLIF m0q6.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+DIP6.BLIF ir6.BLIF ir5.BLIF ir4.BLIF m0q6.D
+-11-------- 1
+-1-1------- 1
+-1--1------ 1
+-1---1----- 1
+0-0000-1--- 1
+1100000---- 1
+110000--0-- 1
+110000---1- 1
+110000----0 1
+.names DIP7.BLIF m0q5.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP5.BLIF m0q5.D
+-11-------- 1
+-1-1------- 1
+-1--1------ 1
+-1---1----- 1
+0-0000----1 1
+1100000---- 1
+110000-0--- 1
+110000--1-- 1
+110000---0- 1
+.names DIP7.BLIF m0q4.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP4.BLIF m0q4.D
+-11-------- 1
+-1-1------- 1
+-1--1------ 1
+-1---1----- 1
+0-0000----1 1
+1100000---- 1
+110000-0--- 1
+110000--1-- 1
+110000---0- 1
+.names DIP7.BLIF m0q3.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP3.BLIF areg3.BLIF m0q3.D
+-11--------- 1
+-1-1-------- 1
+-1--1------- 1
+-1---1------ 1
+0-0000----1- 1
+1100000----- 1
+110000-0---- 1
+110000--1--- 1
+110000---0-- 1
+1-00001101-1 1
+.names DIP7.BLIF m0q2.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP2.BLIF areg2.BLIF m0q2.D
+-11--------- 1
+-1-1-------- 1
+-1--1------- 1
+-1---1------ 1
+0-0000----1- 1
+1100000----- 1
+110000-0---- 1
+110000--1--- 1
+110000---0-- 1
+1-00001101-1 1
+.names DIP7.BLIF m0q1.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP1.BLIF areg1.BLIF m0q1.D
+-11--------- 1
+-1-1-------- 1
+-1--1------- 1
+-1---1------ 1
+0-0000----1- 1
+1100000----- 1
+110000-0---- 1
+110000--1--- 1
+110000---0-- 1
+1-00001101-1 1
+.names DIP7.BLIF m0q0.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP0.BLIF areg0.BLIF m0q0.D
+-11--------- 1
+-1-1-------- 1
+-1--1------- 1
+-1---1------ 1
+0-0000----1- 1
+1100000----- 1
+110000-0---- 1
+110000--1--- 1
+110000---0-- 1
+1-00001101-1 1
+.names memclk.BLIF m0q6.C
+1 1
+.names memclk.BLIF m0q5.C
+1 1
+.names memclk.BLIF m0q4.C
+1 1
+.names memclk.BLIF m0q3.C
+1 1
+.names memclk.BLIF m0q2.C
+1 1
+.names memclk.BLIF m0q1.C
+1 1
+.names memclk.BLIF m0q0.C
+1 1
+.names DIP7.BLIF m1q6.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+DIP6.BLIF ir6.BLIF ir5.BLIF ir4.BLIF m1q6.D
+-10-------- 1
+-1-1------- 1
+-1--1------ 1
+-1---1----- 1
+0-1000-1--- 1
+1110000---- 1
+111000--0-- 1
+111000---1- 1
+111000----0 1
+.names DIP7.BLIF m1q5.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP5.BLIF m1q5.D
+-10-------- 1
+-1-1------- 1
+-1--1------ 1
+-1---1----- 1
+0-1000----1 1
+1110000---- 1
+111000-0--- 1
+111000--1-- 1
+111000---0- 1
+.names DIP7.BLIF m1q4.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP4.BLIF m1q4.D
+-10-------- 1
+-1-1------- 1
+-1--1------ 1
+-1---1----- 1
+0-1000----1 1
+1110000---- 1
+111000-0--- 1
+111000--1-- 1
+111000---0- 1
+.names DIP7.BLIF m1q3.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP3.BLIF areg3.BLIF m1q3.D
+-10--------- 1
+-1-1-------- 1
+-1--1------- 1
+-1---1------ 1
+0-1000----1- 1
+1110000----- 1
+111000-0---- 1
+111000--1--- 1
+111000---0-- 1
+1-10001101-1 1
+.names DIP7.BLIF m1q2.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP2.BLIF areg2.BLIF m1q2.D
+-10--------- 1
+-1-1-------- 1
+-1--1------- 1
+-1---1------ 1
+0-1000----1- 1
+1110000----- 1
+111000-0---- 1
+111000--1--- 1
+111000---0-- 1
+1-10001101-1 1
+.names DIP7.BLIF m1q1.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP1.BLIF areg1.BLIF m1q1.D
+-10--------- 1
+-1-1-------- 1
+-1--1------- 1
+-1---1------ 1
+0-1000----1- 1
+1110000----- 1
+111000-0---- 1
+111000--1--- 1
+111000---0-- 1
+1-10001101-1 1
+.names DIP7.BLIF m1q0.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP0.BLIF areg0.BLIF m1q0.D
+-10--------- 1
+-1-1-------- 1
+-1--1------- 1
+-1---1------ 1
+0-1000----1- 1
+1110000----- 1
+111000-0---- 1
+111000--1--- 1
+111000---0-- 1
+1-10001101-1 1
+.names memclk.BLIF m1q6.C
+1 1
+.names memclk.BLIF m1q5.C
+1 1
+.names memclk.BLIF m1q4.C
+1 1
+.names memclk.BLIF m1q3.C
+1 1
+.names memclk.BLIF m1q2.C
+1 1
+.names memclk.BLIF m1q1.C
+1 1
+.names memclk.BLIF m1q0.C
+1 1
+.names DIP7.BLIF m2q6.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+DIP6.BLIF ir6.BLIF ir5.BLIF ir4.BLIF m2q6.D
+-11-------- 1
+-1-0------- 1
+-1--1------ 1
+-1---1----- 1
+0-0100-1--- 1
+1101000---- 1
+110100--0-- 1
+110100---1- 1
+110100----0 1
+.names DIP7.BLIF m2q5.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP5.BLIF m2q5.D
+-11-------- 1
+-1-0------- 1
+-1--1------ 1
+-1---1----- 1
+0-0100----1 1
+1101000---- 1
+110100-0--- 1
+110100--1-- 1
+110100---0- 1
+.names DIP7.BLIF m2q4.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP4.BLIF m2q4.D
+-11-------- 1
+-1-0------- 1
+-1--1------ 1
+-1---1----- 1
+0-0100----1 1
+1101000---- 1
+110100-0--- 1
+110100--1-- 1
+110100---0- 1
+.names DIP7.BLIF m2q3.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP3.BLIF areg3.BLIF m2q3.D
+-11--------- 1
+-1-0-------- 1
+-1--1------- 1
+-1---1------ 1
+0-0100----1- 1
+1101000----- 1
+110100-0---- 1
+110100--1--- 1
+110100---0-- 1
+1-01001101-1 1
+.names DIP7.BLIF m2q2.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP2.BLIF areg2.BLIF m2q2.D
+-11--------- 1
+-1-0-------- 1
+-1--1------- 1
+-1---1------ 1
+0-0100----1- 1
+1101000----- 1
+110100-0---- 1
+110100--1--- 1
+110100---0-- 1
+1-01001101-1 1
+.names DIP7.BLIF m2q1.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP1.BLIF areg1.BLIF m2q1.D
+-11--------- 1
+-1-0-------- 1
+-1--1------- 1
+-1---1------ 1
+0-0100----1- 1
+1101000----- 1
+110100-0---- 1
+110100--1--- 1
+110100---0-- 1
+1-01001101-1 1
+.names DIP7.BLIF m2q0.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP0.BLIF areg0.BLIF m2q0.D
+-11--------- 1
+-1-0-------- 1
+-1--1------- 1
+-1---1------ 1
+0-0100----1- 1
+1101000----- 1
+110100-0---- 1
+110100--1--- 1
+110100---0-- 1
+1-01001101-1 1
+.names memclk.BLIF m2q6.C
+1 1
+.names memclk.BLIF m2q5.C
+1 1
+.names memclk.BLIF m2q4.C
+1 1
+.names memclk.BLIF m2q3.C
+1 1
+.names memclk.BLIF m2q2.C
+1 1
+.names memclk.BLIF m2q1.C
+1 1
+.names memclk.BLIF m2q0.C
+1 1
+.names DIP7.BLIF m3q6.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+DIP6.BLIF ir6.BLIF ir5.BLIF ir4.BLIF m3q6.D
+-10-------- 1
+-1-0------- 1
+-1--1------ 1
+-1---1----- 1
+0-1100-1--- 1
+1111000---- 1
+111100--0-- 1
+111100---1- 1
+111100----0 1
+.names DIP7.BLIF m3q5.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP5.BLIF m3q5.D
+-10-------- 1
+-1-0------- 1
+-1--1------ 1
+-1---1----- 1
+0-1100----1 1
+1111000---- 1
+111100-0--- 1
+111100--1-- 1
+111100---0- 1
+.names DIP7.BLIF m3q4.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP4.BLIF m3q4.D
+-10-------- 1
+-1-0------- 1
+-1--1------ 1
+-1---1----- 1
+0-1100----1 1
+1111000---- 1
+111100-0--- 1
+111100--1-- 1
+111100---0- 1
+.names DIP7.BLIF m3q3.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP3.BLIF areg3.BLIF m3q3.D
+-10--------- 1
+-1-0-------- 1
+-1--1------- 1
+-1---1------ 1
+0-1100----1- 1
+1111000----- 1
+111100-0---- 1
+111100--1--- 1
+111100---0-- 1
+1-11001101-1 1
+.names DIP7.BLIF m3q2.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP2.BLIF areg2.BLIF m3q2.D
+-10--------- 1
+-1-0-------- 1
+-1--1------- 1
+-1---1------ 1
+0-1100----1- 1
+1111000----- 1
+111100-0---- 1
+111100--1--- 1
+111100---0-- 1
+1-11001101-1 1
+.names DIP7.BLIF m3q1.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP1.BLIF areg1.BLIF m3q1.D
+-10--------- 1
+-1-0-------- 1
+-1--1------- 1
+-1---1------ 1
+0-1100----1- 1
+1111000----- 1
+111100-0---- 1
+111100--1--- 1
+111100---0-- 1
+1-11001101-1 1
+.names DIP7.BLIF m3q0.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP0.BLIF areg0.BLIF m3q0.D
+-10--------- 1
+-1-0-------- 1
+-1--1------- 1
+-1---1------ 1
+0-1100----1- 1
+1111000----- 1
+111100-0---- 1
+111100--1--- 1
+111100---0-- 1
+1-11001101-1 1
+.names memclk.BLIF m3q6.C
+1 1
+.names memclk.BLIF m3q5.C
+1 1
+.names memclk.BLIF m3q4.C
+1 1
+.names memclk.BLIF m3q3.C
+1 1
+.names memclk.BLIF m3q2.C
+1 1
+.names memclk.BLIF m3q1.C
+1 1
+.names memclk.BLIF m3q0.C
+1 1
+.names DIP7.BLIF m4q6.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+DIP6.BLIF ir6.BLIF ir5.BLIF ir4.BLIF m4q6.D
+-11-------- 1
+-1-1------- 1
+-1--0------ 1
+-1---1----- 1
+0-0010-1--- 1
+1100100---- 1
+110010--0-- 1
+110010---1- 1
+110010----0 1
+.names DIP7.BLIF m4q5.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP5.BLIF m4q5.D
+-11-------- 1
+-1-1------- 1
+-1--0------ 1
+-1---1----- 1
+0-0010----1 1
+1100100---- 1
+110010-0--- 1
+110010--1-- 1
+110010---0- 1
+.names DIP7.BLIF m4q4.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP4.BLIF m4q4.D
+-11-------- 1
+-1-1------- 1
+-1--0------ 1
+-1---1----- 1
+0-0010----1 1
+1100100---- 1
+110010-0--- 1
+110010--1-- 1
+110010---0- 1
+.names DIP7.BLIF m4q3.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP3.BLIF areg3.BLIF m4q3.D
+-11--------- 1
+-1-1-------- 1
+-1--0------- 1
+-1---1------ 1
+0-0010----1- 1
+1100100----- 1
+110010-0---- 1
+110010--1--- 1
+110010---0-- 1
+1-00101101-1 1
+.names DIP7.BLIF m4q2.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP2.BLIF areg2.BLIF m4q2.D
+-11--------- 1
+-1-1-------- 1
+-1--0------- 1
+-1---1------ 1
+0-0010----1- 1
+1100100----- 1
+110010-0---- 1
+110010--1--- 1
+110010---0-- 1
+1-00101101-1 1
+.names DIP7.BLIF m4q1.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP1.BLIF areg1.BLIF m4q1.D
+-11--------- 1
+-1-1-------- 1
+-1--0------- 1
+-1---1------ 1
+0-0010----1- 1
+1100100----- 1
+110010-0---- 1
+110010--1--- 1
+110010---0-- 1
+1-00101101-1 1
+.names DIP7.BLIF m4q0.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP0.BLIF areg0.BLIF m4q0.D
+-11--------- 1
+-1-1-------- 1
+-1--0------- 1
+-1---1------ 1
+0-0010----1- 1
+1100100----- 1
+110010-0---- 1
+110010--1--- 1
+110010---0-- 1
+1-00101101-1 1
+.names memclk.BLIF m4q6.C
+1 1
+.names memclk.BLIF m4q5.C
+1 1
+.names memclk.BLIF m4q4.C
+1 1
+.names memclk.BLIF m4q3.C
+1 1
+.names memclk.BLIF m4q2.C
+1 1
+.names memclk.BLIF m4q1.C
+1 1
+.names memclk.BLIF m4q0.C
+1 1
+.names DIP7.BLIF m5q6.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+DIP6.BLIF ir6.BLIF ir5.BLIF ir4.BLIF m5q6.D
+-10-------- 1
+-1-1------- 1
+-1--0------ 1
+-1---1----- 1
+0-1010-1--- 1
+1110100---- 1
+111010--0-- 1
+111010---1- 1
+111010----0 1
+.names DIP7.BLIF m5q5.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP5.BLIF m5q5.D
+-10-------- 1
+-1-1------- 1
+-1--0------ 1
+-1---1----- 1
+0-1010----1 1
+1110100---- 1
+111010-0--- 1
+111010--1-- 1
+111010---0- 1
+.names DIP7.BLIF m5q4.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP4.BLIF m5q4.D
+-10-------- 1
+-1-1------- 1
+-1--0------ 1
+-1---1----- 1
+0-1010----1 1
+1110100---- 1
+111010-0--- 1
+111010--1-- 1
+111010---0- 1
+.names DIP7.BLIF m5q3.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP3.BLIF areg3.BLIF m5q3.D
+-10--------- 1
+-1-1-------- 1
+-1--0------- 1
+-1---1------ 1
+0-1010----1- 1
+1110100----- 1
+111010-0---- 1
+111010--1--- 1
+111010---0-- 1
+1-10101101-1 1
+.names DIP7.BLIF m5q2.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP2.BLIF areg2.BLIF m5q2.D
+-10--------- 1
+-1-1-------- 1
+-1--0------- 1
+-1---1------ 1
+0-1010----1- 1
+1110100----- 1
+111010-0---- 1
+111010--1--- 1
+111010---0-- 1
+1-10101101-1 1
+.names DIP7.BLIF m5q1.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP1.BLIF areg1.BLIF m5q1.D
+-10--------- 1
+-1-1-------- 1
+-1--0------- 1
+-1---1------ 1
+0-1010----1- 1
+1110100----- 1
+111010-0---- 1
+111010--1--- 1
+111010---0-- 1
+1-10101101-1 1
+.names DIP7.BLIF m5q0.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP0.BLIF areg0.BLIF m5q0.D
+-10--------- 1
+-1-1-------- 1
+-1--0------- 1
+-1---1------ 1
+0-1010----1- 1
+1110100----- 1
+111010-0---- 1
+111010--1--- 1
+111010---0-- 1
+1-10101101-1 1
+.names memclk.BLIF m5q6.C
+1 1
+.names memclk.BLIF m5q5.C
+1 1
+.names memclk.BLIF m5q4.C
+1 1
+.names memclk.BLIF m5q3.C
+1 1
+.names memclk.BLIF m5q2.C
+1 1
+.names memclk.BLIF m5q1.C
+1 1
+.names memclk.BLIF m5q0.C
+1 1
+.names DIP7.BLIF m6q6.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+DIP6.BLIF ir6.BLIF ir5.BLIF ir4.BLIF m6q6.D
+-11-------- 1
+-1-0------- 1
+-1--0------ 1
+-1---1----- 1
+0-0110-1--- 1
+1101100---- 1
+110110--0-- 1
+110110---1- 1
+110110----0 1
+.names DIP7.BLIF m6q5.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP5.BLIF m6q5.D
+-11-------- 1
+-1-0------- 1
+-1--0------ 1
+-1---1----- 1
+0-0110----1 1
+1101100---- 1
+110110-0--- 1
+110110--1-- 1
+110110---0- 1
+.names DIP7.BLIF m6q4.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP4.BLIF m6q4.D
+-11-------- 1
+-1-0------- 1
+-1--0------ 1
+-1---1----- 1
+0-0110----1 1
+1101100---- 1
+110110-0--- 1
+110110--1-- 1
+110110---0- 1
+.names DIP7.BLIF m6q3.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP3.BLIF areg3.BLIF m6q3.D
+-11--------- 1
+-1-0-------- 1
+-1--0------- 1
+-1---1------ 1
+0-0110----1- 1
+1101100----- 1
+110110-0---- 1
+110110--1--- 1
+110110---0-- 1
+1-01101101-1 1
+.names DIP7.BLIF m6q2.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP2.BLIF areg2.BLIF m6q2.D
+-11--------- 1
+-1-0-------- 1
+-1--0------- 1
+-1---1------ 1
+0-0110----1- 1
+1101100----- 1
+110110-0---- 1
+110110--1--- 1
+110110---0-- 1
+1-01101101-1 1
+.names DIP7.BLIF m6q1.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP1.BLIF areg1.BLIF m6q1.D
+-11--------- 1
+-1-0-------- 1
+-1--0------- 1
+-1---1------ 1
+0-0110----1- 1
+1101100----- 1
+110110-0---- 1
+110110--1--- 1
+110110---0-- 1
+1-01101101-1 1
+.names DIP7.BLIF m6q0.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP0.BLIF areg0.BLIF m6q0.D
+-11--------- 1
+-1-0-------- 1
+-1--0------- 1
+-1---1------ 1
+0-0110----1- 1
+1101100----- 1
+110110-0---- 1
+110110--1--- 1
+110110---0-- 1
+1-01101101-1 1
+.names memclk.BLIF m6q6.C
+1 1
+.names memclk.BLIF m6q5.C
+1 1
+.names memclk.BLIF m6q4.C
+1 1
+.names memclk.BLIF m6q3.C
+1 1
+.names memclk.BLIF m6q2.C
+1 1
+.names memclk.BLIF m6q1.C
+1 1
+.names memclk.BLIF m6q0.C
+1 1
+.names DIP7.BLIF m7q6.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+DIP6.BLIF ir6.BLIF ir5.BLIF ir4.BLIF m7q6.D
+-10-------- 1
+-1-0------- 1
+-1--0------ 1
+-1---1----- 1
+0-1110-1--- 1
+1111100---- 1
+111110--0-- 1
+111110---1- 1
+111110----0 1
+.names DIP7.BLIF m7q5.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP5.BLIF m7q5.D
+-10-------- 1
+-1-0------- 1
+-1--0------ 1
+-1---1----- 1
+0-1110----1 1
+1111100---- 1
+111110-0--- 1
+111110--1-- 1
+111110---0- 1
+.names DIP7.BLIF m7q4.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP4.BLIF m7q4.D
+-10-------- 1
+-1-0------- 1
+-1--0------ 1
+-1---1----- 1
+0-1110----1 1
+1111100---- 1
+111110-0--- 1
+111110--1-- 1
+111110---0- 1
+.names DIP7.BLIF m7q3.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP3.BLIF areg3.BLIF m7q3.D
+-10--------- 1
+-1-0-------- 1
+-1--0------- 1
+-1---1------ 1
+0-1110----1- 1
+1111100----- 1
+111110-0---- 1
+111110--1--- 1
+111110---0-- 1
+1-11101101-1 1
+.names DIP7.BLIF m7q2.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP2.BLIF areg2.BLIF m7q2.D
+-10--------- 1
+-1-0-------- 1
+-1--0------- 1
+-1---1------ 1
+0-1110----1- 1
+1111100----- 1
+111110-0---- 1
+111110--1--- 1
+111110---0-- 1
+1-11101101-1 1
+.names DIP7.BLIF m7q1.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP1.BLIF areg1.BLIF m7q1.D
+-10--------- 1
+-1-0-------- 1
+-1--0------- 1
+-1---1------ 1
+0-1110----1- 1
+1111100----- 1
+111110-0---- 1
+111110--1--- 1
+111110---0-- 1
+1-11101101-1 1
+.names DIP7.BLIF m7q0.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP0.BLIF areg0.BLIF m7q0.D
+-10--------- 1
+-1-0-------- 1
+-1--0------- 1
+-1---1------ 1
+0-1110----1- 1
+1111100----- 1
+111110-0---- 1
+111110--1--- 1
+111110---0-- 1
+1-11101101-1 1
+.names memclk.BLIF m7q6.C
+1 1
+.names memclk.BLIF m7q5.C
+1 1
+.names memclk.BLIF m7q4.C
+1 1
+.names memclk.BLIF m7q3.C
+1 1
+.names memclk.BLIF m7q2.C
+1 1
+.names memclk.BLIF m7q1.C
+1 1
+.names memclk.BLIF m7q0.C
+1 1
+.names DIP7.BLIF m8q6.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+DIP6.BLIF ir6.BLIF ir5.BLIF ir4.BLIF m8q6.D
+-11-------- 1
+-1-1------- 1
+-1--1------ 1
+-1---0----- 1
+0-0001-1--- 1
+1100010---- 1
+110001--0-- 1
+110001---1- 1
+110001----0 1
+.names DIP7.BLIF m8q5.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP5.BLIF m8q5.D
+-11-------- 1
+-1-1------- 1
+-1--1------ 1
+-1---0----- 1
+0-0001----1 1
+1100010---- 1
+110001-0--- 1
+110001--1-- 1
+110001---0- 1
+.names DIP7.BLIF m8q4.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP4.BLIF m8q4.D
+-11-------- 1
+-1-1------- 1
+-1--1------ 1
+-1---0----- 1
+0-0001----1 1
+1100010---- 1
+110001-0--- 1
+110001--1-- 1
+110001---0- 1
+.names DIP7.BLIF m8q3.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP3.BLIF areg3.BLIF m8q3.D
+-11--------- 1
+-1-1-------- 1
+-1--1------- 1
+-1---0------ 1
+0-0001----1- 1
+1100010----- 1
+110001-0---- 1
+110001--1--- 1
+110001---0-- 1
+1-00011101-1 1
+.names DIP7.BLIF m8q2.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP2.BLIF areg2.BLIF m8q2.D
+-11--------- 1
+-1-1-------- 1
+-1--1------- 1
+-1---0------ 1
+0-0001----1- 1
+1100010----- 1
+110001-0---- 1
+110001--1--- 1
+110001---0-- 1
+1-00011101-1 1
+.names DIP7.BLIF m8q1.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP1.BLIF areg1.BLIF m8q1.D
+-11--------- 1
+-1-1-------- 1
+-1--1------- 1
+-1---0------ 1
+0-0001----1- 1
+1100010----- 1
+110001-0---- 1
+110001--1--- 1
+110001---0-- 1
+1-00011101-1 1
+.names DIP7.BLIF m8q0.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP0.BLIF areg0.BLIF m8q0.D
+-11--------- 1
+-1-1-------- 1
+-1--1------- 1
+-1---0------ 1
+0-0001----1- 1
+1100010----- 1
+110001-0---- 1
+110001--1--- 1
+110001---0-- 1
+1-00011101-1 1
+.names memclk.BLIF m8q6.C
+1 1
+.names memclk.BLIF m8q5.C
+1 1
+.names memclk.BLIF m8q4.C
+1 1
+.names memclk.BLIF m8q3.C
+1 1
+.names memclk.BLIF m8q2.C
+1 1
+.names memclk.BLIF m8q1.C
+1 1
+.names memclk.BLIF m8q0.C
+1 1
+.names DIP7.BLIF m9q6.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+DIP6.BLIF ir6.BLIF ir5.BLIF ir4.BLIF m9q6.D
+-10-------- 1
+-1-1------- 1
+-1--1------ 1
+-1---0----- 1
+0-1001-1--- 1
+1110010---- 1
+111001--0-- 1
+111001---1- 1
+111001----0 1
+.names DIP7.BLIF m9q5.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP5.BLIF m9q5.D
+-10-------- 1
+-1-1------- 1
+-1--1------ 1
+-1---0----- 1
+0-1001----1 1
+1110010---- 1
+111001-0--- 1
+111001--1-- 1
+111001---0- 1
+.names DIP7.BLIF m9q4.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP4.BLIF m9q4.D
+-10-------- 1
+-1-1------- 1
+-1--1------ 1
+-1---0----- 1
+0-1001----1 1
+1110010---- 1
+111001-0--- 1
+111001--1-- 1
+111001---0- 1
+.names DIP7.BLIF m9q3.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP3.BLIF areg3.BLIF m9q3.D
+-10--------- 1
+-1-1-------- 1
+-1--1------- 1
+-1---0------ 1
+0-1001----1- 1
+1110010----- 1
+111001-0---- 1
+111001--1--- 1
+111001---0-- 1
+1-10011101-1 1
+.names DIP7.BLIF m9q2.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP2.BLIF areg2.BLIF m9q2.D
+-10--------- 1
+-1-1-------- 1
+-1--1------- 1
+-1---0------ 1
+0-1001----1- 1
+1110010----- 1
+111001-0---- 1
+111001--1--- 1
+111001---0-- 1
+1-10011101-1 1
+.names DIP7.BLIF m9q1.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP1.BLIF areg1.BLIF m9q1.D
+-10--------- 1
+-1-1-------- 1
+-1--1------- 1
+-1---0------ 1
+0-1001----1- 1
+1110010----- 1
+111001-0---- 1
+111001--1--- 1
+111001---0-- 1
+1-10011101-1 1
+.names DIP7.BLIF m9q0.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP0.BLIF areg0.BLIF m9q0.D
+-10--------- 1
+-1-1-------- 1
+-1--1------- 1
+-1---0------ 1
+0-1001----1- 1
+1110010----- 1
+111001-0---- 1
+111001--1--- 1
+111001---0-- 1
+1-10011101-1 1
+.names memclk.BLIF m9q6.C
+1 1
+.names memclk.BLIF m9q5.C
+1 1
+.names memclk.BLIF m9q4.C
+1 1
+.names memclk.BLIF m9q3.C
+1 1
+.names memclk.BLIF m9q2.C
+1 1
+.names memclk.BLIF m9q1.C
+1 1
+.names memclk.BLIF m9q0.C
+1 1
+.names DIP7.BLIF m10q6.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+DIP6.BLIF ir6.BLIF ir5.BLIF ir4.BLIF m10q6.D
+-11-------- 1
+-1-0------- 1
+-1--1------ 1
+-1---0----- 1
+0-0101-1--- 1
+1101010---- 1
+110101--0-- 1
+110101---1- 1
+110101----0 1
+.names DIP7.BLIF m10q5.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP5.BLIF m10q5.D
+-11-------- 1
+-1-0------- 1
+-1--1------ 1
+-1---0----- 1
+0-0101----1 1
+1101010---- 1
+110101-0--- 1
+110101--1-- 1
+110101---0- 1
+.names DIP7.BLIF m10q4.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP4.BLIF m10q4.D
+-11-------- 1
+-1-0------- 1
+-1--1------ 1
+-1---0----- 1
+0-0101----1 1
+1101010---- 1
+110101-0--- 1
+110101--1-- 1
+110101---0- 1
+.names DIP7.BLIF m10q3.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP3.BLIF areg3.BLIF m10q3.D
+-11--------- 1
+-1-0-------- 1
+-1--1------- 1
+-1---0------ 1
+0-0101----1- 1
+1101010----- 1
+110101-0---- 1
+110101--1--- 1
+110101---0-- 1
+1-01011101-1 1
+.names DIP7.BLIF m10q2.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP2.BLIF areg2.BLIF m10q2.D
+-11--------- 1
+-1-0-------- 1
+-1--1------- 1
+-1---0------ 1
+0-0101----1- 1
+1101010----- 1
+110101-0---- 1
+110101--1--- 1
+110101---0-- 1
+1-01011101-1 1
+.names DIP7.BLIF m10q1.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP1.BLIF areg1.BLIF m10q1.D
+-11--------- 1
+-1-0-------- 1
+-1--1------- 1
+-1---0------ 1
+0-0101----1- 1
+1101010----- 1
+110101-0---- 1
+110101--1--- 1
+110101---0-- 1
+1-01011101-1 1
+.names DIP7.BLIF m10q0.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP0.BLIF areg0.BLIF m10q0.D
+-11--------- 1
+-1-0-------- 1
+-1--1------- 1
+-1---0------ 1
+0-0101----1- 1
+1101010----- 1
+110101-0---- 1
+110101--1--- 1
+110101---0-- 1
+1-01011101-1 1
+.names memclk.BLIF m10q6.C
+1 1
+.names memclk.BLIF m10q5.C
+1 1
+.names memclk.BLIF m10q4.C
+1 1
+.names memclk.BLIF m10q3.C
+1 1
+.names memclk.BLIF m10q2.C
+1 1
+.names memclk.BLIF m10q1.C
+1 1
+.names memclk.BLIF m10q0.C
+1 1
+.names DIP7.BLIF m11q6.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+DIP6.BLIF ir6.BLIF ir5.BLIF ir4.BLIF m11q6.D
+-10-------- 1
+-1-0------- 1
+-1--1------ 1
+-1---0----- 1
+0-1101-1--- 1
+1111010---- 1
+111101--0-- 1
+111101---1- 1
+111101----0 1
+.names DIP7.BLIF m11q5.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP5.BLIF m11q5.D
+-10-------- 1
+-1-0------- 1
+-1--1------ 1
+-1---0----- 1
+0-1101----1 1
+1111010---- 1
+111101-0--- 1
+111101--1-- 1
+111101---0- 1
+.names DIP7.BLIF m11q4.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP4.BLIF m11q4.D
+-10-------- 1
+-1-0------- 1
+-1--1------ 1
+-1---0----- 1
+0-1101----1 1
+1111010---- 1
+111101-0--- 1
+111101--1-- 1
+111101---0- 1
+.names DIP7.BLIF m11q3.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP3.BLIF areg3.BLIF m11q3.D
+-10--------- 1
+-1-0-------- 1
+-1--1------- 1
+-1---0------ 1
+0-1101----1- 1
+1111010----- 1
+111101-0---- 1
+111101--1--- 1
+111101---0-- 1
+1-11011101-1 1
+.names DIP7.BLIF m11q2.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP2.BLIF areg2.BLIF m11q2.D
+-10--------- 1
+-1-0-------- 1
+-1--1------- 1
+-1---0------ 1
+0-1101----1- 1
+1111010----- 1
+111101-0---- 1
+111101--1--- 1
+111101---0-- 1
+1-11011101-1 1
+.names DIP7.BLIF m11q1.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP1.BLIF areg1.BLIF m11q1.D
+-10--------- 1
+-1-0-------- 1
+-1--1------- 1
+-1---0------ 1
+0-1101----1- 1
+1111010----- 1
+111101-0---- 1
+111101--1--- 1
+111101---0-- 1
+1-11011101-1 1
+.names DIP7.BLIF m11q0.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP0.BLIF areg0.BLIF m11q0.D
+-10--------- 1
+-1-0-------- 1
+-1--1------- 1
+-1---0------ 1
+0-1101----1- 1
+1111010----- 1
+111101-0---- 1
+111101--1--- 1
+111101---0-- 1
+1-11011101-1 1
+.names memclk.BLIF m11q6.C
+1 1
+.names memclk.BLIF m11q5.C
+1 1
+.names memclk.BLIF m11q4.C
+1 1
+.names memclk.BLIF m11q3.C
+1 1
+.names memclk.BLIF m11q2.C
+1 1
+.names memclk.BLIF m11q1.C
+1 1
+.names memclk.BLIF m11q0.C
+1 1
+.names DIP7.BLIF m12q6.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+DIP6.BLIF ir6.BLIF ir5.BLIF ir4.BLIF m12q6.D
+-11-------- 1
+-1-1------- 1
+-1--0------ 1
+-1---0----- 1
+0-0011-1--- 1
+1100110---- 1
+110011--0-- 1
+110011---1- 1
+110011----0 1
+.names DIP7.BLIF m12q5.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP5.BLIF m12q5.D
+-11-------- 1
+-1-1------- 1
+-1--0------ 1
+-1---0----- 1
+0-0011----1 1
+1100110---- 1
+110011-0--- 1
+110011--1-- 1
+110011---0- 1
+.names DIP7.BLIF m12q4.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP4.BLIF m12q4.D
+-11-------- 1
+-1-1------- 1
+-1--0------ 1
+-1---0----- 1
+0-0011----1 1
+1100110---- 1
+110011-0--- 1
+110011--1-- 1
+110011---0- 1
+.names DIP7.BLIF m12q3.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP3.BLIF areg3.BLIF m12q3.D
+-11--------- 1
+-1-1-------- 1
+-1--0------- 1
+-1---0------ 1
+0-0011----1- 1
+1100110----- 1
+110011-0---- 1
+110011--1--- 1
+110011---0-- 1
+1-00111101-1 1
+.names DIP7.BLIF m12q2.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP2.BLIF areg2.BLIF m12q2.D
+-11--------- 1
+-1-1-------- 1
+-1--0------- 1
+-1---0------ 1
+0-0011----1- 1
+1100110----- 1
+110011-0---- 1
+110011--1--- 1
+110011---0-- 1
+1-00111101-1 1
+.names DIP7.BLIF m12q1.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP1.BLIF areg1.BLIF m12q1.D
+-11--------- 1
+-1-1-------- 1
+-1--0------- 1
+-1---0------ 1
+0-0011----1- 1
+1100110----- 1
+110011-0---- 1
+110011--1--- 1
+110011---0-- 1
+1-00111101-1 1
+.names DIP7.BLIF m12q0.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP0.BLIF areg0.BLIF m12q0.D
+-11--------- 1
+-1-1-------- 1
+-1--0------- 1
+-1---0------ 1
+0-0011----1- 1
+1100110----- 1
+110011-0---- 1
+110011--1--- 1
+110011---0-- 1
+1-00111101-1 1
+.names memclk.BLIF m12q6.C
+1 1
+.names memclk.BLIF m12q5.C
+1 1
+.names memclk.BLIF m12q4.C
+1 1
+.names memclk.BLIF m12q3.C
+1 1
+.names memclk.BLIF m12q2.C
+1 1
+.names memclk.BLIF m12q1.C
+1 1
+.names memclk.BLIF m12q0.C
+1 1
+.names DIP7.BLIF m13q6.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+DIP6.BLIF ir6.BLIF ir5.BLIF ir4.BLIF m13q6.D
+-10-------- 1
+-1-1------- 1
+-1--0------ 1
+-1---0----- 1
+0-1011-1--- 1
+1110110---- 1
+111011--0-- 1
+111011---1- 1
+111011----0 1
+.names DIP7.BLIF m13q5.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP5.BLIF m13q5.D
+-10-------- 1
+-1-1------- 1
+-1--0------ 1
+-1---0----- 1
+0-1011----1 1
+1110110---- 1
+111011-0--- 1
+111011--1-- 1
+111011---0- 1
+.names DIP7.BLIF m13q4.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP4.BLIF m13q4.D
+-10-------- 1
+-1-1------- 1
+-1--0------ 1
+-1---0----- 1
+0-1011----1 1
+1110110---- 1
+111011-0--- 1
+111011--1-- 1
+111011---0- 1
+.names DIP7.BLIF m13q3.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP3.BLIF areg3.BLIF m13q3.D
+-10--------- 1
+-1-1-------- 1
+-1--0------- 1
+-1---0------ 1
+0-1011----1- 1
+1110110----- 1
+111011-0---- 1
+111011--1--- 1
+111011---0-- 1
+1-10111101-1 1
+.names DIP7.BLIF m13q2.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP2.BLIF areg2.BLIF m13q2.D
+-10--------- 1
+-1-1-------- 1
+-1--0------- 1
+-1---0------ 1
+0-1011----1- 1
+1110110----- 1
+111011-0---- 1
+111011--1--- 1
+111011---0-- 1
+1-10111101-1 1
+.names DIP7.BLIF m13q1.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP1.BLIF areg1.BLIF m13q1.D
+-10--------- 1
+-1-1-------- 1
+-1--0------- 1
+-1---0------ 1
+0-1011----1- 1
+1110110----- 1
+111011-0---- 1
+111011--1--- 1
+111011---0-- 1
+1-10111101-1 1
+.names DIP7.BLIF m13q0.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP0.BLIF areg0.BLIF m13q0.D
+-10--------- 1
+-1-1-------- 1
+-1--0------- 1
+-1---0------ 1
+0-1011----1- 1
+1110110----- 1
+111011-0---- 1
+111011--1--- 1
+111011---0-- 1
+1-10111101-1 1
+.names memclk.BLIF m13q6.C
+1 1
+.names memclk.BLIF m13q5.C
+1 1
+.names memclk.BLIF m13q4.C
+1 1
+.names memclk.BLIF m13q3.C
+1 1
+.names memclk.BLIF m13q2.C
+1 1
+.names memclk.BLIF m13q1.C
+1 1
+.names memclk.BLIF m13q0.C
+1 1
+.names DIP7.BLIF m14q6.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+DIP6.BLIF ir6.BLIF ir5.BLIF ir4.BLIF m14q6.D
+-11-------- 1
+-1-0------- 1
+-1--0------ 1
+-1---0----- 1
+0-0111-1--- 1
+1101110---- 1
+110111--0-- 1
+110111---1- 1
+110111----0 1
+.names DIP7.BLIF m14q5.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP5.BLIF m14q5.D
+-11-------- 1
+-1-0------- 1
+-1--0------ 1
+-1---0----- 1
+0-0111----1 1
+1101110---- 1
+110111-0--- 1
+110111--1-- 1
+110111---0- 1
+.names DIP7.BLIF m14q4.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP4.BLIF m14q4.D
+-11-------- 1
+-1-0------- 1
+-1--0------ 1
+-1---0----- 1
+0-0111----1 1
+1101110---- 1
+110111-0--- 1
+110111--1-- 1
+110111---0- 1
+.names DIP7.BLIF m14q3.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP3.BLIF areg3.BLIF m14q3.D
+-11--------- 1
+-1-0-------- 1
+-1--0------- 1
+-1---0------ 1
+0-0111----1- 1
+1101110----- 1
+110111-0---- 1
+110111--1--- 1
+110111---0-- 1
+1-01111101-1 1
+.names DIP7.BLIF m14q2.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP2.BLIF areg2.BLIF m14q2.D
+-11--------- 1
+-1-0-------- 1
+-1--0------- 1
+-1---0------ 1
+0-0111----1- 1
+1101110----- 1
+110111-0---- 1
+110111--1--- 1
+110111---0-- 1
+1-01111101-1 1
+.names DIP7.BLIF m14q1.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP1.BLIF areg1.BLIF m14q1.D
+-11--------- 1
+-1-0-------- 1
+-1--0------- 1
+-1---0------ 1
+0-0111----1- 1
+1101110----- 1
+110111-0---- 1
+110111--1--- 1
+110111---0-- 1
+1-01111101-1 1
+.names DIP7.BLIF m14q0.BLIF ab0.BLIF ab1.BLIF ab2.BLIF ab3.BLIF sq.BLIF \
+ir6.BLIF ir5.BLIF ir4.BLIF DIP0.BLIF areg0.BLIF m14q0.D
+-11--------- 1
+-1-0-------- 1
+-1--0------- 1
+-1---0------ 1
+0-0111----1- 1
+1101110----- 1
+110111-0---- 1
+110111--1--- 1
+110111---0-- 1
+1-01111101-1 1
+.names memclk.BLIF m14q6.C
+1 1
+.names memclk.BLIF m14q5.C
+1 1
+.names memclk.BLIF m14q4.C
+1 1
+.names memclk.BLIF m14q3.C
+1 1
+.names memclk.BLIF m14q2.C
+1 1
+.names memclk.BLIF m14q1.C
+1 1
+.names memclk.BLIF m14q0.C
+1 1
+.names sq.BLIF sq.D
+0 1
+.names start.BLIF sq.AR
+1 1
+.names cpuclk.BLIF sq.C
+1 1
+.names start.BLIF run.AP
+1 1
+.names run.C
+.names run.D
+.names sq.BLIF ir6.BLIF ir5.BLIF ir4.BLIF run.AR
+1000 1
+.names sq.BLIF pc3.BLIF pc2.BLIF pc1.BLIF pc0.BLIF pc3.D
+11--- 1
+-10-- 1
+-1-0- 1
+-1--0 1
+00111 1
+.names sq.BLIF pc2.BLIF pc1.BLIF pc0.BLIF pc2.D
+11-- 1
+-10- 1
+-1-0 1
+0011 1
+.names sq.BLIF pc1.BLIF pc0.BLIF pc1.D
+11- 1
+-10 1
+001 1
+.names sq.BLIF pc0.BLIF pc0.D
+11 1
+00 1
+.names start.BLIF pc3.AR
+1 1
+.names start.BLIF pc2.AR
+1 1
+.names start.BLIF pc1.AR
+1 1
+.names start.BLIF pc0.AR
+1 1
+.names cpuclk.BLIF pc3.C
+1 1
+.names cpuclk.BLIF pc2.C
+1 1
+.names cpuclk.BLIF pc1.C
+1 1
+.names cpuclk.BLIF pc0.C
+1 1
+.names sq.BLIF ir6.BLIF db6.BLIF ir6.D
+11- 1
+0-1 1
+.names sq.BLIF ir5.BLIF db5.BLIF ir5.D
+11- 1
+0-1 1
+.names sq.BLIF ir4.BLIF db4.BLIF ir4.D
+11- 1
+0-1 1
+.names sq.BLIF ir3.BLIF db3.BLIF ir3.D
+11- 1
+0-1 1
+.names sq.BLIF ir2.BLIF db2.BLIF ir2.D
+11- 1
+0-1 1
+.names sq.BLIF ir1.BLIF db1.BLIF ir1.D
+11- 1
+0-1 1
+.names sq.BLIF ir0.BLIF db0.BLIF ir0.D
+11- 1
+0-1 1
+.names start.BLIF ir6.AR
+1 1
+.names start.BLIF ir5.AR
+1 1
+.names start.BLIF ir4.AR
+1 1
+.names start.BLIF ir3.AR
+1 1
+.names start.BLIF ir2.AR
+1 1
+.names start.BLIF ir1.AR
+1 1
+.names start.BLIF ir0.AR
+1 1
+.names cpuclk.BLIF ir6.C
+1 1
+.names cpuclk.BLIF ir5.C
+1 1
+.names cpuclk.BLIF ir4.C
+1 1
+.names cpuclk.BLIF ir3.C
+1 1
+.names cpuclk.BLIF ir2.C
+1 1
+.names cpuclk.BLIF ir1.C
+1 1
+.names cpuclk.BLIF ir0.C
+1 1
+.names aly.BLIF CF.Q ale.BLIF alx.BLIF C3.BLIF CF.D
+-10-- 1
+-111- 1
+0-101 1
+1-100 1
+.names cpuclk.BLIF CF.C
+1 1
+.names start.BLIF CF.AR
+1 1
+.names ale.BLIF ZF.Q alu3.BLIF alu2.BLIF alu1.BLIF alu0.BLIF ZF.D
+01---- 1
+1-0000 1
+.names cpuclk.BLIF ZF.C
+1 1
+.names start.BLIF ZF.AR
+1 1
+.names ale.BLIF alu3.BLIF NF.Q NF.D
+11- 1
+0-1 1
+.names cpuclk.BLIF NF.C
+1 1
+.names start.BLIF NF.AR
+1 1
+.names C2.BLIF ale.BLIF alx.BLIF C3.BLIF VF.Q VF.D
+-0--1 1
+-11-1 1
+0101- 1
+1100- 1
+.names cpuclk.BLIF VF.C
+1 1
+.names start.BLIF VF.AR
+1 1
+.names areg3.BLIF ale.BLIF alu3.BLIF areg3.D
+10- 1
+-11 1
+.names areg2.BLIF ale.BLIF alu2.BLIF areg2.D
+10- 1
+-11 1
+.names areg1.BLIF ale.BLIF alu1.BLIF areg1.D
+10- 1
+-11 1
+.names areg0.BLIF ale.BLIF alu0.BLIF areg0.D
+10- 1
+-11 1
+.names cpuclk.BLIF areg3.C
+1 1
+.names cpuclk.BLIF areg2.C
+1 1
+.names cpuclk.BLIF areg1.C
+1 1
+.names cpuclk.BLIF areg0.C
+1 1
+.names start.BLIF areg3.AR
+1 1
+.names start.BLIF areg2.AR
+1 1
+.names start.BLIF areg1.AR
+1 1
+.names start.BLIF areg0.AR
+1 1
+.names sq.BLIF ir6.BLIF ir5.BLIF ir4.BLIF areg3.BLIF op3.BLIF op3.D
+0----1 1
+-0---1 1
+--0--1 1
+---0-1 1
+11111- 1
+.names sq.BLIF ir6.BLIF ir5.BLIF ir4.BLIF areg2.BLIF op2.BLIF op2.D
+0----1 1
+-0---1 1
+--0--1 1
+---0-1 1
+11111- 1
+.names sq.BLIF ir6.BLIF ir5.BLIF ir4.BLIF areg1.BLIF op1.BLIF op1.D
+0----1 1
+-0---1 1
+--0--1 1
+---0-1 1
+11111- 1
+.names sq.BLIF ir6.BLIF ir5.BLIF ir4.BLIF areg0.BLIF op0.BLIF op0.D
+0----1 1
+-0---1 1
+--0--1 1
+---0-1 1
+11111- 1
+.names cpuclk.BLIF op3.C
+1 1
+.names cpuclk.BLIF op2.C
+1 1
+.names cpuclk.BLIF op1.C
+1 1
+.names cpuclk.BLIF op0.C
+1 1
+.names start.BLIF op3.AR
+1 1
+.names start.BLIF op2.AR
+1 1
+.names start.BLIF op1.AR
+1 1
+.names start.BLIF op0.AR
+1 1
+.names mar3.BLIF mar2.BLIF mar1.BLIF mar0.BLIF DIS3a
+1011 1
+1101 1
+0001 1
+0100 1
+.names mar3.BLIF mar2.BLIF mar1.BLIF mar0.BLIF DIS3b
+1111 1
+1011 1
+0101 1
+1110 1
+0110 1
+1100 1
+.names mar3.BLIF mar2.BLIF mar1.BLIF mar0.BLIF DIS3c
+1111 1
+1110 1
+0010 1
+1100 1
+.names mar3.BLIF mar2.BLIF mar1.BLIF mar0.BLIF DIS3d
+1111 1
+0111 1
+0001 1
+1010 1
+0100 1
+.names mar3.BLIF mar2.BLIF mar1.BLIF mar0.BLIF DIS3e
+0111 1
+0011 1
+0101 1
+1001 1
+0001 1
+0100 1
+.names mar3.BLIF mar2.BLIF mar1.BLIF mar0.BLIF DIS3f
+0111 1
+0011 1
+1101 1
+0001 1
+0010 1
+.names mar3.BLIF mar2.BLIF mar1.BLIF mar0.BLIF DIS3g
+0111 1
+0001 1
+1100 1
+0000 1
+.names dm6.BLIF dm5.BLIF dm4.BLIF DIS2a
+001 1
+100 1
+.names dm6.BLIF dm5.BLIF dm4.BLIF DIS2b
+101 1
+110 1
+.names dm6.BLIF dm5.BLIF dm4.BLIF DIS2c
+010 1
+.names dm6.BLIF dm5.BLIF dm4.BLIF DIS2d
+111 1
+001 1
+100 1
+.names dm6.BLIF dm5.BLIF dm4.BLIF DIS2e
+111 1
+011 1
+101 1
+001 1
+100 1
+.names dm6.BLIF dm5.BLIF dm4.BLIF DIS2f
+111 1
+011 1
+001 1
+010 1
+.names dm6.BLIF dm5.BLIF dm4.BLIF DIS2g
+111 1
+001 1
+000 1
+.names dm3.BLIF dm2.BLIF dm1.BLIF dm0.BLIF DIS1a
+1011 1
+1101 1
+0001 1
+0100 1
+.names dm3.BLIF dm2.BLIF dm1.BLIF dm0.BLIF DIS1b
+1111 1
+1011 1
+0101 1
+1110 1
+0110 1
+1100 1
+.names dm3.BLIF dm2.BLIF dm1.BLIF dm0.BLIF DIS1c
+1111 1
+1110 1
+0010 1
+1100 1
+.names dm3.BLIF dm2.BLIF dm1.BLIF dm0.BLIF DIS1d
+1111 1
+0111 1
+0001 1
+1010 1
+0100 1
+.names dm3.BLIF dm2.BLIF dm1.BLIF dm0.BLIF DIS1e
+0111 1
+0011 1
+0101 1
+1001 1
+0001 1
+0100 1
+.names dm3.BLIF dm2.BLIF dm1.BLIF dm0.BLIF DIS1f
+0111 1
+0011 1
+1101 1
+0001 1
+0010 1
+.names dm3.BLIF dm2.BLIF dm1.BLIF dm0.BLIF DIS1g
+0111 1
+0001 1
+1100 1
+0000 1
+.names pc3.BLIF pc2.BLIF pc1.BLIF pc0.BLIF DIS4a
+1011 1
+1101 1
+0001 1
+0100 1
+.names pc3.BLIF pc2.BLIF pc1.BLIF pc0.BLIF DIS4b
+1111 1
+1011 1
+0101 1
+1110 1
+0110 1
+1100 1
+.names pc3.BLIF pc2.BLIF pc1.BLIF pc0.BLIF DIS4c
+1111 1
+1110 1
+0010 1
+1100 1
+.names pc3.BLIF pc2.BLIF pc1.BLIF pc0.BLIF DIS4d
+1111 1
+0111 1
+0001 1
+1010 1
+0100 1
+.names pc3.BLIF pc2.BLIF pc1.BLIF pc0.BLIF DIS4e
+0111 1
+0011 1
+0101 1
+1001 1
+0001 1
+0100 1
+.names pc3.BLIF pc2.BLIF pc1.BLIF pc0.BLIF DIS4f
+0111 1
+0011 1
+1101 1
+0001 1
+0010 1
+.names pc3.BLIF pc2.BLIF pc1.BLIF pc0.BLIF DIS4g
+0111 1
+0001 1
+1100 1
+0000 1
+.end
